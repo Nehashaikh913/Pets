@@ -1,7 +1,7 @@
 <?php
 include('include/header.php');
 include('include/sidenav.php');
-include('../include/db.php');
+include('include/config.php');
 ?><?php if (!empty ($_SESSION['admin_is_login'])){ ?>   
 	<div class="main-content">
 		<div class="page-content">

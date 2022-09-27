@@ -1,7 +1,7 @@
 <?php
 include('include/header.php');
 include('include/sidenav.php');
-include('../include/db.php');
+include('include/config.php');
 
 ?><?php if (!empty ($_SESSION['admin_is_login'])){ ?>   
 <!--
@@ -35,12 +35,7 @@ include('../include/db.php');
 					<div class="col-12">
 						<div class="page-title-box d-sm-flex align-items-center justify-content-between">
 							<h4 class="mb-sm-0">Categories<span style="color:black;margin-left:10px">Listing</span></h4>
-							<div class="page-title-right">
-								<ol class="breadcrumb m-0">
-									<li class="breadcrumb-item"> <a href="javascript: void(0);">Forms</a> </li>
-									<li class="breadcrumb-item active">Form Repeater</li>
-								</ol>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -53,29 +48,7 @@ include('../include/db.php');
 										<div class="admin-p d-flex flex-wrap">
 											<div class="category-1  d-flex  flex-wrap">
 												<p class="author-n">Search category</p>
-												<select style="  margin: 0px 13px 0px 0px;" id="s1" oninput="filterTable()">
-												<?php $stmt = $conn->prepare("SELECT * FROM `categories` WHERE STATUS = 0");
-											     	  $stmt->execute();
-													  $data = $stmt->fetchAll(PDO::FETCH_ASSOC);?>	
-												<option value="">All Categories..</option>
-												<?php if (!empty($data)) { foreach ($data as $data) {?>
-													<option value="<?php echo $data['cat_id']; ?>" style="font-weight:bold;padding:10px;"><?php echo $data['cat_name']; ?>
-													<?php $primary_cat_id = $data['cat_id'];
-													$stmt_sub = $conn->prepare("SELECT * FROM `categories` WHERE STATUS = '$primary_cat_id'");
-													$stmt_sub->execute();
-													$data_sub = $stmt_sub->fetchAll(PDO::FETCH_ASSOC);
-													if (!empty($data_sub)) { 
-														foreach ($data_sub as $data_sub_val) {?>	
-														<option value="<?php echo $data_sub_val['cat_id']; ?>" style="padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $data_sub_val['cat_name']; ?></option>
-
-													<?php }
-														}
-													?>			
-													</option>
-													<?php } ?>
-													<option value="others">Others</option>
-													<?php } ?>
-												</select>
+												
 											</div>
 										</div>
 									</div>
@@ -96,8 +69,7 @@ include('../include/db.php');
                                                         
 														<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 206.5px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Sr No</th>
 														<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 307.5px;" aria-label="Position: activate to sort column ascending">Image</th>
-														<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 307.5px;" aria-label="Position: activate to sort column ascending">Parent Category</th>
-														<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 307.5px;" aria-label="Position: activate to sort column ascending">Sub Category</th>
+														<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 307.5px;" aria-label="Position: activate to sort column ascending">Category</th>
 														<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 151.5px;" aria-label="Office: activate to sort column ascending">Edit</th>
 														<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 93.5px;" aria-label="Age: activate to sort column ascending">Delete</th>
 													</tr>
@@ -158,9 +130,6 @@ include('../include/db.php');
 													<td class="sorting_1 dtr-control" tabindex="0"><?php echo $i; ?></td>
 														<td><img src="<?php echo $cta_image ?>" alt="<?php echo $cta_alt ?>" style="width:60px;"></td>
 														<td><?php echo $data['cat_name'] ?></td>
-														<td><?php echo $data['cat_name'] ?></td>
-														
-														<!--onclick modal on edit icon-->
 														<td>
 															<a href="categoryUpdate.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i>
 														</td>

@@ -120,7 +120,7 @@ message:{
             success: function(data){
               if(data=='login'){				
               alert("Login Successfully");
-							window.location = "http://localhost/sanjary/sanjar-admin//home.php";
+							window.location = "http://localhost/pets/pets-admin//home.php";
 							}
 							else{
 								alert("Wrong Credentials")

@@ -15,11 +15,11 @@ include('include/config.php');
 								<h4 class="mb-sm-0 font-size-18">Add Product</h4></div>
 							<div class="page-title-right">
 							<?php
-				$stmt_draft = $conn->prepare("SELECT count(*) FROM `product` WHERE status=2");
+				$stmt_draft = $conn->prepare("SELECT count(*) FROM `product` WHERE status='draft'");
 				$stmt_draft->execute();
 			 	$draft_rows = $stmt_draft->fetchColumn();
 				
-				$stmt_trash = $conn->prepare("SELECT count(*) FROM `product` WHERE status=0");
+				$stmt_trash = $conn->prepare("SELECT count(*) FROM `product` WHERE status='trash'");
 				$stmt_trash->execute();
 				$trash_rows = $stmt_trash->fetchColumn();
 				?>
@@ -60,12 +60,11 @@ include('include/config.php');
 										<table id="datatable" class="table table-bordered">
 											<thead>
 												<tr role="row">
-													<th>Sr No.</th>
+													<th>Sr No</th>
 													<th>Image</th>
-													<th>Product Name</th>
+													<th>Name</th>
 													<th>Price</th>
 													<th>Category</th>
-													<th>Sub Category</th>
 													<th>View</th>
 													<th>Edit</th>
 													<th>Delete</th>
@@ -74,7 +73,7 @@ include('include/config.php');
 											<tbody>
 												<?php
 													  	$per_page = 10;
-															$stmt = $conn->prepare("SELECT * FROM `product` WHERE status=1 ORDER BY id DESC");
+															$stmt = $conn->prepare("SELECT * FROM `product` WHERE status='publish' ORDER BY id DESC");
 															$stmt->execute();
 															$number_of_rows = $stmt->fetchColumn();
 															$page = ceil($number_of_rows/$per_page);
@@ -86,7 +85,7 @@ include('include/config.php');
 																$start--;
 																$start = $start*$per_page;
 															}
-                                $sql = "SELECT * FROM `product` WHERE status=1 ORDER BY id DESC LIMIT $start,$per_page";
+                                $sql = "SELECT * FROM `product` WHERE status='publish' ORDER BY id DESC LIMIT $start,$per_page";
                                 $stmt = $conn->prepare($sql);
                                 $stmt->execute();
                                 $i=1;
@@ -101,8 +100,7 @@ include('include/config.php');
 															<?php echo $i; ?>
 														</td>
 														<td><img src="<?php echo $img_data[0]['path']; ?>" alt="<?php echo $img_data[0]['alt']; ?>" class="custome_img"></td>
-														<td>
-															<?php echo $data['title'] ?>
+														<td><?php echo $data['title'] ?>
 														</td>
 														<td>
 															<?php echo $data['prc'] ?>
@@ -122,25 +120,9 @@ include('include/config.php');
 															 ?>
 
 														</td>
-														<td>
-														<?php
-															 $stmt_cat = $conn->prepare("SELECT * FROM `categories` WHERE id=?");
-															 $stmt_cat->execute([$data['subcat_id']]);
-															 $cat_data = $stmt_cat->fetchAll(PDO::FETCH_ASSOC);
-															 if (!empty($cat_data)) {
-																$cat_name = $cat_data[0]['cat_name']; 
-															}else{
-																$cat_name="Not Found";
-															 }
-															 echo $cat_name;
-															 ?>
-
-														</td>
-														
-														
-														<td><a href="category_update.php?id=<?php echo $data['id']; ?>" class="btn btn-info"><i class="fa-solid fa-eye"></i></td>
-															<td><a href="product_update.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></td>                                   
-                                  <td><a class="btn btn-danger" href="javascript:void(0)" onclick="trashProduct(<?php echo $data['id']; ?>)"><i class="fas fa-trash-alt"></i></a></td>
+								 <td><a href="category_update.php?id=<?php echo $data['id']; ?>" class="btn btn-info"><i class="fa-solid fa-eye"></i></td>
+								 <td><a href="product_update.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></td>                                   
+                                 <td><a class="btn btn-danger" href="javascript:void(0)" onclick="trashProduct(<?php echo $data['id']; ?>)"><i class="fas fa-trash-alt"></i></a></td>
 													</tr>
 													<?php $i++; } }?>
 											</tbody>

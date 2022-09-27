@@ -37,21 +37,7 @@ ini_set('display_errors', 1);
 										<input type="text" class="form-control add_cat_inputs" id="cat" name="cat_name" placeholder="Enter Category" onkeyup="copytext_cat()"> 
                                         </div>
                                         
-                                        <div class="form-group mt-3">
-                			        <?php $stmt = $conn->prepare("SELECT * FROM `categories` WHERE status = 1 AND parent_cat=0");
-                						$stmt->execute();
-                						$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-										?>
-								<label class="form-label">Select Category</label>			
-                					<select class="form-control" id="parent_cat" name="parent_cat" title="Please select Category" >
-                				<option value="">Select Category..</option>
-                				<?php if (!empty($data)) { foreach ($data as $data) {?>
-                			    <option value="<?php echo $data['id']; ?>" style="font-weight:bold;padding:10px;"><?php echo $data['cat_name'];
-                					?></option>
-                				    <?php }} ?>
-                				<option style="font-weight:bold;padding:10px;" value="0">None</option>
-                			    </select>
-                				</div>
+                                     
                 					 <div class="form-group">
                                  <label class="form-label">Description</label>
                                      <textarea class="form-control" rows="6" id="description" name="cat_description" placeholder="Type a description here..."></textarea>
@@ -68,11 +54,11 @@ ini_set('display_errors', 1);
                                         <label for="cat_slug">Add Title</label>
 										<input type="text" class="form-control add_cat_inputs" id="cat_title" name="cat_title" placeholder="Category Title">   </div>
 										
-										<div class="blog-img-box mt-5" data-toggle="modal" data-target="#exampleModal"> <img src="https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png" alt="feature click image">
-										<h5>Set Feature Image</h5></div>
+										<div class="blog-img-box" data-toggle="modal" data-target="#exampleModal"> <img src="https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png" alt="feature click image">
+										<h5>Set Feature Image</h5> </div>
 										<input type="hidden" class="image_id" name="img_id" /> </div>
 										<div class="float-right">
-											<div class="customefeature_image"> <img src="" alt="" class="image_path"> </div>
+											<div class="set_images text-center"> <img src="" alt="" class="image_path"> </div>
 										</div>
 										
                                      </div>

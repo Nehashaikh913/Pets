@@ -918,66 +918,7 @@ $('.author_change_other').change(function () {
     },
   })
 })
-
-$('#category').change(function () {
-  var id = $(this).val()
-  //alert(id)
-
-  if (id == 'others') {
-    //  alert("others");
-
-    $('#others_category_section').modal('show')
-    $('#add_category').validate({
-      rules: {
-        cat: 'required',
-        sub_cat: 'required',
-        cat_slug: 'required',
-      },
-      message: {
-        cat: 'Please enter username',
-        sub_cat: 'Please enter username',
-        cat_slug: 'Please enter username',
-      },
-      submitHandler: function (form) {
-        // alert("validated");
-
-        $.ajax({
-          url: 'category_edit.php',
-          type: 'post',
-          data: new FormData(form),
-          contentType: false,
-          cache: false,
-          processData: false,
-          success: function (data) {
-            alert('Cat')
-            console.log(data)
-            $('#others_category_section').modal('hide')
-            //location.reload();
-          },
-        })
-      },
-    })
-  }
-
-  $.ajax({
-    type: 'post',
-    url: 'get_subcat.php',
-    data: { cat_id: id },
-    cache: false,
-    success: function (data) {
-      $('.sub_category111').html(data)
-      $('.chosen-select').chosen({
-        no_results_text: 'Oops, nothing found!',
-      })
-      //alert(data);
-      //console.log(data);
-    },
-  })
-  //    }  // if close
-})
-
 // blog title filter
-
 $('#blog_title_change_other').change(function () {
   alert('fdsfds')
   var id = $(this).val()
@@ -996,17 +937,3 @@ $('#blog_title_change_other').change(function () {
     },
   })
 })
-
-$("#category").change(function () {
-  var id = $(this).val();
-  alert(id)
-      $.ajax({
-      type: "post",
-      url: "get_subcat.php",
-      data: { cat_id: id },
-      cache: false,
-      success: function (data) {
-          $("#subcategory").html(data);
-      }
-    });
-});

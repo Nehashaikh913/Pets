@@ -1148,12 +1148,6 @@ if($_POST['btn']=="deletequotesCategory_id")
         if(isset($_POST['parent_cat'])){
             $parent_cat = $_POST['parent_cat'];
         }
-        old_img_id
-        // if($parent_cat==0){
-            
-        // }
-        
-        
         
         $sql = "UPDATE `categories` SET `cat_name`='$cat',`cat_slug`='$cat_slug',`cat_desc`='$cat_desc',`cat_title`='$cat_title',`meta_desc`='$meta_desc',`status`='$parent_cat' WHERE `id`='$cat_id'";
 

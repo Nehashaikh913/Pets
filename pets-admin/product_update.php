@@ -48,16 +48,10 @@ include('include/config.php');
 										<label for="horizontal-firstname-input" class="col-form-label">Price</label>
 										<input type="text" class="form-control" id="prc" name="prc" value="<?php echo $row['prc'] ?>">
 									</div>
-									<div class="form-group  mx-3  w-100">
-										<label for="horizontal-firstname-input" class="col-form-label">Discount Price</label>
-										<input type="text" class="form-control" id="disc" name="desc" value="<?php echo $row['disc_prc'] ?>">
-									</div>
-								</div>
-								<div class="d-flex mt-4">
-								<div class="form-group ml-3 w-100">
+									<div class="form-group ml-3 w-100">
 										<label class="form-label"> Select Category </label>
-										<?php $stmt = $conn->prepare("SELECT * FROM `categories` WHERE parent_cat=?");
-            							$stmt->execute([0]);
+										<?php $stmt = $conn->prepare("SELECT * FROM `categories`");
+            							$stmt->execute();
             							$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         									?>
 											<select class="form-control sel_cat" id="category" name="category" title="Please select Category">
@@ -70,17 +64,9 @@ include('include/config.php');
 													<?php } ?>
 											</select>
 									</div>
-
-									<div class="form-group ml-3 w-100">
-										<label class="form-label"> Select Sub Category </label>
-											<select class="form-control sel_cat" id="subcategory" name="subcategory" title="Please Select Subcategory">
-											<option value="<?php echo $data['id']; ?>" <?php if ($data['id']==$row['subcat_id']) echo ' selected="selected"'; ?> >
-												<?php echo $data['cat_name']; ?>
-											</option>
-										</select>
-									</div>
+									
 								</div>
-
+								
 								<div class="d-flex mt-4">
 								
 								<div class="form-group  w-100">
@@ -114,7 +100,7 @@ include('include/config.php');
 
 											<!-- <a href="javascript:void(0)" class="text-center text-danger" onclick="setFrontproductimage(<?php echo $img_val1['id'] ?>)">Set As Front</a> -->
 												<img src="<?php echo $img_val1['path']; ?>" alt="<?php echo $img_val1['alt'] ?>" class="image_path">
-												<div class=" d-flex justify-content-center"><button type="button" id="remove_btn" class="btn btn-danger float-center my-3" onclick="removeproductimage(<?php echo $img_val1['id'] ?>,<?php echo $row['id'] ?>)">Remove Image</button> </div>									
+												<div class="d-flex justify-content-center"><button type="button" id="remove_btn" class="btn btn-danger float-center my-3" onclick="removeproductimage(<?php echo $img_val1['id'] ?>,<?php echo $row['id'] ?>)">Remove Image</button> </div>									
 										<?php $i++; } }else{echo "no images"; } ?>
 									</div>
 									

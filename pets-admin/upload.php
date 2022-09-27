@@ -2,7 +2,7 @@
     include('include/config.php');
     if(isset($_POST['btn'])){
     $targetDir = "uploads/"; 
-    $allowTypes = array('jpg','png','jpeg','gif','webp');      
+    $allowTypes = array('jpg','png','jpeg','gif','webp','WEBP','JPG','PNG','JPEG','GIF');      
     $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = ''; 
     $filename = array_filter($_FILES['files']['name']); 
     if(!empty($filename)){ 

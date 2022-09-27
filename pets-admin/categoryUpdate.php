@@ -1,7 +1,7 @@
 <?php
 include('include/header.php');
 include('include/sidenav.php');
-include('../include/db.php');
+include('include/config.php');
 ini_set('display_errors', 1);
 ?><?php if (!empty ($_SESSION['admin_is_login'])){ ?>   
 	<div class="main-content">
@@ -62,25 +62,7 @@ ini_set('display_errors', 1);
 										<label for="cat">Category</label>
 										<input type="text" class="form-control add_cat_inputs" id="cat" name="cat_name" value="<?php echo $row_cat['cat_name'] ?>" onkeyup="copytext_cat()"> 
                                         </div>
-                                        <div class="form-group mt-3">
-                		<select class="form-control" id="parent_cat" name="parent_cat" title="Please select Category">
-                    <?php
-                            echo $parent_cat = $row_cat['parent_cat'];
-                            $stmt = $conn->prepare("SELECT * FROM `categories` WHERE status=1");
-                			$stmt->execute();
-                			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                			if(!empty($data)){ foreach ($data as $data){?>
-                		
-                		 <option value="<?php echo $data['id']; ?>"
-                		 <?php if($data['id']==$parent_cat) echo 'selected="selected"'; ?>><?php echo $data['cat_name']; ?></option>
-                		 
-                	
-                				    <?php } ?>
-                			        <option value="0"  <?php if($parent_cat==0) echo 'selected="selected"'; ?>>None</option>
-                			        <?php } ?>
-                			        
-                			    </select>
-                				</div>
+                                   
                 					 <div class="form-group mt-4">
                                  <label class="form-label">Description</label>
                                      <textarea class="form-control" rows="6" id="description" name="cat_description"/><?php echo $row_cat['cat_desc'] ?></textarea>

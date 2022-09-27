@@ -29,29 +29,26 @@ include('include/config.php');
 							<!-- <div class="header">
 								<h4 class="card-title mb-4">Features</h4> </div> -->
 							<div class="card-body">
-								<div class="d-flex  my-4">
+								<div class="d-flex my-4">
 									<div class="form-group mx-3  w-100">
 										<label for="Title" class="form-label"> Product Name</label>
-										<input type="text" class="form-control " id="pro_name" name="pro_name" placeholder="Enter Name"> </div>
+										<input type="text" class="form-control " id="pro_name" name="pro_name" placeholder="Enter Name">
+									</div>
 									<div class="form-group  w-100">
 										<label for="horizontal-firstname-input">Product Slug</label>
-										<input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Slug"> </div>
+										<input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Slug">
 									</div>
-								<div class="d-flex my-4">
+								</div>
+
+								<div class="d-flex">
 									<div class="form-group  w-100">
 										<label for="horizontal-firstname-input" class="col-form-label">Price</label>
 										<input type="text" class="form-control" id="prc" name="prc" placeholder="Enter Price">
 									</div>
-									<div class="form-group  mx-3  w-100">
-										<label for="horizontal-firstname-input" class="col-form-label">Discount Price</label>
-										<input type="text" class="form-control" id="disc" name="disc" placeholder="Enter Discount Price">
-									</div>
-								</div>
-								<div class="d-flex mt-4">
-								<div class="form-group ml-3 w-100">
-										<label class="form-label"> Select Category </label>
-										<?php $stmt = $conn->prepare("SELECT * FROM `categories` WHERE parent_cat=?");
-            							$stmt->execute([0]);
+									<div class="form-group mx-3 w-100">
+									<label class="form-label"> Select Category </label>
+										<?php $stmt = $conn->prepare("SELECT * FROM `categories`");
+            							$stmt->execute();
             							$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         									?>
 											<select class="form-control sel_cat" id="category" name="category" title="Please select Category">
@@ -64,17 +61,10 @@ include('include/config.php');
 													<?php } ?>
 											</select>
 									</div>
-
-									<div class="form-group ml-3 w-100">
-										<label class="form-label"> Select Sub Category </label>
-											<select class="form-control sel_cat" id="subcategory" name="subcategory" title="Please Select Subcategory">
-											
-											</select>
-									</div>
 								</div>
 
-								<div class="d-flex mt-4">
-								
+							
+								<div class="d-flex">	
 								<div class="form-group  w-100">
 										<label for="horizontal-firstname-input" class="col-form-label">Description</label>
 										<textarea name="description" class="form-control" id="" name="description" cols="30" rows="10"></textarea>

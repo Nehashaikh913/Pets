@@ -27,20 +27,18 @@ if($_POST['btn']=='image_update'){
 
 if($_POST['btn']=='addCategory'){
   $cat_name = $_POST['cat_name'];
-  $cat_parent = $_POST['parent_cat'];
   $title = $_POST['cat_title'];
   $slug = $_POST['cat_slug'];
   $desc = $_POST['cat_description'];
   $img_id = $_POST['img_id'];
-  $stmt = $conn->prepare("INSERT INTO categories(img_id, parent_cat, cat_name, cat_slug, cat_desc, cat_title, status) VALUES(?,?,?,?,?,?,?)");
-  if($stmt->execute([$img_id, $cat_parent, $cat_name, $slug, $desc, $title, 1])){
+  $stmt = $conn->prepare("INSERT INTO categories(img_id, cat_name, cat_slug, cat_desc, cat_title, status) VALUES(?,?,?,?,?,?)");
+  if($stmt->execute([$img_id, $cat_name, $slug, $desc, $title, 1])){
     echo "inserted";
   }
 }
 if($_POST['btn']=='updateCategory'){
   $cat_id = $_POST['cat_id'];
   $cat_name = $_POST['cat_name'];
-  $cat_parent = $_POST['parent_cat'];
   $title = $_POST['cat_title'];
   $slug = $_POST['cat_slug'];
   $desc = $_POST['cat_description'];
@@ -49,8 +47,8 @@ if($_POST['btn']=='updateCategory'){
   }else{
     $img_id = $_POST['img_id'];
   }
-  $stmt = $conn->prepare("UPDATE categories SET img_id=?, parent_cat=?, cat_name=?, cat_slug=?, cat_desc=?, cat_title=? WHERE id=?");
-  if($stmt->execute([$img_id, $cat_parent, $cat_name, $slug, $desc, $title, $cat_id])){
+  $stmt = $conn->prepare("UPDATE categories SET img_id=?, cat_name=?, cat_slug=?, cat_desc=?, cat_title=? WHERE id=?");
+  if($stmt->execute([$img_id, $cat_name, $slug, $desc, $title, $cat_id])){
     echo "updated";
   }
 
@@ -62,7 +60,7 @@ if($_POST['btn']=='deleteCategory_id'){
     }
 
 //product
-if($_POST['btn']=='addProduct'){
+    if($_POST['btn']=='addProduct'){
     $name="";
     if(isset($_POST['pro_name'])){
         $name=$_POST['pro_name'];
@@ -70,15 +68,13 @@ if($_POST['btn']=='addProduct'){
         $name="";
     }
     $prc = $_POST['prc'];
-    $disc = $_POST['disc'];
     $slug = $_POST['slug'];
     $cat = $_POST['category'];
-    $subcat = $_POST['subcategory'];
     $description = $_POST['description']; 
     $img_id = $_POST['img_id'];
     $PostDate = date("Y-m-d H:i");
-    $stmt = $conn->prepare("INSERT INTO product(img_id, title, prc, disc_prc, slug, cat_id, subcat_id, description, PostDate, status) VALUES(?,?,?,?,?,?,?,?,?,?)");
-    if($stmt->execute([$img_id, $name, $prc, $disc, $slug, $cat, $subcat, $description, $PostDate, 1])){
+    $stmt = $conn->prepare("INSERT INTO product(img_id, title, prc, slug, cat_id, description, PostDate, status) VALUES(?,?,?,?,?,?,?,?)");
+    if($stmt->execute([$img_id, $name, $prc, $slug, $cat, $description, $PostDate, 'publish'])){
       echo "inserted";
     }
   }
@@ -86,12 +82,10 @@ if($_POST['btn']=='addProduct'){
   if($_POST['btn']=='updateProduct'){
     $product_id=$_POST['product_id'];
     $name = $_POST['pro_name'];
-    $d_prc = $_POST['desc'];
     $prc = $_POST['prc'];
     $disc = $_POST['discription'];
     $slug = $_POST['slug'];
-    $cat = $_POST['category'];
-    $subcat = $_POST['subcategory'];   
+    $cat = $_POST['category'];   
     if(empty($_POST['front_img'])){
         $front_img = 1;
     }else{
@@ -102,8 +96,8 @@ if($_POST['btn']=='addProduct'){
     }else{
         $img_id = $_POST['img_id'];
     }
-    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, title=?, prc=?, disc_prc=?, slug=?, cat_id=?, subcat_id=?, description=? WHERE id=?");
-    if($stmt->execute([$img_id, $front_img, $name, $prc, $d_prc, $slug, $cat, $subcat, $disc, $product_id])){
+    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, title=?, prc=?, slug=?, cat_id=?, description=? WHERE id=?");
+    if($stmt->execute([$img_id, $front_img, $name, $prc, $slug, $cat, $disc, $product_id])){
       echo "updated";
     }
   }
