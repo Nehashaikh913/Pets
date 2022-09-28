@@ -62,7 +62,7 @@
                 <div class="container">
                     <div class="patoi-responsive-menu">
                         <div class="logo">
-                            <a href="index-4.html"><img src="assets/img/logo.png" alt="logo"></a>
+                            <a href="index-4.html"><img src="assets/img/logo/LOGO.svg" width="170" height="60"></img></a>
                         </div>
                     </div>
                 </div>
@@ -70,10 +70,10 @@
             <div class="patoi-nav">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index-4.html"><img src="assets/img/logo.png" alt="logo"></a>
+                        <a class="navbar-brand" href="index-4.html"><img src="assets/img/logo/LOGO.svg" width="170" height="70"></img></a>
                         <div class="collapse navbar-collapse mean-menu">
                             <ul class="navbar-nav">
-                                <li class="nav-item"><a href="/" class="dropdown-toggle nav-link active">Home</a>
+                                <li class="nav-item"><a href="index.php" class="dropdown-toggle nav-link active">Home</a>
                                 </li>
                                 <li class="nav-item"><a href="#" class="dropdown-toggle nav-link">Pages</a>
                                     <ul class="dropdown-menu">
