@@ -4065,9 +4065,12 @@ Cart Area CSS
 .cart-totals {
   padding: 30px;
   max-width: 500px;
-  border: 1px solid #eeeeee;
-  margin-top: 60px;
+  /* border: 1px solid #eeeeee; */
+  /* margin-top: 60px; */
   margin-left: auto;
+  background: #FFFFFF;
+border: 0.5px solid #259CD8;
+border-radius: 12px;
 }
 
 .cart-totals ul {

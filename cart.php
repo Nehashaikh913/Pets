@@ -17,132 +17,66 @@
 <!-- Start Cart Area -->
 <div class="cart-area ptb-100">
     <div class="container">
-        <form>
-            <div class="cart-table table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="cart.html" class="remove"><i class='bx bx-trash'></i></a></td>
-                            <td class="product-thumbnail">
-                                <a href="products-details.html">
-                                    <img src="assets/img/products/products9.jpg" alt="item">
-                                    <h3>Pet chair</h3>
-                                </a>
-                            </td>
-                            <td>$199.00</td>
-                            <td class="product-quantity">
-                                <div class="input-counter">
-                                    <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                                    <input type="text" value="1">
-                                    <span class="plus-btn"><i class='bx bx-plus'></i></span>
-                                </div>
-                            </td>
-                            <td>$199.00</td>
-                        </tr>
-                        <tr>
-                            <td><a href="cart.html" class="remove"><i class='bx bx-trash'></i></a></td>
-                            <td class="product-thumbnail">
-                                <a href="products-details.html">
-                                    <img src="assets/img/products/products10.jpg" alt="item">
-                                    <h3>Pink ceramic cat bowl</h3>
-                                </a>
-                            </td>
-                            <td>$150.00</td>
-                            <td class="product-quantity">
-                                <div class="input-counter">
-                                    <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                                    <input type="text" value="1">
-                                    <span class="plus-btn"><i class='bx bx-plus'></i></span>
-                                </div>
-                            </td>
-                            <td>$150.00</td>
-                        </tr>
-                        <tr>
-                            <td><a href="cart.html" class="remove"><i class='bx bx-trash'></i></a></td>
-                            <td class="product-thumbnail">
-                                <a href="products-details.html">
-                                    <img src="assets/img/products/products12.jpg" alt="item">
-                                    <h3>Pet carrier</h3>
-                                </a>
-                            </td>
-                            <td>$200.00</td>
-                            <td class="product-quantity">
-                                <div class="input-counter">
-                                    <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                                    <input type="text" value="1">
-                                    <span class="plus-btn"><i class='bx bx-plus'></i></span>
-                                </div>
-                            </td>
-                            <td>$200.00</td>
-                        </tr>
-                        <tr>
-                            <td><a href="cart.html" class="remove"><i class='bx bx-trash'></i></a></td>
-                            <td class="product-thumbnail">
-                                <a href="products-details.html">
-                                    <img src="assets/img/products/products11.jpg" alt="item">
-                                    <h3>Red dog bed</h3>
-                                </a>
-                            </td>
-                            <td>$289.00</td>
-                            <td class="product-quantity">
-                                <div class="input-counter">
-                                    <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                                    <input type="text" value="1">
-                                    <span class="plus-btn"><i class='bx bx-plus'></i></span>
-                                </div>
-                            </td>
-                            <td>$289.00</td>
-                        </tr>
-                        <tr>
-                            <td><a href="cart.html" class="remove"><i class='bx bx-trash'></i></a></td>
-                            <td class="product-thumbnail">
-                                <a href="products-details.html">
-                                    <img src="assets/img/products/products4.jpg" alt="item">
-                                    <h3>Dog toy collar</h3>
-                                </a>
-                            </td>
-                            <td>$289.00</td>
-                            <td class="product-quantity">
-                                <div class="input-counter">
-                                    <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                                    <input type="text" value="1">
-                                    <span class="plus-btn"><i class='bx bx-plus'></i></span>
-                                </div>
-                            </td>
-                            <td>$289.00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="cart-buttons">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 col-sm-12 col-md-7">
-                        <div class="shopping-coupon-code">
-                            <input type="text" class="form-control" placeholder="Coupon code" name="coupon-code" id="coupon-code">
-                            <button type="submit">Apply Coupon</button>
+        <form class="row">
+            <div class="col-lg-8 cart-table table-responsive">
+                <div class="data__list__block mb-4">
+                    <div class="data-list p-1 p-lg-2 d-flex align-items-center gap-4">
+                        <div class="lhs">
+                            <img src="assets/img/BATHROBE TOWEL-1.webp" width="90" alt="">
+                        </div>
+                        <div class="rhs w-100">
+                            <div class="grid-template">
+                                <div class="one"><div class="title">Dog carrier</div></div>
+                                <div class="two"><div class="btn"><i class="fa-solid fa-trash-can"></i><span class="delete d-none d-lg-inline ms-3">Delete</span></div></div>
+                                <div class="three"><div class="price">$199.99</div></div>
+                                <div class="four"><div class="btn"><i class="fa-regular fa-heart"></i><span class="text d-none d-lg-inline ms-3">Move to whistlist</span></div></div>
+                                <div class="five"><div class="btn">Qty: 1<i class="fa-solid ms-2 fa-caret-down"></i></div></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-sm-12 col-md-5 text-end">
-                        <a href="cart.html" class="default-btn"><span>Update Cart</span></a>
+                </div>
+                <div class="data__list__block mb-4">
+                    <div class="data-list p-1 p-lg-2 d-flex align-items-center gap-4">
+                        <div class="lhs">
+                            <img src="assets/img/BATHROBE TOWEL-1.webp" width="90" alt="">
+                        </div>
+                        <div class="rhs w-100">
+                            <div class="grid-template">
+                                <div class="one"><div class="title">Dog carrier</div></div>
+                                <div class="two"><div class="btn"><i class="fa-solid fa-trash-can"></i><span class="delete d-none d-lg-inline ms-3">Delete</span></div></div>
+                                <div class="three"><div class="price">$199.99</div></div>
+                                <div class="four"><div class="btn"><i class="fa-regular fa-heart"></i><span class="text d-none d-lg-inline ms-3">Move to whistlist</span></div></div>
+                                <div class="five"><div class="btn">Qty: 1<i class="fa-solid ms-2 fa-caret-down"></i></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="data__list__block mb-4">
+                    <div class="data-list p-1 p-lg-2 d-flex align-items-center gap-4">
+                        <div class="lhs">
+                            <img src="assets/img/BATHROBE TOWEL-1.webp" width="90" alt="">
+                        </div>
+                        <div class="rhs w-100">
+                            <div class="grid-template">
+                                <div class="one"><div class="title">Dog carrier</div></div>
+                                <div class="two"><div class="btn"><i class="fa-solid fa-trash-can"></i><span class="delete d-none d-lg-inline ms-3">Delete</span></div></div>
+                                <div class="three"><div class="price">$199.99</div></div>
+                                <div class="four"><div class="btn"><i class="fa-regular fa-heart"></i><span class="text d-none d-lg-inline ms-3">Move to whistlist</span></div></div>
+                                <div class="five"><div class="btn">Qty: 1<i class="fa-solid ms-2 fa-caret-down"></i></div></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="cart-totals">
+            <div class=" col-lg-4">
+                <div class="cart-totals">
                 <ul>
                     <li>Subtotal <span>$800.00</span></li>
                     <li>Shipping <span>$30.00</span></li>
                     <li>Total <span>$830.00</span></li>
                 </ul>
                 <a href="checkout.html" class="default-btn"><span>Proceed to Checkout</span></a>
+                </div>
             </div>
         </form>
     </div>
