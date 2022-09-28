@@ -73,32 +73,27 @@
                         <a class="navbar-brand" href="index-4.html"><img src="assets/img/logo.png" alt="logo"></a>
                         <div class="collapse navbar-collapse mean-menu">
                             <ul class="navbar-nav">
-                                <li class="nav-item"><a href="#" class="dropdown-toggle nav-link active">Home</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="index-2.html" class="nav-link">Home Demo - One</a></li>
-                                        <li class="nav-item"><a href="index-3.html" class="nav-link">Home Demo - Two</a></li>
-                                        <li class="nav-item"><a href="index-4.html" class="nav-link active">Home Demo - Three</a></li>
-                                    </ul>
+                                <li class="nav-item"><a href="/" class="dropdown-toggle nav-link active">Home</a>
                                 </li>
                                 <li class="nav-item"><a href="#" class="dropdown-toggle nav-link">Pages</a>
                                     <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                                        <li class="nav-item"><a href="about.php" class="nav-link">About Us</a></li>
                                         <li class="nav-item"><a href="order-tracking.html" class="nav-link">Order Tracking</a></li>
-                                        <li class="nav-item"><a href="profile-authentication.html" class="nav-link">My Account</a></li>
-                                        <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-                                        <li class="nav-item"><a href="privacy-policy.html" class="nav-link">Privacy Policy</a></li>
-                                        <li class="nav-item"><a href="terms-conditions.html" class="nav-link">Terms & Conditions</a></li>
-                                        <li class="nav-item"><a href="not-found.html" class="nav-link">404 Error Page</a></li>
-                                    </ul>
+                                        <li class="nav-item"><a href="user.php" class="nav-link">My Account</a></li>
+                                        <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
+                                        <li class="nav-item"><a href="privacypolicy.php" class="nav-link">Privacy Policy</a></li>
+                                        <li class="nav-item"><a href="termsconditions.php" class="nav-link">Terms & Conditions</a></li>
+                                        <li class="nav-item"><a href="not-found.php" class="nav-link">404 Error Page</a></li>
+                                    </ul>   
                                 </li>
                                 <li class="nav-item"><a href="#" class="dropdown-toggle nav-link">Shop</a>
                                     <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="shop-grid.html" class="nav-link">Shop Grid</a></li>
-                                        <li class="nav-item"><a href="shop-left-sidebar.html" class="nav-link">Shop Left Sidebar</a></li>
-                                        <li class="nav-item"><a href="shop-right-sidebar.html" class="nav-link">Shop Right Sidebar</a></li>
-                                        <li class="nav-item"><a href="products-details.html" class="nav-link">Products Details</a></li>
-                                        <li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
-                                        <li class="nav-item"><a href="checkout.html" class="nav-link">Checkout</a></li>
+                                        <!-- <li class="nav-item"><a href="shop-grid.html" class="nav-link">Shop Grid</a></li> -->
+                                        <!-- <li class="nav-item"><a href="shop-left-sidebar.html" class="nav-link">Shop Left Sidebar</a></li> -->
+                                        <!-- <li class="nav-item"><a href="shop-right-sidebar.html" class="nav-link">Shop Right Sidebar</a></li> -->
+                                        <!-- <li class="nav-item"><a href="productpage.php" class="nav-link">Products Details</a></li> -->
+                                        <li class="nav-item"><a href="cart.php" class="nav-link">Cart</a></li>
+                                        <li class="nav-item"><a href="checkout.php" class="nav-link">Checkout</a></li>
                                         <li class="nav-item"><a href="wishlist.html" class="nav-link">Wishlist</a></li>
                                     </ul>
                                 </li>
@@ -110,18 +105,18 @@
                                         <li class="nav-item"><a href="blog-details.html" class="nav-link">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                                <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                             </ul>
                             <div class="others-option">
                                 <div class="d-flex align-items-center">
                                     <ul>
-                                        <li>
+                                        <!-- <li>
                                             <select class="form-select">
                                                 <option selected>English</option>
                                                 <option value="1">Spanish</option>
                                                 <option value="2">Chinese</option>
                                             </select>
-                                        </li>
+                                        </li> -->
                                         <li><a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a></li>
                                         <li><a href="cart.html"><i class='bx bx-cart'></i></a></li>
                                     </ul>
