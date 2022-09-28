@@ -21,10 +21,11 @@
         <link rel="stylesheet" href="assets/css/meanmenu.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
-
+        <link rel="stylesheet" href="assets/css/custom.css">
         <title>Patoi - Pet Care Shop HTML Template</title>
 
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     </head>
     <body>
 
