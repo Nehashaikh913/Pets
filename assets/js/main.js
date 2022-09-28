@@ -1,4 +1,4 @@
-(function($){
+(function ($) {
 	"use strict";
 
 	// Mean Menu
@@ -7,25 +7,25 @@
 	});
 
 	// Header Sticky
-	$(window).on('scroll',function() {
-		if ($(this).scrollTop() > 120){  
+	$(window).on('scroll', function () {
+		if ($(this).scrollTop() > 120) {
 			$('.navbar-area').addClass("is-sticky");
 		}
-		else{
+		else {
 			$('.navbar-area').removeClass("is-sticky");
 		}
 	});
-	
+
 	// Others Option For Responsive JS
-	$(".others-option-for-responsive .dot-menu").on("click", function(){
+	$(".others-option-for-responsive .dot-menu").on("click", function () {
 		$(".others-option-for-responsive .container .container").toggleClass("active");
 	});
 
 	// Search Menu JS
-	$(".others-option .search-icon i").on("click", function(){
+	$(".others-option .search-icon i").on("click", function () {
 		$(".search-overlay").toggleClass("search-overlay-active");
 	});
-	$(".search-overlay-close").on("click", function(){
+	$(".search-overlay-close").on("click", function () {
 		$(".search-overlay").removeClass("search-overlay-active");
 	});
 
@@ -141,9 +141,9 @@
 	});
 
 	// Odometer JS
-	$('.odometer').appear(function(e) {
+	$('.odometer').appear(function (e) {
 		var odo = $(".odometer");
-		odo.each(function() {
+		odo.each(function () {
 			var countNumber = $(this).attr("data-count");
 			$(this).html(countNumber);
 		});
@@ -152,8 +152,8 @@
 	// Popup Image
 	$('.popup-image').magnificPopup({
 		type: 'image',
-		gallery:{
-			enabled:true
+		gallery: {
+			enabled: true
 		}
 	});
 
@@ -182,14 +182,14 @@
 	});
 
 	// Input Plus & Minus Number JS
-	$('.input-counter').each(function() {
+	$('.input-counter').each(function () {
 		var spinner = jQuery(this),
-		input = spinner.find('input[type="text"]'),
-		btnUp = spinner.find('.plus-btn'),
-		btnDown = spinner.find('.minus-btn'),
-		min = input.attr('min'),
-		max = input.attr('max');
-		btnUp.on('click', function() {
+			input = spinner.find('input[type="text"]'),
+			btnUp = spinner.find('.plus-btn'),
+			btnDown = spinner.find('.minus-btn'),
+			min = input.attr('min'),
+			max = input.attr('max');
+		btnUp.on('click', function () {
 			var oldValue = parseFloat(input.val());
 			if (oldValue >= max) {
 				var newVal = oldValue;
@@ -199,7 +199,7 @@
 			spinner.find("input").val(newVal);
 			spinner.find("input").trigger("change");
 		});
-		btnDown.on('click', function() {
+		btnDown.on('click', function () {
 			var oldValue = parseFloat(input.val());
 			if (oldValue <= min) {
 				var newVal = oldValue;
@@ -217,7 +217,7 @@
 	});
 
 	// Countdown
-	$(document).ready(function(){
+	$(document).ready(function () {
 		loopcounter('counter-class');
 	});
 
@@ -276,7 +276,7 @@
 			event.preventDefault();
 		}
 	});
-	function callbackFunction (resp) {
+	function callbackFunction(resp) {
 		if (resp.result === "success") {
 			formSuccessSub();
 		}
@@ -284,21 +284,21 @@
 			formErrorSub();
 		}
 	}
-	function formSuccessSub(){
+	function formSuccessSub() {
 		$(".newsletter-form")[0].reset();
 		submitMSGSub(true, "Thank you for subscribing!");
-		setTimeout(function() {
+		setTimeout(function () {
 			$("#validator-newsletter").addClass('hide');
 		}, 4000)
 	}
-	function formErrorSub(){
+	function formErrorSub() {
 		$(".newsletter-form").addClass("animated shake");
-		setTimeout(function() {
+		setTimeout(function () {
 			$(".newsletter-form").removeClass("animated shake");
 		}, 1000)
 	}
-	function submitMSGSub(valid, msg){
-		if(valid){
+	function submitMSGSub(valid, msg) {
+		if (valid) {
 			var msgClasses = "validation-success";
 		} else {
 			var msgClasses = "validation-danger";
@@ -312,16 +312,16 @@
 	});
 
 	// Go to Top
-	$(function(){
+	$(function () {
 		// Scroll Event
-		$(window).on('scroll', function(){
+		$(window).on('scroll', function () {
 			var scrolled = $(window).scrollTop();
 			if (scrolled > 600) $('.go-top').addClass('active');
 			if (scrolled < 600) $('.go-top').removeClass('active');
-		});  
+		});
 		// Click Event
-		$('.go-top').on('click', function() {
-			$("html, body").animate({ scrollTop: "0" },  500);
+		$('.go-top').on('click', function () {
+			$("html, body").animate({ scrollTop: "0" }, 500);
 		});
 	});
 

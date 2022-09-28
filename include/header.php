@@ -43,14 +43,14 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6">
+                    <!-- <div class="col-lg-3 col-md-3 col-sm-6">
                         <ul>
                             <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li>
                             <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li>
                             <li><a href="#" target="_blank"><i class='bx bxl-instagram'></i></a></li>
                             <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -115,13 +115,13 @@
                             <div class="others-option">
                                 <div class="d-flex align-items-center">
                                     <ul>
-                                        <li>
+                                        <!-- <li>
                                             <select class="form-select">
                                                 <option selected>English</option>
                                                 <option value="1">Spanish</option>
                                                 <option value="2">Chinese</option>
                                             </select>
-                                        </li>
+                                        </li> -->
                                         <li><a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a></li>
                                         <li><a href="cart.html"><i class='bx bx-cart'></i></a></li>
                                     </ul>
