@@ -177,11 +177,8 @@ if($_POST['btn']=='trashPost_id'){
     $update->execute([$_POST['trashPost_id']]);
     echo 'trashed';
     }
-
-
-
     function trim_data($text) {
-      // $text = trim($data); //<-- LINE 31
+       $text = trim($text); //<-- LINE 31
        if(is_array($text)) {
            return array_map('trim_data', $text);
        }
