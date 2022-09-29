@@ -30,7 +30,12 @@
                                 <div class="two"><div class="btn"><i class="fa-solid fa-trash-can"></i><span class="delete d-none d-lg-inline ms-3">Delete</span></div></div>
                                 <div class="three"><div class="price">$199.99</div></div>
                                 <div class="four"><div class="btn"><i class="fa-regular fa-heart"></i><span class="text d-none d-lg-inline ms-3">Move to whistlist</span></div></div>
-                                <div class="five"><div class="btn">Qty: 1<i class="fa-solid ms-2 fa-caret-down"></i></div></div>
+                                <div class="five"><div class="btn">Qty:<select class="border-0" name="cars" id="cars">
+                                    <option value="volvo">1</option>
+                                    <option value="saab">2</option>
+                                    <option value="opel">3</option>
+                                    <option value="audi">4</option>
+                                </select></div></div>
                             </div>
                         </div>
                     </div>
@@ -46,7 +51,12 @@
                                 <div class="two"><div class="btn"><i class="fa-solid fa-trash-can"></i><span class="delete d-none d-lg-inline ms-3">Delete</span></div></div>
                                 <div class="three"><div class="price">$199.99</div></div>
                                 <div class="four"><div class="btn"><i class="fa-regular fa-heart"></i><span class="text d-none d-lg-inline ms-3">Move to whistlist</span></div></div>
-                                <div class="five"><div class="btn">Qty: 1<i class="fa-solid ms-2 fa-caret-down"></i></div></div>
+                                <div class="five"><div class="btn">Qty:<select class="border-0" name="cars" id="cars">
+                                    <option value="volvo">1</option>
+                                    <option value="saab">2</option>
+                                    <option value="opel">3</option>
+                                    <option value="audi">4</option>
+                                </select></div></div>
                             </div>
                         </div>
                     </div>
@@ -62,7 +72,12 @@
                                 <div class="two"><div class="btn"><i class="fa-solid fa-trash-can"></i><span class="delete d-none d-lg-inline ms-3">Delete</span></div></div>
                                 <div class="three"><div class="price">$199.99</div></div>
                                 <div class="four"><div class="btn"><i class="fa-regular fa-heart"></i><span class="text d-none d-lg-inline ms-3">Move to whistlist</span></div></div>
-                                <div class="five"><div class="btn">Qty: 1<i class="fa-solid ms-2 fa-caret-down"></i></div></div>
+                                <div class="five"><div class="btn">Qty:<select class="border-0" name="cars" id="cars">
+                                    <option value="volvo">1</option>
+                                    <option value="saab">2</option>
+                                    <option value="opel">3</option>
+                                    <option value="audi">4</option>
+                                </select></div></div>
                             </div>
                         </div>
                     </div>
