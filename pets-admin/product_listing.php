@@ -92,8 +92,14 @@ include('include/config.php');
                                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 if (!empty($data)) {
                                 foreach ($data as $data)
-                                {  $stmt1 = $conn->prepare("SELECT * FROM `images` WHERE id=?");
-                                   $stmt1->execute([$data['img_id']]);
+								{
+								if(!empty($data['front_img'])){
+									$front_img = $data['front_img'];
+								}else{
+									$front_img=1;
+								}
+								   $stmt1 = $conn->prepare("SELECT * FROM `images` WHERE id=?");
+                                   $stmt1->execute([$front_img]);
                                    $img_data = $stmt1->fetchAll(PDO::FETCH_ASSOC);?>
 													<tr class="odd">
 														<td class="sorting_1 dtr-control" tabindex="0">
