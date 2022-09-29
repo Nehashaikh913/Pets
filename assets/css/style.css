@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&amp;display=swap");
 @import url(header.css);
 @import url(footer.css);
+
 :root {
   --fontFamily: 'Titillium Web', sans-serif;
   --headingFontFamily: 'Fredoka One', cursive;
@@ -23,7 +24,18 @@ body {
   font-family: var(--fontFamily);
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--blackColor);
   font-weight: 700;
   font-family: var(--headingFontFamily);
@@ -188,11 +200,13 @@ p:last-child {
   background-color: var(--primaryColor);
 }
 
-.default-btn:hover::before, .default-btn:hover::after {
+.default-btn:hover::before,
+.default-btn:hover::after {
   height: 100%;
 }
 
-.default-btn:hover span::before, .default-btn:hover span::after {
+.default-btn:hover span::before,
+.default-btn:hover span::after {
   height: 100%;
 }
 
@@ -204,7 +218,7 @@ p:last-child {
   font-size: var(--fontSize);
   border: 1px solid #eeeeee;
   -webkit-box-shadow: unset !important;
-          box-shadow: unset !important;
+  box-shadow: unset !important;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -270,12 +284,12 @@ Main Banner Area CSS
   bottom: 10px;
   position: absolute;
   -webkit-animation: moveleftbounce 5s linear infinite;
-          animation: moveleftbounce 5s linear infinite;
+  animation: moveleftbounce 5s linear infinite;
 }
 
 .main-banner-image img:nth-child(3) {
   -webkit-animation: movebounce 5s linear infinite;
-          animation: movebounce 5s linear infinite;
+  animation: movebounce 5s linear infinite;
   position: absolute;
   top: 190px;
   right: 0;
@@ -287,7 +301,7 @@ Main Banner Area CSS
 
 .banner-content .content {
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   position: absolute;
   margin-top: -20px;
   max-width: 540px;
@@ -359,10 +373,10 @@ Main Banner Area CSS
 
 .banner-image a:hover img {
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-.banner-slides.owl-theme .owl-nav.disabled + .owl-dots {
+.banner-slides.owl-theme .owl-nav.disabled+.owl-dots {
   margin-top: 0;
 }
 
@@ -396,7 +410,8 @@ Main Banner Area CSS
   background-color: var(--whiteColor);
 }
 
-.banner-slides.owl-theme .owl-dots .owl-dot.active span, .banner-slides.owl-theme .owl-dots .owl-dot:hover span {
+.banner-slides.owl-theme .owl-dots .owl-dot.active span,
+.banner-slides.owl-theme .owl-dots .owl-dot:hover span {
   border-color: var(--whiteColor);
 }
 
@@ -470,7 +485,7 @@ Main Banner Area CSS
   -webkit-transition: var(--transition);
   transition: var(--transition);
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: 28px !important;
   border-radius: 50%;
   position: absolute;
@@ -483,7 +498,7 @@ Main Banner Area CSS
 
 .home-slides .owl-nav [class*=owl-] i {
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   position: absolute;
   margin-top: .5px;
   top: 50%;
@@ -505,106 +520,130 @@ Main Banner Area CSS
 @-webkit-keyframes moveleftbounce {
   0% {
     -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
+
   50% {
     -webkit-transform: translateX(20px);
-            transform: translateX(20px);
+    transform: translateX(20px);
   }
+
   100% {
     -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
 }
 
 @keyframes moveleftbounce {
   0% {
     -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
+
   50% {
     -webkit-transform: translateX(20px);
-            transform: translateX(20px);
+    transform: translateX(20px);
   }
+
   100% {
     -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    transform: translateX(0px);
   }
 }
 
 @-webkit-keyframes movebounce {
   0% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
+
   50% {
     -webkit-transform: translateY(20px);
-            transform: translateY(20px);
+    transform: translateY(20px);
   }
+
   100% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
 }
 
 @keyframes movebounce {
   0% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
+
   50% {
     -webkit-transform: translateY(20px);
-            transform: translateY(20px);
+    transform: translateY(20px);
   }
+
   100% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
 }
 
 @-webkit-keyframes border-transform {
-  0%, 100% {
+
+  0%,
+  100% {
     border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
   }
+
   14% {
     border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
   }
+
   28% {
     border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
   }
+
   42% {
     border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
   }
+
   56% {
     border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
   }
+
   70% {
     border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
   }
+
   84% {
     border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
   }
 }
 
 @keyframes border-transform {
-  0%, 100% {
+
+  0%,
+  100% {
     border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
   }
+
   14% {
     border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
   }
+
   28% {
     border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
   }
+
   42% {
     border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
   }
+
   56% {
     border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
   }
+
   70% {
     border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
   }
+
   84% {
     border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
   }
@@ -625,7 +664,7 @@ Offer Area CSS
 
 .single-offer-box:hover img {
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .offer-box {
@@ -845,7 +884,7 @@ Categories Area CSS
 .single-categories-box {
   background-color: var(--whiteColor);
   -webkit-box-shadow: 0 0 10px #eeeeee;
-          box-shadow: 0 0 10px #eeeeee;
+  box-shadow: 0 0 10px #eeeeee;
   padding: 10px 10px 15px;
   margin-bottom: 25px;
   text-align: center;
@@ -880,7 +919,7 @@ Categories Area CSS
 .categories-box img {
   margin-bottom: 15px;
   -webkit-animation: border-transform 10s linear infinite alternate forwards;
-          animation: border-transform 10s linear infinite alternate forwards;
+  animation: border-transform 10s linear infinite alternate forwards;
 }
 
 .categories-box h3 {
@@ -912,7 +951,7 @@ Categories Area CSS
   -webkit-transition: var(--transition);
   transition: var(--transition);
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: 22px !important;
   border-radius: 50%;
   position: absolute;
@@ -925,7 +964,7 @@ Categories Area CSS
 
 .categories-slides .owl-nav [class*=owl-] i {
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   position: absolute;
   margin-top: 1px;
   top: 50%;
@@ -1043,7 +1082,7 @@ Products Area CSS
   top: 50%;
   position: absolute;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .single-products-box .image .products-button li a:hover {
@@ -1084,7 +1123,7 @@ Products Area CSS
 
 .single-products-box:hover .image img {
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .single-products-box:hover .image .products-button {
@@ -1104,7 +1143,7 @@ Products Area CSS
   -webkit-transition: var(--transition);
   transition: var(--transition);
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: 22px !important;
   border-radius: 50%;
   position: absolute;
@@ -1117,7 +1156,7 @@ Products Area CSS
 
 .products-slides .owl-nav [class*=owl-] i {
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   position: absolute;
   margin-top: 1px;
   top: 50%;
@@ -1148,7 +1187,7 @@ Products Area CSS
 
 .products-ads-box:hover img {
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .patoi-grid-sorting {
@@ -1223,7 +1262,7 @@ Products Details Area CSS
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   text-align: center;
   list-style-type: none;
   margin-top: 0;
@@ -1234,8 +1273,8 @@ Products Details Area CSS
 
 .products-details-thumbs-image .slick-dots li {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 20%;
-          flex: 0 0 20%;
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
   display: block;
   max-width: 20%;
   position: relative;
@@ -1258,7 +1297,8 @@ Products Details Area CSS
   transition: var(--transition);
 }
 
-.products-details-thumbs-image .slick-dots li:hover img, .products-details-thumbs-image .slick-dots li.slick-active img {
+.products-details-thumbs-image .slick-dots li:hover img,
+.products-details-thumbs-image .slick-dots li.slick-active img {
   opacity: .4;
 }
 
@@ -1304,8 +1344,8 @@ Products Details Area CSS
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 20px;
 }
 
@@ -1564,11 +1604,13 @@ Products Details Area CSS
   background-color: var(--primaryColor);
 }
 
-.products-details-tabs .nav .nav-item .nav-link:hover, .products-details-tabs .nav .nav-item .nav-link.active {
+.products-details-tabs .nav .nav-item .nav-link:hover,
+.products-details-tabs .nav .nav-item .nav-link.active {
   color: var(--blackColor);
 }
 
-.products-details-tabs .nav .nav-item .nav-link:hover::before, .products-details-tabs .nav .nav-item .nav-link.active::before {
+.products-details-tabs .nav .nav-item .nav-link:hover::before,
+.products-details-tabs .nav .nav-item .nav-link.active::before {
   width: 100%;
 }
 
@@ -1705,7 +1747,9 @@ Products Details Area CSS
   display: none;
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .rating input:checked ~ label:before, .products-details-tabs .tab-content .tab-pane .review-form-wrapper form .rating:not(:checked) > label:hover:before, .products-details-tabs .tab-content .tab-pane .review-form-wrapper form .rating:not(:checked) > label:hover ~ label:before {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .rating input:checked~label:before,
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .rating:not(:checked)>label:hover:before,
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .rating:not(:checked)>label:hover~label:before {
   color: #f6b500;
 }
 
@@ -1714,11 +1758,13 @@ Products Details Area CSS
   margin-bottom: 0;
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked, .products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked) {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked,
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked) {
   display: none;
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked + label, .products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked) + label {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked+label,
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked)+label {
   cursor: pointer;
   margin-bottom: 0;
   line-height: 20px;
@@ -1728,7 +1774,8 @@ Products Details Area CSS
   color: var(--secondaryColor);
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked + label:before, .products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked) + label:before {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked+label:before,
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked)+label:before {
   top: 0;
   left: 0;
   content: '';
@@ -1742,7 +1789,8 @@ Products Details Area CSS
   background: var(--whiteColor);
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked + label:after, .products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked) + label:after {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked+label:after,
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked)+label:after {
   top: 6px;
   left: 6px;
   width: 8px;
@@ -1754,23 +1802,23 @@ Products Details Area CSS
   -webkit-transition: all 0.2s ease;
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked) + label:after {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:not(:checked)+label:after {
   opacity: 0;
   transform: scale(0);
   -webkit-transform: scale(0);
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked + label:after {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked+label:after {
   opacity: 1;
   transform: scale(1);
   -webkit-transform: scale(1);
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:hover + label:before {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:hover+label:before {
   border-color: var(--primaryColor);
 }
 
-.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked + label:before {
+.products-details-tabs .tab-content .tab-pane .review-form-wrapper form .comment-form-cookies-consent [type="checkbox"]:checked+label:before {
   border-color: var(--primaryColor);
 }
 
@@ -1814,9 +1862,9 @@ Products Details Area CSS
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-.products-details-tabs .tab-content .tab-pane .table > :not(caption) > * > * {
+.products-details-tabs .tab-content .tab-pane .table> :not(caption)>*>* {
   -webkit-box-shadow: unset;
-          box-shadow: unset;
+  box-shadow: unset;
 }
 
 /*================================================
@@ -1834,7 +1882,7 @@ Brands Area CSS
 
 .single-brands-box:hover img {
   -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 /*================================================
@@ -1864,7 +1912,7 @@ Partners Area CSS
 
 .single-partners-box:hover img {
   -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 /*================================================
@@ -1985,7 +2033,7 @@ Blog Area CSS
 
 .single-blog-post:hover .image img {
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /*================================================
@@ -2103,17 +2151,20 @@ Blog Details Area CSS
   color: var(--blackColor);
 }
 
-.blog-details-desc ul, .blog-details-desc ol {
+.blog-details-desc ul,
+.blog-details-desc ol {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.blog-details-desc ul li, .blog-details-desc ol li {
+.blog-details-desc ul li,
+.blog-details-desc ol li {
   color: var(--secondaryColor);
   margin-bottom: 15px;
 }
 
-.blog-details-desc ul li:last-child, .blog-details-desc ol li:last-child {
+.blog-details-desc ul li:last-child,
+.blog-details-desc ol li:last-child {
   margin-bottom: 0;
 }
 
@@ -2141,19 +2192,19 @@ Blog Details Area CSS
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-top: 30px;
   padding-top: 30px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-top: 1px solid #eeeeee;
 }
 
 .blog-details-desc .post-footer .post-tags {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
   max-width: 50%;
 }
 
@@ -2191,8 +2242,8 @@ Blog Details Area CSS
 
 .blog-details-desc .post-footer .article-share {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
   max-width: 50%;
   text-align: end;
 }
@@ -2279,14 +2330,16 @@ Blog Details Area CSS
   background-color: transparent;
 }
 
-blockquote, .blockquote {
+blockquote,
+.blockquote {
   background-color: #f9f9f9;
   padding: 40px 50px !important;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
-blockquote p, .blockquote p {
+blockquote p,
+.blockquote p {
   line-height: 1.7;
   margin-bottom: 0;
   color: var(--blackColor);
@@ -2295,7 +2348,8 @@ blockquote p, .blockquote p {
   font-size: 20px !important;
 }
 
-blockquote cite, .blockquote cite {
+blockquote cite,
+.blockquote cite {
   display: block;
   margin-top: 18px;
   font-weight: 600;
@@ -2315,7 +2369,8 @@ blockquote cite, .blockquote cite {
   line-height: initial;
 }
 
-.comments-area ol, .comments-area ul {
+.comments-area ol,
+.comments-area ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -2429,7 +2484,19 @@ blockquote cite, .blockquote cite {
   display: none;
 }
 
-.comments-area .comment-respond input[type="date"], .comments-area .comment-respond input[type="time"], .comments-area .comment-respond input[type="datetime-local"], .comments-area .comment-respond input[type="week"], .comments-area .comment-respond input[type="month"], .comments-area .comment-respond input[type="text"], .comments-area .comment-respond input[type="email"], .comments-area .comment-respond input[type="url"], .comments-area .comment-respond input[type="password"], .comments-area .comment-respond input[type="search"], .comments-area .comment-respond input[type="tel"], .comments-area .comment-respond input[type="number"], .comments-area .comment-respond textarea {
+.comments-area .comment-respond input[type="date"],
+.comments-area .comment-respond input[type="time"],
+.comments-area .comment-respond input[type="datetime-local"],
+.comments-area .comment-respond input[type="week"],
+.comments-area .comment-respond input[type="month"],
+.comments-area .comment-respond input[type="text"],
+.comments-area .comment-respond input[type="email"],
+.comments-area .comment-respond input[type="url"],
+.comments-area .comment-respond input[type="password"],
+.comments-area .comment-respond input[type="search"],
+.comments-area .comment-respond input[type="tel"],
+.comments-area .comment-respond input[type="number"],
+.comments-area .comment-respond textarea {
   outline: 0;
   width: 100%;
   border: none;
@@ -2442,43 +2509,139 @@ blockquote cite, .blockquote cite {
   background-color: #f9f9f9;
 }
 
-.comments-area .comment-respond input[type="date"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="time"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="datetime-local"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="week"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="month"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="text"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="email"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="url"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="password"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="search"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="tel"]::-webkit-input-placeholder, .comments-area .comment-respond input[type="number"]::-webkit-input-placeholder, .comments-area .comment-respond textarea::-webkit-input-placeholder {
+.comments-area .comment-respond input[type="date"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="time"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="datetime-local"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="week"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="month"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="text"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="email"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="url"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="password"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="search"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="tel"]::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="number"]::-webkit-input-placeholder,
+.comments-area .comment-respond textarea::-webkit-input-placeholder {
   color: var(--secondaryColor);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
-.comments-area .comment-respond input[type="date"]:-ms-input-placeholder, .comments-area .comment-respond input[type="time"]:-ms-input-placeholder, .comments-area .comment-respond input[type="datetime-local"]:-ms-input-placeholder, .comments-area .comment-respond input[type="week"]:-ms-input-placeholder, .comments-area .comment-respond input[type="month"]:-ms-input-placeholder, .comments-area .comment-respond input[type="text"]:-ms-input-placeholder, .comments-area .comment-respond input[type="email"]:-ms-input-placeholder, .comments-area .comment-respond input[type="url"]:-ms-input-placeholder, .comments-area .comment-respond input[type="password"]:-ms-input-placeholder, .comments-area .comment-respond input[type="search"]:-ms-input-placeholder, .comments-area .comment-respond input[type="tel"]:-ms-input-placeholder, .comments-area .comment-respond input[type="number"]:-ms-input-placeholder, .comments-area .comment-respond textarea:-ms-input-placeholder {
+.comments-area .comment-respond input[type="date"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="time"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="datetime-local"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="week"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="month"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="text"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="email"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="url"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="password"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="search"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="tel"]:-ms-input-placeholder,
+.comments-area .comment-respond input[type="number"]:-ms-input-placeholder,
+.comments-area .comment-respond textarea:-ms-input-placeholder {
   color: var(--secondaryColor);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
-.comments-area .comment-respond input[type="date"]::-ms-input-placeholder, .comments-area .comment-respond input[type="time"]::-ms-input-placeholder, .comments-area .comment-respond input[type="datetime-local"]::-ms-input-placeholder, .comments-area .comment-respond input[type="week"]::-ms-input-placeholder, .comments-area .comment-respond input[type="month"]::-ms-input-placeholder, .comments-area .comment-respond input[type="text"]::-ms-input-placeholder, .comments-area .comment-respond input[type="email"]::-ms-input-placeholder, .comments-area .comment-respond input[type="url"]::-ms-input-placeholder, .comments-area .comment-respond input[type="password"]::-ms-input-placeholder, .comments-area .comment-respond input[type="search"]::-ms-input-placeholder, .comments-area .comment-respond input[type="tel"]::-ms-input-placeholder, .comments-area .comment-respond input[type="number"]::-ms-input-placeholder, .comments-area .comment-respond textarea::-ms-input-placeholder {
+.comments-area .comment-respond input[type="date"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="time"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="datetime-local"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="week"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="month"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="text"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="email"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="url"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="password"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="search"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="tel"]::-ms-input-placeholder,
+.comments-area .comment-respond input[type="number"]::-ms-input-placeholder,
+.comments-area .comment-respond textarea::-ms-input-placeholder {
   color: var(--secondaryColor);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
-.comments-area .comment-respond input[type="date"]::placeholder, .comments-area .comment-respond input[type="time"]::placeholder, .comments-area .comment-respond input[type="datetime-local"]::placeholder, .comments-area .comment-respond input[type="week"]::placeholder, .comments-area .comment-respond input[type="month"]::placeholder, .comments-area .comment-respond input[type="text"]::placeholder, .comments-area .comment-respond input[type="email"]::placeholder, .comments-area .comment-respond input[type="url"]::placeholder, .comments-area .comment-respond input[type="password"]::placeholder, .comments-area .comment-respond input[type="search"]::placeholder, .comments-area .comment-respond input[type="tel"]::placeholder, .comments-area .comment-respond input[type="number"]::placeholder, .comments-area .comment-respond textarea::placeholder {
+.comments-area .comment-respond input[type="date"]::placeholder,
+.comments-area .comment-respond input[type="time"]::placeholder,
+.comments-area .comment-respond input[type="datetime-local"]::placeholder,
+.comments-area .comment-respond input[type="week"]::placeholder,
+.comments-area .comment-respond input[type="month"]::placeholder,
+.comments-area .comment-respond input[type="text"]::placeholder,
+.comments-area .comment-respond input[type="email"]::placeholder,
+.comments-area .comment-respond input[type="url"]::placeholder,
+.comments-area .comment-respond input[type="password"]::placeholder,
+.comments-area .comment-respond input[type="search"]::placeholder,
+.comments-area .comment-respond input[type="tel"]::placeholder,
+.comments-area .comment-respond input[type="number"]::placeholder,
+.comments-area .comment-respond textarea::placeholder {
   color: var(--secondaryColor);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
-.comments-area .comment-respond input[type="date"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="time"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="datetime-local"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="week"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="month"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="text"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="email"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="url"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="password"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="search"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="tel"]:focus::-webkit-input-placeholder, .comments-area .comment-respond input[type="number"]:focus::-webkit-input-placeholder, .comments-area .comment-respond textarea:focus::-webkit-input-placeholder {
+.comments-area .comment-respond input[type="date"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="time"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="datetime-local"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="week"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="month"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="text"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="email"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="url"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="password"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="search"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="tel"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond input[type="number"]:focus::-webkit-input-placeholder,
+.comments-area .comment-respond textarea:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-.comments-area .comment-respond input[type="date"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="time"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="datetime-local"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="week"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="month"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="text"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="email"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="url"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="password"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="search"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="tel"]:focus:-ms-input-placeholder, .comments-area .comment-respond input[type="number"]:focus:-ms-input-placeholder, .comments-area .comment-respond textarea:focus:-ms-input-placeholder {
+.comments-area .comment-respond input[type="date"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="time"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="datetime-local"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="week"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="month"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="text"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="email"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="url"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="password"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="search"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="tel"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond input[type="number"]:focus:-ms-input-placeholder,
+.comments-area .comment-respond textarea:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-.comments-area .comment-respond input[type="date"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="time"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="datetime-local"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="week"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="month"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="text"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="email"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="url"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="password"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="search"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="tel"]:focus::-ms-input-placeholder, .comments-area .comment-respond input[type="number"]:focus::-ms-input-placeholder, .comments-area .comment-respond textarea:focus::-ms-input-placeholder {
+.comments-area .comment-respond input[type="date"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="time"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="datetime-local"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="week"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="month"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="text"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="email"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="url"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="password"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="search"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="tel"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond input[type="number"]:focus::-ms-input-placeholder,
+.comments-area .comment-respond textarea:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-.comments-area .comment-respond input[type="date"]:focus::placeholder, .comments-area .comment-respond input[type="time"]:focus::placeholder, .comments-area .comment-respond input[type="datetime-local"]:focus::placeholder, .comments-area .comment-respond input[type="week"]:focus::placeholder, .comments-area .comment-respond input[type="month"]:focus::placeholder, .comments-area .comment-respond input[type="text"]:focus::placeholder, .comments-area .comment-respond input[type="email"]:focus::placeholder, .comments-area .comment-respond input[type="url"]:focus::placeholder, .comments-area .comment-respond input[type="password"]:focus::placeholder, .comments-area .comment-respond input[type="search"]:focus::placeholder, .comments-area .comment-respond input[type="tel"]:focus::placeholder, .comments-area .comment-respond input[type="number"]:focus::placeholder, .comments-area .comment-respond textarea:focus::placeholder {
+.comments-area .comment-respond input[type="date"]:focus::placeholder,
+.comments-area .comment-respond input[type="time"]:focus::placeholder,
+.comments-area .comment-respond input[type="datetime-local"]:focus::placeholder,
+.comments-area .comment-respond input[type="week"]:focus::placeholder,
+.comments-area .comment-respond input[type="month"]:focus::placeholder,
+.comments-area .comment-respond input[type="text"]:focus::placeholder,
+.comments-area .comment-respond input[type="email"]:focus::placeholder,
+.comments-area .comment-respond input[type="url"]:focus::placeholder,
+.comments-area .comment-respond input[type="password"]:focus::placeholder,
+.comments-area .comment-respond input[type="search"]:focus::placeholder,
+.comments-area .comment-respond input[type="tel"]:focus::placeholder,
+.comments-area .comment-respond input[type="number"]:focus::placeholder,
+.comments-area .comment-respond textarea:focus::placeholder {
   color: transparent;
 }
 
@@ -2606,7 +2769,7 @@ Feedback Area CSS
   color: var(--secondaryColor);
 }
 
-.feedback-slides.owl-theme .owl-nav.disabled + .owl-dots {
+.feedback-slides.owl-theme .owl-nav.disabled+.owl-dots {
   margin-top: 20px;
 }
 
@@ -2634,7 +2797,8 @@ Feedback Area CSS
   background-color: var(--primaryColor);
 }
 
-.feedback-slides.owl-theme .owl-dots .owl-dot.active span, .feedback-slides.owl-theme .owl-dots .owl-dot:hover span {
+.feedback-slides.owl-theme .owl-dots .owl-dot.active span,
+.feedback-slides.owl-theme .owl-dots .owl-dot:hover span {
   border-color: var(--primaryColor);
 }
 
@@ -2664,7 +2828,7 @@ Feedback Area CSS
   color: var(--whiteColor);
   background-color: var(--primaryColor);
   -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
 }
 
 .video-box .popup-video i {
@@ -2673,10 +2837,11 @@ Feedback Area CSS
   top: 50%;
   position: absolute;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-.video-box .popup-video::after, .video-box .popup-video::before {
+.video-box .popup-video::after,
+.video-box .popup-video::before {
   top: 0;
   left: 0;
   right: 0;
@@ -2691,12 +2856,12 @@ Feedback Area CSS
 
 .video-box .popup-video::before {
   -webkit-animation: ripple 2s linear infinite;
-          animation: ripple 2s linear infinite;
+  animation: ripple 2s linear infinite;
 }
 
 .video-box .popup-video::after {
   -webkit-animation: ripple 2s linear 1s infinite;
-          animation: ripple 2s linear 1s infinite;
+  animation: ripple 2s linear 1s infinite;
 }
 
 @-webkit-keyframes ripple {
@@ -2704,11 +2869,13 @@ Feedback Area CSS
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+
   75% {
     -webkit-transform: scale(1.75);
     transform: scale(1.75);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: scale(2);
     transform: scale(2);
@@ -2721,11 +2888,13 @@ Feedback Area CSS
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+
   75% {
     -webkit-transform: scale(1.75);
     transform: scale(1.75);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: scale(2);
     transform: scale(2);
@@ -2825,7 +2994,7 @@ FAQ Area CSS
   position: relative;
   padding: 0 0 0 50px;
   -webkit-box-shadow: unset !important;
-          box-shadow: unset !important;
+  box-shadow: unset !important;
   background-color: transparent;
   font-size: 17px;
   font-family: var(--headingFontFamily);
@@ -2833,7 +3002,7 @@ FAQ Area CSS
 
 .faq-accordion .accordion-item .accordion-button:not(.collapsed) {
   -webkit-box-shadow: unset;
-          box-shadow: unset;
+  box-shadow: unset;
   color: var(--blackColor);
   background-color: transparent;
 }
@@ -2853,7 +3022,7 @@ FAQ Area CSS
   position: absolute;
   font-family: boxicons;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .faq-accordion .accordion-item .accordion-button.collapsed::before {
@@ -2924,7 +3093,7 @@ Profile Authentication Area CSS
 .login-form form .remember-me-wrap .form-check .form-check-input {
   margin-top: .20em;
   -webkit-box-shadow: unset !important;
-          box-shadow: unset !important;
+  box-shadow: unset !important;
 }
 
 .login-form form .remember-me-wrap .form-check .form-check-input[type=checkbox] {
@@ -3145,7 +3314,7 @@ Contact Area CSS
 .contact-form form .form-check .form-check-input {
   margin-top: 0.18em;
   -webkit-box-shadow: unset !important;
-          box-shadow: unset !important;
+  box-shadow: unset !important;
 }
 
 .contact-form form .form-check .form-check-input[type=checkbox] {
@@ -3249,8 +3418,8 @@ Pagination Area CSS
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .pagination-area .page-numbers {
@@ -3268,7 +3437,7 @@ Pagination Area CSS
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeef3));
   background: linear-gradient(180deg, #ffffff 0%, #eaeef3 100%);
   -webkit-box-shadow: 0 5px 15px 0 rgba(107, 124, 147, 0.15), 0 2px 4px 0 rgba(107, 124, 147, 0.2), inset 0 -2px 0 0 #c2cfde;
-          box-shadow: 0 5px 15px 0 rgba(107, 124, 147, 0.15), 0 2px 4px 0 rgba(107, 124, 147, 0.2), inset 0 -2px 0 0 #c2cfde;
+  box-shadow: 0 5px 15px 0 rgba(107, 124, 147, 0.15), 0 2px 4px 0 rgba(107, 124, 147, 0.2), inset 0 -2px 0 0 #c2cfde;
   font-size: 15px;
   font-weight: 700;
   margin-left: 5px;
@@ -3329,7 +3498,7 @@ Widget Area CSS
   margin-top: 1px;
   position: absolute;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background-color: #eeeeee;
 }
 
@@ -3444,10 +3613,10 @@ Widget Area CSS
 .widget-area .widget_patoi_posts_thumb .item {
   margin-bottom: 20px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3456,16 +3625,16 @@ Widget Area CSS
 .widget-area .widget_patoi_posts_thumb .item .thumb {
   display: block;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 27%;
 }
 
 .widget-area .widget_patoi_posts_thumb .item .info {
   padding-left: 15px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 73%;
 }
 
@@ -3554,16 +3723,22 @@ Widget Area CSS
   cursor: pointer;
 }
 
-.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-from, .widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-to, .widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-single {
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-from,
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-to,
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-single {
   background-color: var(--primaryColor);
   padding: 1px 5px 1px 11.5px;
 }
 
-.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-from::before, .widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-to::before, .widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-single::before {
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-from::before,
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-to::before,
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-single::before {
   border-top-color: var(--primaryColor);
 }
 
-.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-from::after, .widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-to::after, .widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-single::after {
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-from::after,
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-to::after,
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-single::after {
   content: '$';
   position: absolute;
   left: 5px;
@@ -3574,15 +3749,17 @@ Widget Area CSS
   background-color: var(--primaryColor);
 }
 
-.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-handle > i:first-child {
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-handle>i:first-child {
   background-color: var(--primaryColor);
 }
 
-.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-min, .widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-max {
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-min,
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-max {
   padding: 1px 3px 1px 9.5px;
 }
 
-.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-min::before, .widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-max::before {
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-min::before,
+.widget-area .widget_price_filter .collection_filter_by_price .irs--flat .irs-max::before {
   position: absolute;
   content: '$';
   top: 0.5px;
@@ -3592,10 +3769,10 @@ Widget Area CSS
 .widget-area .widget_patoi_posts_thumb .item {
   margin-bottom: 20px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3604,16 +3781,16 @@ Widget Area CSS
 .widget-area .widget_patoi_posts_thumb .item .thumb {
   display: block;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 27%;
 }
 
 .widget-area .widget_patoi_posts_thumb .item .info {
   padding-left: 20px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 73%;
 }
 
@@ -4031,7 +4208,7 @@ Cart Area CSS
   height: 45px;
   font-size: 15px;
   -webkit-box-shadow: unset;
-          box-shadow: unset;
+  box-shadow: unset;
   padding-left: 15px;
   color: var(--blackColor);
 }
@@ -4065,9 +4242,15 @@ Cart Area CSS
 .cart-totals {
   padding: 30px;
   max-width: 500px;
-  border: 1px solid #eeeeee;
-  margin-top: 60px;
+  /* border: 1px solid #eeeeee; */
+  /* margin-top: 60px; */
   margin-left: auto;
+  background: #FFFFFF;
+  border: 0.5px solid #259CD8;
+  border-radius: 12px;
+  left: 0px;
+  position: sticky;
+  top: 100px;
 }
 
 .cart-totals ul {
@@ -4117,7 +4300,7 @@ Checkout Area CSS
 =================================================*/
 .user-actions {
   -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-          box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
   border-left: 3px solid var(--primaryColor);
   background: var(--whiteColor);
   margin-bottom: 50px;
@@ -4153,7 +4336,7 @@ Checkout Area CSS
   margin-top: 1px;
   position: absolute;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background-color: #ebeeee;
 }
 
@@ -4189,7 +4372,7 @@ Checkout Area CSS
   border-radius: 5px;
   border: 1px solid #eeeeee;
   -webkit-box-shadow: unset !important;
-          box-shadow: unset !important;
+  box-shadow: unset !important;
   font-size: var(--fontSize);
   color: var(--blackColor);
   padding-left: 15px;
@@ -4211,7 +4394,7 @@ Checkout Area CSS
 .billing-details .form-check .form-check-input {
   margin-top: .15em;
   -webkit-box-shadow: unset !important;
-          box-shadow: unset !important;
+  box-shadow: unset !important;
 }
 
 .billing-details .form-check .form-check-input[type=checkbox] {
@@ -4275,19 +4458,23 @@ Checkout Area CSS
   color: var(--primaryColor);
 }
 
-.order-details .order-table table tbody tr td.order-subtotal span, .order-details .order-table table tbody tr td.order-shipping span, .order-details .order-table table tbody tr td.total-price span {
+.order-details .order-table table tbody tr td.order-subtotal span,
+.order-details .order-table table tbody tr td.order-shipping span,
+.order-details .order-table table tbody tr td.total-price span {
   color: var(--blackColor);
   font-weight: 600;
 }
 
-.order-details .order-table table tbody tr td.shipping-price, .order-details .order-table table tbody tr td.order-subtotal-price, .order-details .order-table table tbody tr td.product-subtotal {
+.order-details .order-table table tbody tr td.shipping-price,
+.order-details .order-table table tbody tr td.order-subtotal-price,
+.order-details .order-table table tbody tr td.product-subtotal {
   color: var(--blackColor);
   font-weight: 600;
 }
 
 .order-details .payment-box {
   -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
   background-color: var(--whiteColor);
   margin-top: 30px;
   padding: 40px;
@@ -4300,7 +4487,8 @@ Checkout Area CSS
   padding-bottom: 15px;
 }
 
-.order-details .payment-box .payment-method p [type="radio"]:checked, .order-details .payment-box .payment-method p [type="radio"]:not(:checked) {
+.order-details .payment-box .payment-method p [type="radio"]:checked,
+.order-details .payment-box .payment-method p [type="radio"]:not(:checked) {
   display: none;
 }
 
@@ -4313,7 +4501,8 @@ Checkout Area CSS
   margin-bottom: 5px;
 }
 
-.order-details .payment-box .payment-method p [type="radio"]:checked + label, .order-details .payment-box .payment-method p [type="radio"]:not(:checked) + label {
+.order-details .payment-box .payment-method p [type="radio"]:checked+label,
+.order-details .payment-box .payment-method p [type="radio"]:not(:checked)+label {
   color: var(--blackColor);
   padding-left: 27px;
   position: relative;
@@ -4323,7 +4512,8 @@ Checkout Area CSS
   display: block;
 }
 
-.order-details .payment-box .payment-method p [type="radio"]:checked + label::before, .order-details .payment-box .payment-method p [type="radio"]:not(:checked) + label::before {
+.order-details .payment-box .payment-method p [type="radio"]:checked+label::before,
+.order-details .payment-box .payment-method p [type="radio"]:not(:checked)+label::before {
   left: 0;
   top: 4px;
   content: '';
@@ -4335,7 +4525,8 @@ Checkout Area CSS
   background: var(--whiteColor);
 }
 
-.order-details .payment-box .payment-method p [type="radio"]:checked + label::after, .order-details .payment-box .payment-method p [type="radio"]:not(:checked) + label::after {
+.order-details .payment-box .payment-method p [type="radio"]:checked+label::after,
+.order-details .payment-box .payment-method p [type="radio"]:not(:checked)+label::after {
   top: 7px;
   left: 3px;
   content: '';
@@ -4348,18 +4539,18 @@ Checkout Area CSS
   background: var(--primaryColor);
 }
 
-.order-details .payment-box .payment-method p [type="radio"]:not(:checked) + label::after {
+.order-details .payment-box .payment-method p [type="radio"]:not(:checked)+label::after {
   opacity: 0;
   visibility: hidden;
   -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
 }
 
-.order-details .payment-box .payment-method p [type="radio"]:checked + label::after {
+.order-details .payment-box .payment-method p [type="radio"]:checked+label::after {
   opacity: 1;
   visibility: visible;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .order-details .payment-box .payment-method p:first-child {
@@ -4473,7 +4664,7 @@ Go Top CSS
 .go-top.active {
   opacity: 1;
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   visibility: visible;
 }
 
@@ -4501,7 +4692,7 @@ Modal CSS
   opacity: 1;
   right: 10px;
   -webkit-box-shadow: unset;
-          box-shadow: unset;
+  box-shadow: unset;
   position: absolute;
   color: var(--blackColor);
   -webkit-transition: var(--transition);
@@ -4551,8 +4742,8 @@ Modal CSS
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 20px;
 }
 
@@ -4689,7 +4880,7 @@ Modal CSS
   height: 100%;
   position: fixed;
   -webkit-transform: translate3d(0%, 0, 0);
-          transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
 }
 
 .modal.right .modal-content {
@@ -4706,7 +4897,7 @@ Modal CSS
   z-index: 1;
   opacity: 1;
   -webkit-box-shadow: unset;
-          box-shadow: unset;
+  box-shadow: unset;
   position: absolute;
   color: var(--blackColor);
   -webkit-transition: var(--transition);
@@ -4742,7 +4933,7 @@ Modal CSS
   z-index: 1;
   opacity: 1;
   -webkit-box-shadow: unset;
-          box-shadow: unset;
+  box-shadow: unset;
   position: absolute;
   color: var(--blackColor);
   -webkit-transition: var(--transition);
@@ -4753,4 +4944,5 @@ Modal CSS
 .productsFilterModal.modal .modal-content .widget-area {
   padding-left: 0;
 }
+
 /*# sourceMappingURL=style.css.map */

@@ -137,7 +137,7 @@
                                 <div class="single-products-box">
                                     <div class="image">
                                         <a href="#" class="d-block">
-                                            <img src="assets/img/products/products1.jpg" alt="products-image">
+                                            <img src="assets/img/BATHROBE TOWEL-1.webp" alt="products-image">
                                         </a>
                                         <ul class="products-button">
                                             <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
