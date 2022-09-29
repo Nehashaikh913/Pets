@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" col-lg-4">
+            <div class=" col-lg-4 position-relative">
                 <div class="cart-totals">
                 <ul>
                     <li>Subtotal <span>$800.00</span></li>
