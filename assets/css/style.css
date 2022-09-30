@@ -2910,11 +2910,11 @@ Page Title Area CSS
   z-index: 1;
   position: relative;
   background-color: #f9f9f9;
-  background-image: url(../img/page-title.jpg);
+  background-image: url(../img/banner/COMMON\ BANNER\ -\ 2.WEBP);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 130px;
+  padding-top: 230px;
   padding-bottom: 180px;
 }
 
