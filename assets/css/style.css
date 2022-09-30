@@ -236,6 +236,14 @@ textarea.form-control {
 /*================================================
 Header Area CSS
 =================================================*/
+.others-option li span{
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  background-color: #1da1f2;
+  color: #FFFFFF;
+  text-align: center;
+}
 /*================================================
 Main Banner Area CSS
 =================================================*/

@@ -288,7 +288,7 @@
             <div class="container">
                 <div class="single-offer-box">
                     <a href="shop-grid.html" class="d-block">
-                        <img src="assets/img/offer/offer8.jpg" alt="offer-image">
+                        <img src="assets/img/banner/CTA BANNER.WEBP" alt="offer-image">
                     </a>
                 </div>
             </div>

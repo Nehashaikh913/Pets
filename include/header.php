@@ -83,8 +83,8 @@
                                 <div class="d-flex align-items-center">
                                     <ul>
                                         <li><a href="user.php"><i class='bx bx-user-circle'></i></a></li>
-                                        <li><a href="wishlist.php"><i class="fa-regular fa-heart"></i></a></li>
-                                        <li><a href="cart.php"><i class='bx bx-cart'></i></a></li>
+                                        <li><span>1</span><a href="wishlist.php"><i class="fa-regular fa-heart"></i></a></li>
+                                        <li class="position-relative"><span>1</span><a href="cart.php"><i class='bx bx-cart'></i></a></li>
                                     </ul>
                                 </div>
                             </div>
