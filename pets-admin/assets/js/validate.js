@@ -92,7 +92,6 @@ $('#user_form').validate({
   },
   messages: {},
   submitHandler: function (form) {
-    alert('validated form')
     $.ajax({
       url: 'action.php',
       type: 'post',
@@ -101,8 +100,10 @@ $('#user_form').validate({
       cache: false,
       processData: false,
       success: function (data) {
-        alert(data)
-        console.log(data)
+        if(data == 'inserted'){
+          alert("User Added Successfully")
+          window.location.reload();
+        }
       },
     })
   },
@@ -121,7 +122,6 @@ $('#Updateuser').validate({
   },
   messages: {},
   submitHandler: function (form) {
-    alert('validated form')
     $.ajax({
       url: 'action.php',
       type: 'post',
@@ -130,8 +130,10 @@ $('#Updateuser').validate({
       cache: false,
       processData: false,
       success: function (data) {
-        alert(data)
-        console.log(data)
+        if(data == 'updated'){
+          alert("User Updated Successfully")
+          window.location.reload();
+        }
       },
     })
   },

@@ -43,10 +43,8 @@ include('include/config.php');
 											<thead>
 												<tr role="row">
 													<th>Sr No.</th>
-													<th>Image</th>
 													<th>Name</th>
 													<th>Username</th>
-													<th>Password</th>
 													<th>Edit</th>
 													<th>Delete</th>
 												</tr>
@@ -73,25 +71,18 @@ include('include/config.php');
                                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 if (!empty($data)) {
                                 foreach ($data as $data)
-                                {  $stmt1 = $conn->prepare("SELECT * FROM `images` WHERE id=?");
-                                   $stmt1->execute([$data['img_id']]);
-                                   $img_data = $stmt1->fetchAll(PDO::FETCH_ASSOC);?>
+                                { ?>
 													<tr class="odd">
 														<td class="sorting_1 dtr-control" tabindex="0">
 															<?php echo $i; ?>
 														</td>
-														<td><img src="<?php echo $img_data[0]['path']; ?>" alt="<?php echo $img_data[0]['alt']; ?>" class="custome_img"></td>
 														<td>
 															<?php echo $data['name'] ?>
 														</td>
 														<td>
 															<?php echo $data['username'] ?>
 														</td>
-														<td>
-															<?php echo $data['password'] ?>
-														</td>
-														
-															<td><a href="user_update.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></td>                                   
+														<td><a href="user_update.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></td>                                   
                                   <td><a class="btn btn-danger" href="javascript:void(0)" onclick="deleteUser(<?php echo $data['id']; ?>)"><i class="fas fa-trash-alt"></i></a></td>
 													</tr>
 													<?php $i++; } }?>

@@ -1,18 +1,25 @@
 <?php include('include/config.php');
 session_start();
+session_regenerate_id();
 date_default_timezone_set('Asia/Kolkata');
 if($_POST['btn']=='loginUser'){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $stmt = $conn->prepare("SELECT * FROM `user` WHERE username=? AND password=?");
-    $stmt->execute([$username, $password]);
-    $user_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $id= $user_data[0]['id'];
+    $username = trim_data($_POST['username']);
+    $pass = trim_data($_POST['password']);
+    $stmt = $conn->prepare("SELECT * FROM `user` WHERE username=?");
+    $stmt->execute([$username]);
     $userCount=$stmt->rowCount();
     if($userCount > 0){
-        echo "login";
-        $_SESSION['admin_is_login'] = $username;
-        $_SESSION['admin_is_login_id'] = $id;
+      while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $email = $row['username'];
+        $password = $row['password'];
+        if (password_verify($pass, $password)) {
+          $_SESSION['admin_is_login'] = $row['username'];
+          $_SESSION['admin_is_login_id'] = $row['id'];
+          $_SESSION['admin_is_login_id'] = true;
+          echo "done";            
+        }
+
+      }
     }
   }
 if($_POST['btn']=='image_update'){
@@ -124,12 +131,13 @@ if($_POST['btn']=='uploadProduct_id'){
 //   product ends here
 //user
 if($_POST['btn']=='addUser'){
-    $name = $_POST['name'];
-    $username = $_POST['username'];
-    $pwd = $_POST['pwd'];  
-    $img_id = $_POST['img_id'];
-    $stmt = $conn->prepare("INSERT INTO user(img_id,name ,username,password,status) VALUES(?,?,?,?,?)");
-    if($stmt->execute([$img_id, $name, $username,  $pwd,1])){
+    $name = trim_data($_POST['name']);
+    $username = trim_data($_POST['username']);
+    $pwd = trim_data($_POST['pwd']);
+    $options = ['cost' => 12];  
+    $password_hash = password_hash($pwd, PASSWORD_DEFAULT, $options);
+    $stmt = $conn->prepare("INSERT INTO user(name ,username,password,status) VALUES(?,?,?,?)");
+    if($stmt->execute([$name, $username, $password_hash, 1])){
       echo "inserted";
     }
   }
@@ -139,9 +147,8 @@ if($_POST['btn']=='addUser'){
     $name = $_POST['name'];
     $username = $_POST['username'];
     $pwd = $_POST['pwd'];  
-    $img_id = $_POST['img_id'];
-    $stmt = $conn->prepare("UPDATE user SET img_id=?, name=?, username=?, password=?, status=? WHERE id=?");
-    if($stmt->execute([$img_id, $name, $username,  $pwd, 1, $user_id])){
+    $stmt = $conn->prepare("UPDATE user SET name=?, username=?, password=?, status=? WHERE id=?");
+    if($stmt->execute([$name, $username,  $pwd, 1, $user_id])){
       echo "updated";
     }
   }
