@@ -10,11 +10,11 @@ if($_POST['btn']=='loginUser'){
     $userCount=$stmt->rowCount();
     if($userCount > 0){
       while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $email = $row['username'];
-        $password = $row['password'];
+        $email = $user_data['username'];
+        $password = $user_data['password'];
         if (password_verify($pass, $password)) {
-          $_SESSION['admin_is_login'] = $row['username'];
-          $_SESSION['admin_is_login_id'] = $row['id'];
+          $_SESSION['admin_is_login'] = $user_data['username'];
+          $_SESSION['admin_is_login_id'] = $user_data['id'];
           $_SESSION['admin_is_login_id'] = true;
           echo "done";            
         }
@@ -68,20 +68,15 @@ if($_POST['btn']=='deleteCategory_id'){
 
 //product
     if($_POST['btn']=='addProduct'){
-    $name="";
-    if(isset($_POST['pro_name'])){
-        $name=$_POST['pro_name'];
-    }else{
-        $name="";
-    }
+    $name=$_POST['pro_name'];
     $prc = $_POST['prc'];
     $slug = $_POST['slug'];
     $cat = $_POST['category'];
     $description = $_POST['description']; 
-    $img_id = $_POST['img_id'];
+    $image_link = $_POST['image_link'];
     $PostDate = date("Y-m-d H:i");
-    $stmt = $conn->prepare("INSERT INTO product(img_id, title, prc, slug, cat_id, description, PostDate, status) VALUES(?,?,?,?,?,?,?,?)");
-    if($stmt->execute([$img_id, $name, $prc, $slug, $cat, $description, $PostDate, 'publish'])){
+    $stmt = $conn->prepare("INSERT INTO product(image, name, slug, category, price, description, date) VALUES(?,?,?,?,?,?,?)");
+    if($stmt->execute([$image_link, $name, $slug, $cat, $prc, $description, $PostDate])){
         $last_pro_id = $conn->lastInsertId();
         echo "inserted".$last_pro_id;
     }
@@ -91,21 +86,12 @@ if($_POST['btn']=='deleteCategory_id'){
     $product_id=$_POST['product_id'];
     $name = $_POST['pro_name'];
     $prc = $_POST['prc'];
-    $disc = $_POST['discription'];
     $slug = $_POST['slug'];
     $cat = $_POST['category'];   
-    if(empty($_POST['front_img'])){
-        $front_img = 1;
-    }else{
-        $front_img = $_POST['front_img'];
-    }
-    if(empty($_POST['img_id'])){
-        $img_id = $_POST['old_img_id'];
-    }else{
-        $img_id = $_POST['img_id'];
-    }
-    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, title=?, prc=?, slug=?, cat_id=?, description=? WHERE id=?");
-    if($stmt->execute([$img_id, $front_img, $name, $prc, $slug, $cat, $disc, $product_id])){
+    $image_link = $_POST['image_link'];
+    $desc = $_POST['discription'];
+    $stmt = $conn->prepare("UPDATE product SET image=?, name=?, slug=?, category=?, price=?, description=? WHERE id=?");
+    if($stmt->execute([$image_link, $name, $slug, $cat, $prc, $desc, $product_id])){
       echo "updated";
     }
   }
@@ -117,7 +103,7 @@ if($_POST['btn']=='uploadProduct_id'){
     }
   // Trash product
   if($_POST['btn']=='trashProduct_id'){
-    $update = $conn->prepare('UPDATE product SET status=0 WHERE id=?');
+    $update = $conn->prepare('DELETE FROM product WHERE id=?');
     $update->execute([$_POST['trashProduct_id']]);
     echo 'trashed';
     }

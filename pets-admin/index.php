@@ -118,7 +118,7 @@ message:{
             cache: false,
             processData: false,
             success: function(data){
-              if(data=='login'){				
+              if(data=='done'){				
               alert("Login Successfully");
 							window.location = "http://localhost/pets/pets-admin//home.php";
 							}

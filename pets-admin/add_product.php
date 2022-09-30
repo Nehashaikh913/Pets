@@ -55,7 +55,7 @@ include('include/config.php');
 												<option value="">Pick a Category... </option>
 												<?php foreach ($data as $data) {
             									?>
-													<option value="<?php echo $data['id']; ?>">
+													<option value="<?php echo $data['cat_slug']; ?>">
 														          <?php echo $data['cat_name']; ?>
 													</option>
 													<?php } ?>
@@ -67,21 +67,14 @@ include('include/config.php');
 								<div class="d-flex">	
 								<div class="form-group  w-100">
 										<label for="horizontal-firstname-input" class="col-form-label">Description</label>
-										<textarea name="description" class="form-control" id="" name="description" cols="30" rows="10"></textarea>
+										<textarea name="description" class="form-control" id="" name="description" cols="15" rows="5"></textarea>
 								</div>
 								
-								
-									<div class="blog-img-box  w-100 mx-3" data-toggle="modal" data-target="#exampleModal"> <img src="https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png" alt="feature click image">
-										<h5>Set Feature Image</h5> </div>
-										<input type="hidden" class="image_id" id="image_id" name="img_id" />
-										
+									<div class="form-group w-100 m-5">
+										<label for="horizontal-firstname-input" class="col-form-label">Image Link</label>
+										<input type="text" class="form-control" id="image_link" name="image_link" placeholder="Enter Image Link">
 									</div>
-									<div class="set_images">					
-										</div>
-									<div class="w-50 h-50 float-right"><div class="customefeature_image">
-										<img src="" alt="" class="image_path"> </div>
-									</div>				
-									
+							</div>								
 				<div class="submit-btns clearfix d-flex">           
                 <input type="hidden" name="btn" value="addProduct">
                 <input type="submit" class="post-btn float-left ml-4" name="blog_publish" value="Publish">
