@@ -1,13 +1,15 @@
-<?php session_start(); ?>
+<?php session_start();
+session_regenerate_id();
+?>
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>PAS Admin Panel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <base href="http://localhost/pets/pets-admin/">
+<meta charset="utf-8"/>
+<title>PAS Admin Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+<meta content="Themesbrand" name="author" />
+ <base href="http://localhost/pets/pets-admin/">
  <link rel="shortcut icon" href="assets/images/favicon.ico">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/jquery.datetimepicker.min.css" />
@@ -291,7 +293,6 @@
                     </div>
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
                             <span class="d-none d-xl-inline-block ms-1" key="t-henry"><?php if(isset($_SESSION['admin_is_login']) && !empty($_SESSION['admin_is_login'])) { echo $_SESSION['admin_is_login']; } ?></span>
                             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                         </button>

@@ -46,39 +46,20 @@ include('include/config.php');
 									
 								
 								<div class=" d-flex my-4">
-                              
-									<div class="form-group  mx-3  w-100 ">
+									<div class="form-group mx-3 w-50">
 										<label for="horizontal-firstname-input" class="col-form-label">Password</label>
-										<input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo $row['password'] ?>"> </div>
-                                        </div>
-                <?php
-                      $stmt1 = $conn->prepare("SELECT * FROM `images` WHERE id=?");
-                      $stmt1->execute([$row['img_id']]);
-                      $img_data = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-                      if(!empty($img_data)){
-                      $image = $img_data[0]['path'];
-                      $alt = $img_data[0]['alt'];
-
-                    }else{
-                        $image = "https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png";
-                        $alt="feature click image";
-                        }
-
-                      ?>
-                <div class="blog-img-box" data-toggle="modal" data-target="#exampleModal">  
-                <img src="<?php echo $image ?>"alt="<?php echo $alt ?>" class="image_path">
-                 </div>
-                 <input type="hidden" class="image_id" name="img_id" value="<?php echo $row['img_id'] ?>"/>  
-                 <div class="customefeature_image">
-                 <!-- <img src="" alt="" class="image_path"> -->
-                 </div>
-								<!-- Drop Box -->
+										<input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo $row['password'] ?>">
+									</div>
+																	<!-- Drop Box -->
 								<div class="submit-btns clearfix d-flex">  
                                 <input type="hidden" name="user_id" value="<?php echo $row['id'] ?>">         
                 <input type="hidden" name="btn" value="updateUser">
-                <input type="submit" class="post-btn float-left" name="blog_publish" value="Publish">
+                <input type="submit" class="post-btn float-left" name="blog_publish" value="Update">
                 <!-- <button class="discard-btn" type="submit"> <i class="fa fa-trash" aria-hidden="true"></i>Discard</button> -->
                 </div>
+
+                                </div>
+               
 							</div>
 						</div>
 					</div>

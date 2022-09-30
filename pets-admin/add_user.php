@@ -41,28 +41,18 @@ include('include/config.php');
 								
 								<div class=" d-flex my-4">
                               
-									<div class="form-group  mx-3  w-100 ">
+									<div class="form-group mx-3  w-50">
 										<label for="horizontal-firstname-input" class="col-form-label">Password</label>
-										<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password"> </div>
-											<!-- Drop Box -->
-										<div class="blog-img-box  w-100 mx-3 rounded" data-toggle="modal" data-target="#exampleModal">
-								 <img src="https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png" alt="feature click image">
-									<h5>Set Feature Image</h5> </div>
-                                        </div>
-								<!-- Drop Box -->
-								<div class="d-flex justify-content-center rounded">
-								
-								
-</div>
-							 <input type="hidden" class="image_id" name="img_id" />
-								<div class="customefeature_image  ml-5"> <img src="" alt="" class="image_path">
-							 </div>
-								<!-- Drop Box -->
+										<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password">
+									 </div>
+									 			<!-- Drop Box -->
 								<div class="submit-btns clearfix d-flex">           
                 <input type="hidden" name="btn" value="addUser">
                 <input type="submit" class="post-btn float-left" name="blog_publish" value="Publish">
                 <!-- <button class="discard-btn" type="submit"> <i class="fa fa-trash" aria-hidden="true"></i>Discard</button> -->
                 </div>
+				</div>	
+					
 							</div>
 						</div>
 					</div>

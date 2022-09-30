@@ -23,7 +23,7 @@ include('include/config.php');
 					</div>
 				</div>
 				<!-- end page title -->
-				<form id="product_form">
+				<form id="updateProduct">
 				<?php 
                 $stmt= $conn->prepare("SELECT * FROM `product` WHERE id=?");                               
                 $stmt->execute([$_GET['id']]);
@@ -38,7 +38,7 @@ include('include/config.php');
 								<div class="d-flex  my-4">
 									<div class="form-group mx-3  w-100">
 										<label for="Title" class="form-label"> Product Name</label>
-										<input type="text" class="form-control " id="pro_name"  name="pro_name" value="<?php echo $row['title'] ?>" > </div>
+										<input type="text" class="form-control " id="pro_name"  name="pro_name" value="<?php echo $row['name'] ?>" > </div>
 									<div class="form-group  w-100">
 										<label for="horizontal-firstname-input">Product Slug</label>
 										<input type="text" class="form-control" id="slug" name="slug" value="<?php echo $row['slug'] ?>"> </div>
@@ -46,7 +46,7 @@ include('include/config.php');
 								<div class="d-flex my-4">
 									<div class="form-group  w-100">
 										<label for="horizontal-firstname-input" class="col-form-label">Price</label>
-										<input type="text" class="form-control" id="prc" name="prc" value="<?php echo $row['prc'] ?>">
+										<input type="text" class="form-control" id="prc" name="prc" value="<?php echo $row['price'] ?>">
 									</div>
 									<div class="form-group ml-3 w-100">
 										<label class="form-label"> Select Category </label>
@@ -58,7 +58,7 @@ include('include/config.php');
 												<option value="">Pick a Category... </option>
 												<?php foreach ($data as $data) {
             									?>
-													<option value="<?php echo $data['id']; ?>" <?php if ($data['id']==$row['cat_id']) echo ' selected="selected"'; ?> >
+													<option value="<?php echo $data['cat_slug']; ?>" <?php if ($data['cat_slug']==$row['category']) echo ' selected="selected"'; ?> >
 														          <?php echo $data['cat_name']; ?>
 													</option>
 													<?php } ?>
@@ -69,44 +69,20 @@ include('include/config.php');
 								
 								<div class="d-flex mt-4">
 								
-								<div class="form-group  w-100">
+							<div class="form-group  w-100">
 										<label for="horizontal-firstname-input" class="col-form-label">Description</label>
-										<textarea class="form-control" id="" name="discription" cols="30" rows="10"><?php echo $row['description'] ?></textarea>
-								</div>
-									<div class="blog-img-box  w-100 mx-3" data-toggle="modal" data-target="#exampleModal"> <img src="https://spruko.com/demo/sash/sash/assets/plugins/fancyuploder/fancy_upload.png" alt="feature click image">
-										<h5>Set Feature Image</h5> </div>
-										<input type="hidden" class="image_id" name="img_id" />
+										<textarea class="form-control" id="" name="discription" cols="15" rows="5"><?php echo $row['description'] ?></textarea>
+							  		</div>
+									<div class="form-group w-100 m-5">
+										<label for="horizontal-firstname-input" class="col-form-label">Image Link</label>
+										<input type="text" class="form-control" id="image_link" name="image_link" value="<?php echo $row['image'] ?>">
+										<img src="<?php echo $row['image'] ?>" class="custome_img">
 									</div>
-							<div class="w-50 h-50 float-right">
-							<div class="customefeature_image1">
-											<?php
-														$img_id=1;
-														if($row['img_id']){
-														$img_id=$row['img_id'];
-														}else{
-														$img_id=1;
-														}
-														$sql1 = "SELECT * FROM `images` WHERE status=1 AND id IN ($img_id)";
-														$stmt1 = $conn->prepare($sql1);
-														$stmt1->execute();
-														$img_data = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-													?>
-												<?php if(!empty($img_data)){
-													$i=1;
-													foreach ($img_data as $img_val1){ ?>
-											<label for="d<?php echo $i ?>">Set As Front</label>
-											<input type="radio" id="d<?php echo $i ?>" name="front_img" value="<?php echo $img_val1['id'] ?>" <?php if($row['front_img']==$img_val1['id']){echo "checked";} ?>>
-
-
-											<!-- <a href="javascript:void(0)" class="text-center text-danger" onclick="setFrontproductimage(<?php echo $img_val1['id'] ?>)">Set As Front</a> -->
-												<img src="<?php echo $img_val1['path']; ?>" alt="<?php echo $img_val1['alt'] ?>" class="image_path">
-												<div class="d-flex justify-content-center"><button type="button" id="remove_btn" class="btn btn-danger float-center my-3" onclick="removeproductimage(<?php echo $img_val1['id'] ?>,<?php echo $row['id'] ?>)">Remove Image</button> </div>									
-										<?php $i++; } }else{echo "no images"; } ?>
-									</div>
+							</div>
+						
 									
 				<div class="submit-btns clearfix d-flex">           
 				<input type="hidden" name="product_id" value="<?php echo $row['id'] ?>">
-				<input type="hidden" name="old_img_id" value="<?php echo $row['img_id'] ?>">
                 <input type="hidden" name="btn" value="updateProduct">
                 <input type="submit" class="post-btn float-left ml-4" name="blog_publish" value="Publish">
                 <!-- <button class="discard-btn" type="submit"> <i class="fa fa-trash" aria-hidden="true"></i>Discard</button> -->

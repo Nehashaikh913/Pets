@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 	<style>
 		body{
-			background: linear-gradient(90deg, black 50%, #d3d3d3 50%);
+			background: linear-gradient(90deg, #1b1464 50%, #d3d3d3 50%);
 		}
 		.error{
 			color: red;
@@ -28,7 +28,7 @@
 		height:100vh;
 	}
 	.custome_sideimg{
-		background: linear-gradient(1800deg, #d3d3d3 50%, black 50%);
+		background: linear-gradient(1800deg, #d3d3d3 50%, #14caf4 50%);
 	}
 	.container{
 		box-shadow:#212529 0px 0px 0px 3px, #343a40 0px 0px 0px 6px, rgb(0 0 0 / 30%) 33px 37px 3px, rgb(255 255 255 / 22%) -28px 33px 8px; 
@@ -49,7 +49,7 @@
 					<div class="row">
 						<div class="col-sm-4 p-0">
 						<div class="auth-full-page-content p-4" id="login_section">
-							<h3 class="text-center"><img src="assets/images/AUGS-logo.png" alt="AUGS Logo" class="logo_design"></h3>				
+							<h3 class="text-center"><img src="../assets/img/logo/LOGO.svg" alt="Dog Logo" class="logo_design"></h3>				
 						<form id="login_form" class="mt-5">			
 										<div class="mb-3">
 										<label for="formemail" class="form-label">Username</label>
@@ -63,7 +63,7 @@
 											<input type="hidden" name="btn" value="loginUser"/>
 
 											<div class="d-flex justify-content-between">
-											<button class="btn btn-primary waves-effect waves-light lg-btn" name="login" value="login" type="submit" style="background:#000;border:none;">Log In</button>
+											<button class="btn btn-primary waves-effect waves-light lg-btn" name="login" value="login" type="submit" style="background:#1b1464;border:none;">Log In</button>
 											<div class="float-end"> <a href="auth-recoverpw-2.html" class="text-muted">Forgot password?</a> </div>
 											</div>
 										
@@ -118,7 +118,7 @@ message:{
             cache: false,
             processData: false,
             success: function(data){
-              if(data=='login'){				
+              if(data=='done'){				
               alert("Login Successfully");
 							window.location = "http://localhost/pets/pets-admin//home.php";
 							}

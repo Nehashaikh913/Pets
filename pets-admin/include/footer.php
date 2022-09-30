@@ -115,7 +115,7 @@
                         while ($row = $images->fetch(PDO::FETCH_ASSOC)) {
                           $imag_alt = pathinfo($row['name'], PATHINFO_FILENAME);
                   ?>                          
-                 <li><input type="checkbox" id="cb<?php echo $i; ?>" onclick="imageCheckbox()" name="img_id" value="<?php echo $row['id'] ?>"/>
+                 <li><input type="checkbox" id="cb<?php echo $i; ?>" onclick="imageCheckbox(this)" data-image="<?php echo $row['id'] ?>" name="img_id" value="<?php echo $row['id'] ?>"/>
                       <label for="cb<?php echo $i; ?>">
                       <div class="text-center"><?php echo $imag_alt ?></div>
                       <img src="<?php echo $row['path']; ?>" alt="<?php echo $row['alt']; ?>" class="img-rounded custome_images" onclick="imageChahge(<?php echo $row['id']; ?>,'<?php echo $row['path']; ?>')">

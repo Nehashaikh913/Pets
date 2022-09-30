@@ -116,26 +116,6 @@ function imageChahge(id, path) {
   })
 }
 
-function contenImage(id, path) {
- // alert('image id ' + id)
- // alert('path ' + path)
-  $.ajax({
-    type: 'POST',
-    url: 'upload.php',
-    dataType: 'html',
-    data: {
-      image_id: id,
-    },
-    success: function (data) {
-      $('#for_dynamicImage,#for_dynamicImage1').html(data)
-      $('#content_ifr')
-        .contents()
-        .find('body')
-        .append('<img src="' + path + '">')
-      imageUdatevalidate()
-    },
-  })
-}
 const INPUT_FILE = document.querySelector('#upload-files')
 const INPUT_CONTAINER = document.querySelector('#upload-container')
 const FILES_LIST_CONTAINER = document.querySelector('#files-list-container')
@@ -225,19 +205,6 @@ const removeFile = () => {
 
 fileUpload()
 removeFile()
-
-function imageCheckbox(){
-            var favorite = [];
-            $.each($("input[name='img_id']:checked"), function(){            
-                favorite.push($(this).val());
-            });
-            var img_id = favorite.join(",");
-		      	$('.image_id').attr('value',img_id)
-    }
-function removeImg(ele){
-  ele.remove()
-}
-
 // Delete Category
 function deleteCategory(id) {
   var x = confirm('Are you sure you want to permanent delete this?')
@@ -344,28 +311,6 @@ function deleteProduct(id) {
   }
 }
 
-//Delete cta
-function deleteCta(id) {
-  var x = confirm('Are you sure you want to permanent delete this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        deleteCta_id: id,
-        btn: 'deleteCta_id',
-      },
-      success: function (data) {
-        if (data == 'deleted') {
-          alert('Cta Successfully Deleted')
-          location.reload()
-        }
-      },
-    })
-  }
-}
-
 //post search text here
 $('#search_post_title').keyup(function () {
   var name = $('#search_post_title').val()
@@ -411,415 +356,7 @@ $('#product_search_table').keyup(function () {
   }
 })
 
-//blog section of pass
-function blogTrashRows(id) {
-  var x = confirm('Are you sure you want to trash this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        blog_id_trash: id,
-        btn: 'blog_id_trash',
-      },
-      success: function (data) {
-        //$("#whats_new").html(data);
-        //location.reload();
-        alert(data)
-        //console.log(data);
-        location.reload()
-      },
-    })
-  }
-}
-// post trash
-function trashPost(id) {
-  var x = confirm('Are you sure you want to trash this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        trashPost_id: id,
-        btn: 'trashPost_id',
-      },
-      success: function (data) {
-        if (data == 'trashed') {
-          alert('Post Successfully Trashed')
-          location.reload()
-        }
-      },
-    })
-  }
-}
-// upload
-function uploadPost(id) {
-  var x = confirm('Are you sure you want to upload this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        uploadPost_id: id,
-        btn: 'uploadPost_id',
-      },
-      success: function (data) {
-        if (data == 'uploaded') {
-          alert('Post Successfully Uploaded')
-          location.reload()
-        }
-      },
-    })
-  }
-}
-// blog permanent delete
-function deletePost(id) {
-  var x = confirm('Are you sure you want to permanent delete this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        deletePost_id: id,
-        btn: 'deletePost_id',
-      },
-      success: function (data) {
-        if (data == 'deleted') {
-          alert('post Successfully Deleted')
-          location.reload()
-        }
-      },
-    })
-  }
-}
-// blog restore data
-function blogRestoreRows(id) {
-  var x = confirm('Are you sure you want to restore this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        blog_id_restore: id,
-        btn: 'blog_id_restore',
-      },
-      success: function (data) {
-        //$("#whats_new").html(data);
-        //location.reload();
-        alert(data)
-        location.reload()
-      },
-    })
-  }
-}
-// blog upload function
-function blogUploadRows(id) {
-  var x = confirm('Are you sure you want to upload this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        blogUploadRows_id: id,
-        btn: 'blogUploadRows_id',
-      },
-      success: function (data) {
-        //$("#whats_new").html(data);
-        //location.reload();
-        alert(data)
-        location.reload()
-      },
-    })
-  }
-}
 
-// quotes trash row function
-
-function quotesTrashRows(id) {
-  var x = confirm('Are you sure you want to trash this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        quotesTrashRows_id: id,
-        btn: 'quotesTrashRows_id',
-      },
-      success: function (data) {
-        //$("#whats_new").html(data);
-        //location.reload();
-        alert(data)
-        //console.log(data);
-        location.reload()
-      },
-    })
-  }
-}
-// quotes delete function
-function quotesPermenetDelete(id) {
-  var x = confirm('Are you sure you want to permanent delete this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        quotesPermenetDelete_id: id,
-        btn: 'quotesPermenetDelete_id',
-      },
-      success: function (data) {
-        //$("#whats_new").html(data);
-        //location.reload();
-        alert(data)
-        //console.log(data);
-        location.reload()
-      },
-    })
-  }
-}
-
-// Quotes restore function
-
-function quoteRestoreRows(id) {
-  var x = confirm('Are you sure you want to restore this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        quoteRestoreRows_id: id,
-        btn: 'quoteRestoreRows_id',
-      },
-      success: function (data) {
-        //$("#whats_new").html(data);
-        //location.reload();
-        alert(data)
-        //console.log(data);
-        location.reload()
-      },
-    })
-  }
-}
-// quotes upload function
-function uploadDraftdata(id) {
-  var x = confirm('Are you sure you want to upload this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        uploadDraftdata_id: id,
-        btn: 'uploadDraftdata_id',
-      },
-      success: function (data) {
-        //$("#whats_new").html(data);
-        //location.reload();
-        alert(data)
-        //console.log(data);
-        location.reload()
-      },
-    })
-  }
-}
-// author delete function
-
-function deleteFunctionAuthor(id) {
-  var x = confirm('Are you sure you want to delete this?')
-  if (x) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        deleteFunctionAuthor_id: id,
-        btn: 'deleteFunctionAuthor_id',
-      },
-      success: function (data) {
-        //$("#whats_new").html(data);
-        alert(data)
-        location.reload()
-      },
-    })
-  }
-}
-
-let counter = 1
-function appendQuotesAuthor() {
-  var html = ` <div id=${'author_block_meta_block_' + counter} class="row mt-5">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                            <label>Enter Author's Description</label>
-                            <textarea class="form-control" name="quote[]" rows="8"></textarea>
-                            </div>
-                        </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Author Position</label>
-                            <input type="text" class="form-control" name="authorname[]" placeholder="Author Name">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="resume ">Upload</label>
-                            <input type="file" accept="image/png, image/jpeg" class="form-control" name="author_image[]">
-                        </div>	
-                        <div class="d-flex clearfix">
-                        <span class="btn1 add-btn float-left" onclick="appendQuotesAuthor()">Add More</span>
-                        <span class="btn1 add-btn float-left" onclick="deleteQuotesAuthor(${counter})" style="background:#7e37d8;">Delete</span>
-                        </div>  
-                    </div>                            
-            </div>`
-
-  $('#forAppend').append(html)
-  counter++
-}
-
-function deleteQuotesAuthor(target) {
-  const ele = document.getElementById('author_block_meta_block_' + target)
-  ele.remove()
-}
-
-//blog search text here
-$('#search_blog_title').keyup(function () {
-  var name = $('#search_blog_title').val()
-  //alert(name);
-  if (name == '') {
-    //Assigning empty value to "display" div in "search.php" file.
-    $('#datatable').html('')
-    //alert("blank");
-  } else {
-    $.ajax({
-      type: 'post',
-      url: 'get_filterTable.php',
-      data: { blog_title: name, btn: 'blog_title' },
-      cache: false,
-      success: function (data) {
-        $('#datatable').html(data)
-        //alert(data);
-        //console.log(data);
-      },
-    })
-  }
-})
-
-//quotes search text here
-$('#search_quotes_title').keyup(function () {
-  var name = $('#search_quotes_title').val()
-  //alert(name);
-  if (name == '') {
-    //Assigning empty value to "display" div in "search.php" file.
-    $('#datatable').html('')
-    //alert("blank");
-  } else {
-    $.ajax({
-      type: 'post',
-      url: 'get_filterTable.php',
-      data: { quotes_title: name, btn: 'quotes_title' },
-      cache: false,
-      success: function (data) {
-        $('#datatable').html(data)
-        //alert(data);
-        //console.log(data);
-      },
-    })
-  }
-})
-
-function image_update_Function(id) {
-  alert('fdfsd')
-  // $("#others_category_section1").modal('show');
-  if (id) {
-    $.ajax({
-      type: 'POST',
-      url: 'blog_edit.php',
-      dataType: 'html',
-      data: {
-        quotes_author_id: id,
-      },
-      success: function (data) {
-        //location.reload();
-        //alert(data);
-        console.log(data)
-
-        $('#upload_image_here').html(data)
-        loadImageUpdateCode()
-      },
-    })
-  }
-}
-
-function loadImageUpdateCode() {
-  $('#add_image_upload').on('submit', function (event) {
-    event.preventDefault()
-    alert('work')
-    $.ajax({
-      url: 'action.php',
-      type: 'post',
-      data: new FormData(this),
-      contentType: false,
-      cache: false,
-      processData: false,
-      success: function (data) {
-        alert(data)
-        console.log(data)
-      },
-    })
-  })
-}
-
-function quotes_update_authors(id) {
-  alert(id)
-  $('#quotes_update_contet').modal('show')
-  if (id) {
-    $.ajax({
-      type: 'POST',
-      url: 'action.php',
-      dataType: 'html',
-      data: {
-        quotes_author_content_id: id,
-        btn: 'quotes_author_content_id',
-      },
-      success: function (data) {
-        //location.reload();
-        //alert(data);
-        console.log(data)
-        $('#author_content_form').html(data)
-        loadQuoteUpdateCode()
-      },
-    })
-  }
-}
-
-function loadQuoteUpdateCode() {
-  $('#update_author_data').on('submit', function (event) {
-    event.preventDefault()
-    $.ajax({
-      url: 'action.php',
-      type: 'post',
-      data: new FormData(this),
-      contentType: false,
-      cache: false,
-      processData: false,
-      success: function (data) {
-        alert(data)
-        console.log(data)
-      },
-    })
-  })
-}
-// $("#add_image_upload").on("submit", function (event) {
-//     event.preventDefault();
-//     alert("work");
-// });
 
 // SEO Title KeyUp Function
 function copytext_cat(e) {
@@ -829,111 +366,53 @@ function copytext_cat(e) {
   document.getElementById('cat_slug').value = str
 }
 
-function editCategory() {}
-//validation for category//
+var db_val = $('#image_id').val();
+var db_array = db_val.split(",");
+var numberArray = db_array.map(Number)
 
-function appendInput() {
-  var html = ` <div class="input-box">
-        <div class="row">
-       <div class="col-lg-6">
-           <textarea name="quote[]" rows="8"  style="margin-right:20px;width:100%"></textarea>
-               </div>
-               <div class=" col-lg-5">
-               <div>
-               <label>Author Name</label>
-               <input type="text" name="authorname[]" placeholder="Author Name"> </div>
-               <div>
-               <label>Author Position</label>
-   
-           <input type="text" name="authorposition[]" placeholder="Author Position"> </div>
-           <div>
-           <label for="resume ">Upload</label>
-           <input type="file" class="form-control" name="author_image[]"> </div>
-           </div>
+function imageCheckbox(x){
+  var image_id = $(x).data('image');
+  if($(x).is(":checked")){
+    numberArray.push(image_id)    
+  } else {
+    numberArray.splice(numberArray.indexOf(image_id),1);
+  }
+  var pro_id = numberArray.join(",");
+  if(pro_id.charAt(0)==','){
+     pro_id=pro_id.substring(1);
+     console.log(pro_id);
+ }
+ $('.image_id').attr('value',pro_id)
 
-<button class="remove-lnk" style="background:#7e37d8;color:white;border-radius:7px;padding:10px 10px;cursor:pointer;display:inline-block;height:40px;width:80px;top: 85px;">Delete</button>
-</div>`
+  // var favorite = [];
+  // $.each($("input[name='img_id']:checked"), function(){            
+  //     favorite.push($(this).val());
+  // });
+  // var img_id = favorite.join(",");
+  // $('.image_id').attr('value',img_id)
 
-  $('.wrapper').append(html)
 }
 
-$('.author_change_other').change(function () {
-  var val = $('#author_change_other').val()
+function removeImg(ele){
+ele.remove()
+}
 
-  let position = val.includes('others')
-  //const lastVal="";
-
-  if (position) {
-    $('#others_author_section').modal('show')
-  }
-  //alert(val);
-  else {
-  }
-
-  $('#add_author_other').validate({
-    rules: {
-      author_name: 'required',
-      email: 'required',
-      password: 'required',
-      image: {
-        required: true,
-        extension: 'jpg|png|jpeg',
-      },
-      message: {
-        required: true,
-      },
-      position: {
-        required: true,
-      },
-    },
-    message: {
-      author_name: 'Please enter username',
-      email: 'Please enter username',
-      password: 'Please enter username',
-    },
-    submitHandler: function (form) {
-      //alert("validated");
-
-      var authors = $('#author_change_other').val()
-      var formData = new FormData(form)
-      formData.append('author_id', authors)
-      //                    console.log(formData);
-
-      $.ajax({
-        url: 'edit_author.php',
-        type: 'post',
-        data: formData,
-        contentType: false,
-        cache: false,
-        processData: false,
-        success: function (data) {
-          console.log(data)
-          alert('New Author Added')
-          $('#others_author_section').modal('hide')
-          $('#author_change_other').html(data)
-          //location.reload();
-          console.log(data)
-        },
-      })
-    },
-  })
-})
-// blog title filter
-$('#blog_title_change_other').change(function () {
-  alert('fdsfds')
-  var id = $(this).val()
-
-  alert(id)
-
-  $.ajax({
+function removeproductimage(id){
+  var x = confirm('Are you sure you want to delete this?')
+  if (x) {
+    $.ajax({
     type: 'post',
-    url: 'get_title_blog.php',
-    data: { blog_id: id },
+    url: 'action.php',
+    data: { pro_id: id,
+            'btn':'delete_pro_id',
+           },
     cache: false,
     success: function (data) {
-      $('#datatable').html(data)
-      //alert(data);
-      console.log(data)
+      if(data=='deleted'){
+        window.location.reload();
+      }
     },
-  })
-})
+    })
+  }
+}
+

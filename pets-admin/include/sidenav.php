@@ -28,12 +28,6 @@
                         <li><a href="order_product.php" key="t-product-detail">Listing</a></li>
                     </ul>
                 </li>
-                <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="bx bxs-user-detail"></i><span key="t-ecommerce">CTA</span></a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="add_cta.php" key="t-product-detail">Add</a></li>
-                        <li><a href="cta_listing.php" key="t-product-detail">Listing</a></li>
-                    </ul>
-                </li>
                 <li><a href="javascript: void(0);" class="has-arrow waves-effect"><i class="bx bx-detail"></i><span key="t-ecommerce">User</span></a>
                 <ul class="sub-menu" aria-expanded="false">
                         <li><a href="add_user.php" key="t-product-detail">Add</a></li>

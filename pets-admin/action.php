@@ -1,18 +1,25 @@
 <?php include('include/config.php');
 session_start();
+session_regenerate_id();
 date_default_timezone_set('Asia/Kolkata');
 if($_POST['btn']=='loginUser'){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $stmt = $conn->prepare("SELECT * FROM `user` WHERE username=? AND password=?");
-    $stmt->execute([$username, $password]);
-    $user_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $id= $user_data[0]['id'];
+    $username = trim_data($_POST['username']);
+    $pass = trim_data($_POST['password']);
+    $stmt = $conn->prepare("SELECT * FROM `user` WHERE username=?");
+    $stmt->execute([$username]);
     $userCount=$stmt->rowCount();
     if($userCount > 0){
-        echo "login";
-        $_SESSION['admin_is_login'] = $username;
-        $_SESSION['admin_is_login_id'] = $id;
+      while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $email = $user_data['username'];
+        $password = $user_data['password'];
+        if (password_verify($pass, $password)) {
+          $_SESSION['admin_is_login'] = $user_data['username'];
+          $_SESSION['admin_is_login_id'] = $user_data['id'];
+          $_SESSION['admin_is_login_id'] = true;
+          echo "done";            
+        }
+
+      }
     }
   }
 if($_POST['btn']=='image_update'){
@@ -61,21 +68,17 @@ if($_POST['btn']=='deleteCategory_id'){
 
 //product
     if($_POST['btn']=='addProduct'){
-    $name="";
-    if(isset($_POST['pro_name'])){
-        $name=$_POST['pro_name'];
-    }else{
-        $name="";
-    }
+    $name=$_POST['pro_name'];
     $prc = $_POST['prc'];
     $slug = $_POST['slug'];
     $cat = $_POST['category'];
     $description = $_POST['description']; 
-    $img_id = $_POST['img_id'];
+    $image_link = $_POST['image_link'];
     $PostDate = date("Y-m-d H:i");
-    $stmt = $conn->prepare("INSERT INTO product(img_id, title, prc, slug, cat_id, description, PostDate, status) VALUES(?,?,?,?,?,?,?,?)");
-    if($stmt->execute([$img_id, $name, $prc, $slug, $cat, $description, $PostDate, 'publish'])){
-      echo "inserted";
+    $stmt = $conn->prepare("INSERT INTO product(image, name, slug, category, price, description, date) VALUES(?,?,?,?,?,?,?)");
+    if($stmt->execute([$image_link, $name, $slug, $cat, $prc, $description, $PostDate])){
+        $last_pro_id = $conn->lastInsertId();
+        echo "inserted".$last_pro_id;
     }
   }
 
@@ -83,21 +86,12 @@ if($_POST['btn']=='deleteCategory_id'){
     $product_id=$_POST['product_id'];
     $name = $_POST['pro_name'];
     $prc = $_POST['prc'];
-    $disc = $_POST['discription'];
     $slug = $_POST['slug'];
     $cat = $_POST['category'];   
-    if(empty($_POST['front_img'])){
-        $front_img = 1;
-    }else{
-        $front_img = $_POST['front_img'];
-    }
-    if(empty($_POST['img_id'])){
-        $img_id = $_POST['old_img_id'];
-    }else{
-        $img_id = $_POST['img_id'];
-    }
-    $stmt = $conn->prepare("UPDATE product SET img_id=?, front_img=?, title=?, prc=?, slug=?, cat_id=?, description=? WHERE id=?");
-    if($stmt->execute([$img_id, $front_img, $name, $prc, $slug, $cat, $disc, $product_id])){
+    $image_link = $_POST['image_link'];
+    $desc = $_POST['discription'];
+    $stmt = $conn->prepare("UPDATE product SET image=?, name=?, slug=?, category=?, price=?, description=? WHERE id=?");
+    if($stmt->execute([$image_link, $name, $slug, $cat, $prc, $desc, $product_id])){
       echo "updated";
     }
   }
@@ -109,7 +103,7 @@ if($_POST['btn']=='uploadProduct_id'){
     }
   // Trash product
   if($_POST['btn']=='trashProduct_id'){
-    $update = $conn->prepare('UPDATE product SET status=0 WHERE id=?');
+    $update = $conn->prepare('DELETE FROM product WHERE id=?');
     $update->execute([$_POST['trashProduct_id']]);
     echo 'trashed';
     }
@@ -123,12 +117,13 @@ if($_POST['btn']=='uploadProduct_id'){
 //   product ends here
 //user
 if($_POST['btn']=='addUser'){
-    $name = $_POST['name'];
-    $username = $_POST['username'];
-    $pwd = $_POST['pwd'];  
-    $img_id = $_POST['img_id'];
-    $stmt = $conn->prepare("INSERT INTO user(img_id,name ,username,password,status) VALUES(?,?,?,?,?)");
-    if($stmt->execute([$img_id, $name, $username,  $pwd,1])){
+    $name = trim_data($_POST['name']);
+    $username = trim_data($_POST['username']);
+    $pwd = trim_data($_POST['pwd']);
+    $options = ['cost' => 12];  
+    $password_hash = password_hash($pwd, PASSWORD_DEFAULT, $options);
+    $stmt = $conn->prepare("INSERT INTO user(name ,username,password,status) VALUES(?,?,?,?)");
+    if($stmt->execute([$name, $username, $password_hash, 1])){
       echo "inserted";
     }
   }
@@ -138,9 +133,8 @@ if($_POST['btn']=='addUser'){
     $name = $_POST['name'];
     $username = $_POST['username'];
     $pwd = $_POST['pwd'];  
-    $img_id = $_POST['img_id'];
-    $stmt = $conn->prepare("UPDATE user SET img_id=?, name=?, username=?, password=?, status=? WHERE id=?");
-    if($stmt->execute([$img_id, $name, $username,  $pwd, 1, $user_id])){
+    $stmt = $conn->prepare("UPDATE user SET name=?, username=?, password=?, status=? WHERE id=?");
+    if($stmt->execute([$name, $username,  $pwd, 1, $user_id])){
       echo "updated";
     }
   }
@@ -157,9 +151,9 @@ if($_POST['btn']=='addUser'){
 
  // post start here
 // delete post
-if($_POST['btn']=='deletePost_id'){
-    $update = $conn->prepare('DELETE FROM post WHERE id=?');
-    $update->execute([$_POST['deletePost_id']]);
+if($_POST['btn']=='delete_pro_id'){
+    $update = $conn->prepare('DELETE FROM images WHERE id=?');
+    $update->execute([$_POST['pro_id']]);
     echo 'deleted';
     }
  //   upload post
@@ -176,260 +170,8 @@ if($_POST['btn']=='trashPost_id'){
     $update->execute([$_POST['trashPost_id']]);
     echo 'trashed';
     }
-
-    
-    if($_POST['btn']=="addPost"){
-        $title="";
-        if(isset($_POST['title'])){
-            $title = trim_data($_POST['title']);
-        }
-        else{
-            $title="";
-        }
-        $seo_title="";
-        if(isset($_POST['seo_title'])){
-            $seo_title = trim_data($_POST['seo_title']);
-        }
-        else{
-            $seo_title="";
-        }
-        $slug="";
-        if(isset($_POST['slug'])){
-            $slug = strtolower(str_replace(" ","-",$_POST['slug']));
-        }
-        else{
-            $slug="";
-        }
-        $meta_desc="";
-        if(isset($_POST['meta_desc'])){
-            $meta_desc = trim_data($_POST['meta_desc']);
-        }
-        else{
-            $meta_desc="";
-        }
-        $content="";
-        if(isset($_POST['content'])){
-            $content = trim_data($_POST['content']);
-        }else{
-            $content="";
-        }
-        if(isset($_POST['bot_robot'])){
-            $bot_robot = ($_POST['bot_robot']);
-        }
-        $bot_robot_value="";
-        if(!empty($bot_robot)){
-            $bot_robot_value  = implode(", ",$bot_robot);            
-        }
-        else{
-            $bot_robot_value = "0";
-        }
-        if(isset($_POST['max_snippet'])){
-            $max_snippet = $_POST['max_snippet'];
-        }
-        else{
-             $max_snippet = "max-snippet:";
-        }
-        if(isset($_POST['max_video'])){
-        $max_video =($_POST['max_video']);
-        }
-        else{
-            $max_video = "max-video:";
-        }
-
-        if(isset($_POST['max_image'])){
-        $max_image=$_POST['max_image'];
-        }
-        else{
-            $max_image="max-image:";
-        }
-            $max_snippet_value =$_POST['max_snippet_value'];   
-            $concat_snippet = $max_snippet.$max_snippet_value;
-            $max_video_value =$_POST['max_video_value'];
-            $concat_video = $max_video.$max_video_value;    
-            $max_image_value =$_POST['max_image_value'];
-            $concat_image = $max_image.$max_image_value;
-            $advance_bot = $bot_robot_value.", ".$concat_snippet.", ".$concat_video.", ".$concat_image;
-            
-            $img_id=0;
-            if(isset($_POST['img_id'])){
-                $img_id = $_POST['img_id'];
-            }
-            else{
-                $img_id=0;
-            }
-            $cat_id="";
-            if(isset($_POST['category'])){
-                $cat_id = $_POST['category'];
-            }
-            else{
-                $cat_id="";
-            }
-
-            $description="";
-            if(isset($_POST['description'])){
-                $description = trim_data($_POST['description']);
-            }
-            else{
-                $description="";
-            }
-            $PostDate="";
-            if(isset($_POST['PostDate'])){
-                $PostDate = date("Y-m-d H:i", strtotime($_POST['PostDate']));
-            }
-            else{
-                $PostDate="";
-            }
-            $draft=1;
-            if(isset($_POST['draft'])){
-                $draft = $_POST['draft'];
-            }
-            else{
-                $draft = 1;
-            }
-                $stmt1 = $conn->prepare("INSERT INTO post(title, seo_title, slug, meta_desc, content, img_id, cat_id, bot_rank, description, uploaded_on, status) 
-                VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-                if($stmt1->execute([$title, $seo_title, $slug, $meta_desc, $content, $img_id, $cat_id, $advance_bot, $description, $PostDate, $draft]))
-                {
-                            echo "inserted";
-                }
-            
-    }//add post end
-
-    // trash 
-
-    // update post start
-    if($_POST['btn']=="updatePost"){
-        $post_id=$_POST['post_id'];
-        $title="";
-        if(isset($_POST['title'])){
-            $title = trim_data($_POST['title']);
-        }
-        else{
-            $title="";
-        }
-        $seo_title="";
-        if(isset($_POST['seo_title'])){
-            $seo_title = trim_data($_POST['seo_title']);
-        }
-        else{
-            $seo_title="";
-        }
-        $slug="";
-        if(isset($_POST['slug'])){
-            $slug = strtolower(str_replace(" ","-",$_POST['slug']));
-        }
-        else{
-            $slug="";
-        }
-        $meta_desc="";
-        if(isset($_POST['meta_desc'])){
-            $meta_desc = trim_data($_POST['meta_desc']);
-        }
-        else{
-            $meta_desc="";
-        }
-        $content="";
-        if(isset($_POST['content'])){
-            $content = trim_data($_POST['content']);
-        }else{
-            $content="";
-        }
-        if(isset($_POST['bot_robot'])){
-            $bot_robot = ($_POST['bot_robot']);
-        }
-        $bot_robot_value="";
-        if(!empty($bot_robot)){
-            $bot_robot_value  = implode(", ",$bot_robot);            
-        }
-        else{
-            $bot_robot_value = "0";
-        }
-        if(isset($_POST['max_snippet'])){
-            $max_snippet = $_POST['max_snippet'];
-        }
-        else{
-             $max_snippet = "max-snippet:";
-        }
-        if(isset($_POST['max_video'])){
-        $max_video =($_POST['max_video']);
-        }
-        else{
-            $max_video = "max-video:";
-        }
-        if(isset($_POST['max_image'])){
-        $max_image=$_POST['max_image'];
-        }
-        else{
-            $max_image="max-image:";
-        }
-            $max_snippet_value =$_POST['max_snippet_value'];   
-            $concat_snippet = $max_snippet.$max_snippet_value;
-            $max_video_value =$_POST['max_video_value'];
-            $concat_video = $max_video.$max_video_value;    
-            $max_image_value =$_POST['max_image_value'];
-            $concat_image = $max_image.$max_image_value;
-            $advance_bot = $bot_robot_value.", ".$concat_snippet.", ".$concat_video.", ".$concat_image;
-            $img_id=0;
-            if(isset($_POST['img_id'])){
-                $img_id = $_POST['img_id'];
-            }
-            else{
-                $img_id=0;
-            }
-            $cat_id="";
-            if(isset($_POST['category'])){
-                $cat_id = $_POST['category'];
-            }
-            else{
-                $cat_id="";
-            }
-            $description="";
-            if(isset($_POST['description'])){
-                $description = trim_data($_POST['description']);
-            }
-            else{
-                $description="";
-            }
-            $PostDate="";
-            if(isset($_POST['PostDate'])){
-                $PostDate = date("Y-m-d H:i", strtotime($_POST['PostDate']));
-            }
-            else{
-                $PostDate="";
-            }
-            $draft=1;
-            if(isset($_POST['draft'])){
-                $draft = $_POST['draft'];
-            }
-            else{
-                $draft = 1;
-            }
-
-  $stmt = $conn->prepare("UPDATE post SET title=?, seo_title=?, slug=?, meta_desc=?, content=?, img_id=?, cat_id=?, bot_rank=?, description=?, uploaded_on=?, status=? WHERE id=?");
-  if($stmt->execute([$title, $seo_title, $slug, $meta_desc, $content, $img_id, $cat_id, $advance_bot, $description, $PostDate, $draft, $post_id])){
-    echo "updated";
-  }
-
-//   $stmt = $conn->prepare("UPDATE category SET img_id=?, name=?, title=?, slug=?, content=?, description=?, status=? WHERE id=?");
-//   if($stmt->execute([$img_id, $cat_name, $title, $slug, $content, $desc, 1, $cat_id])){
-//     echo "updated";
-//   }
-
-                // $stmt1 = $conn->prepare("INSERT INTO post(title, seo_title, slug, meta_desc, content, img_id, cat_id, bot_rank, description, uploaded_on, status) 
-                // VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-                // if($stmt1->execute([$title, $seo_title, $slug, $meta_desc, $content, $img_id, $cat_id, $advance_bot, $description, $PostDate, $draft]))
-                // {
-                //             echo "inserted";
-                // }
-            
-    }//update post end
-
-
-
-
-
     function trim_data($text) {
-      // $text = trim($data); //<-- LINE 31
+       $text = trim($text); //<-- LINE 31
        if(is_array($text)) {
            return array_map('trim_data', $text);
        }
