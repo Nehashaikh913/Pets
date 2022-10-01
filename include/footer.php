@@ -52,7 +52,7 @@
                 <div class="modal-content">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="modal-body">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center" id="productsPopupContent">
                             <div class="col-lg-6 col-md-6">
                                 <div class="image">
                                     <img src="assets/img/products/products1.jpg" alt="image">
@@ -218,7 +218,8 @@
         <!-- End Sidebar Modal Area -->
 
         <!-- Link of JS files -->
-        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/magnific-popup.min.js"></script>
         <script src="assets/js/meanmenu.min.js"></script>

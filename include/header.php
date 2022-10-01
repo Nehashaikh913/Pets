@@ -1,4 +1,5 @@
-<?php include('pets-admin/include/config.php'); ?>
+<?php include('pets-admin/include/config.php');
+//      include('product_popup.php'); ?>
 <!doctype html>
 <html lang="eng">
 <head>
@@ -26,7 +27,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     </head>
     <body>
-
         <!-- Start Top Header Area -->
         <div class="top-header-area">
             <div class="container">
