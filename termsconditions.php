@@ -1,17 +1,4 @@
 <?php include('./include/header.php') ?>
-        <!-- Start Page Title Area -->
-        <div class="page-title-area">
-            <div class="container">
-                <div class="page-title-content">
-                    <h1>Terms & Conditions</h1>
-                    <ul>
-                        <li><a href="index-2.html">Home</a></li>
-                        <li>Terms & Conditions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- End Page Title Area -->
 
         <!-- Start Terms & Conditions Area -->
         <div class="terms-conditions-area ptb-100">

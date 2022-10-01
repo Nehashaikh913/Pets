@@ -1,19 +1,5 @@
 <?php include('./include/header.php') ?>
 
-        <!-- Start Page Title Area -->
-        <div class="page-title-area">
-            <div class="container">
-                <div class="page-title-content">
-                    <h1>My Account</h1>
-                    <ul>
-                        <li><a href="index-2.html">Home</a></li>
-                        <li>My Account</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- End Page Title Area -->
-
         <!-- Start Profile Authentication Area -->
         <div class="profile-authentication-area ptb-100">
             <div class="container">

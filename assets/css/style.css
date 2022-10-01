@@ -438,7 +438,7 @@ Main Banner Area CSS
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 150px;
-  height: 600px;
+  height: 500px;
 }
 
 .banner-item.bg1 {
@@ -455,15 +455,24 @@ Main Banner Area CSS
 
 @media (max-width: 600px) {
   .banner-item.bg1 {
-    background-image: url(../img/banner/CLOTHES\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\).WEBP);
+    background-image: url(../img/banner/CLOTHES\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
   }
   
   .banner-item.bg2 {
-    background-image: url(../img/banner/ONE\ STOP\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\).WEBP);
+    background-image: url(../img/banner/ONE\ STOP\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
   }
   
   .banner-item.bg3 {
-    background-image: url(../img/banner/SMALL\ BITES\ FOR\ SMALL\ MOUTH\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\).WEBP);
+    background-image: url(../img/banner/SMALL\ BITES\ FOR\ SMALL\ MOUTH\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
+  }
+  .banner-item{
+    height: unset;
+  }
+}
+
+@media (min-width: 1600px) {
+  .banner-item{
+    height: 1080px;
   }
 }
 
@@ -943,6 +952,13 @@ Categories Area CSS
   margin-bottom: 15px;
   -webkit-animation: border-transform 10s linear infinite alternate forwards;
   animation: border-transform 10s linear infinite alternate forwards;
+}
+
+@media (max-width: 600px) {
+  .categories-box img{
+    width: 200px !important;
+    margin: auto;
+  }
 }
 
 .categories-box h3 {

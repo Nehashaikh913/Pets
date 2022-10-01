@@ -1,18 +1,5 @@
 <?php include('./include/header.php') ?>
 
-        <!-- Start Page Title Area -->
-        <div class="page-title-area">
-            <div class="container">
-                <div class="page-title-content">
-                    <h1>Wishlist</h1>
-                    <ul>
-                        <li><a href="index-2.html">Home</a></li>
-                        <li>Wishlist</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- End Page Title Area -->
 
         <!-- Start Wishlist Area -->
 		<div class="wishlist-area ptb-100">
