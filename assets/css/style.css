@@ -453,6 +453,20 @@ Main Banner Area CSS
   background-image: url(../img/banner/HOME\ PAGE\ BANNER\ -\ 3.WEBP);
 }
 
+@media (max-width: 600px) {
+  .banner-item.bg1 {
+    background-image: url(../img/banner/CLOTHES\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\).WEBP);
+  }
+  
+  .banner-item.bg2 {
+    background-image: url(../img/banner/ONE\ STOP\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\).WEBP);
+  }
+  
+  .banner-item.bg3 {
+    background-image: url(../img/banner/SMALL\ BITES\ FOR\ SMALL\ MOUTH\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\).WEBP);
+  }
+}
+
 .banner-item-content {
   max-width: 610px;
 }
@@ -1007,6 +1021,7 @@ Products Area CSS
 .single-products-box .image img {
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  height: 380px;
 }
 
 .single-products-box .image .new {
