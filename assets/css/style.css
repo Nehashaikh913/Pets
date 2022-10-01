@@ -1021,7 +1021,7 @@ Products Area CSS
 .single-products-box .image img {
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  height: 380px;
+  height: 300px;
 }
 
 .single-products-box .image .new {

@@ -301,25 +301,25 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                         <div class="facility-box">
-                            <img src="assets/img/icon/icon1.png" alt="icon">
+                            <img src="assets/img/icon/GIFT.svg" width="100" alt="icon">
                             <h3>Best collection</h3>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                         <div class="facility-box bg-fed3d1">
-                            <img src="assets/img/icon/icon2.png" alt="icon">
+                            <img src="assets/img/icon/FAST DELIVERY.svg" width="100" alt="icon">
                             <h3>Fast delivery</h3>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                         <div class="facility-box bg-a9d4d9">
-                            <img src="assets/img/icon/icon3.png" alt="icon">
+                            <img src="assets/img/icon/24-7 CUSTOMER SUPPORT.svg" width="100" alt="icon">
                             <h3>24/7 customer support</h3>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                         <div class="facility-box bg-fef2d1">
-                            <img src="assets/img/icon/icon4.png" alt="icon">
+                            <img src="assets/img/icon/SECURE PAYMENT.svg" width="100" alt="icon">
                             <h3>Secured payment</h3>
                         </div>
                     </div>
