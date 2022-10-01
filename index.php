@@ -135,7 +135,7 @@
                                         <ul class="products-button">
                                             <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
                                             <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                                            <li><a href="javascript:void(0)" data-pro_id="1" onclick="product_popup(this)"><i class='bx bx-show'></i></a></li>
+                                            <li><a href="javascript:void(0)" data-pro_id="<?php echo $pro_data['id'] ?>" onclick="product_popup(this)"><i class='bx bx-show'></i></a></li>
                                             <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
                                         </ul>
                                     </div>
