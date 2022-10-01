@@ -1,12 +1,10 @@
+<?php include('pets-admin/include/config.php'); ?>
 <!doctype html>
-<html lang="zxx">
-    
-<!-- Mirrored from templates.envytheme.com/patoi/default/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Sep 2022 12:01:14 GMT -->
+<html lang="eng">
 <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <!-- Link of CSS files -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -72,9 +70,13 @@
                                 </li>
                                 <li class="nav-item"><a class="dropdown-toggle nav-link">Shop By Category</a>
                                     <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="shop-grid.php" class="nav-link">category</a></li>
-                                        <li class="nav-item"><a href="shop-grid.php" class="nav-link">category</a></li>
-                                        <li class="nav-item"><a href="shop-grid.html" class="nav-link">category</a></li>
+                                        <?php
+                                          $stmt = $conn->prepare("SELECT * FROM `categories`");
+                                          $stmt->execute();
+                                          while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                        ?>
+                                        <li class="nav-item"><a href="shop-grid.php" class="nav-link"><?php echo $user_data['cat_name'] ?></a></li>
+                                         <?php } ?>   
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>

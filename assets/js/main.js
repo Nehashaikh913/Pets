@@ -326,3 +326,9 @@
 	});
 
 }(jQuery));
+
+function product_popup(x){
+	//var id = $(this)
+	alert('data');
+
+}
