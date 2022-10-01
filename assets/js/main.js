@@ -328,44 +328,21 @@
 }(jQuery));
 
 function product_popup(x){
-	//var id = $(this)
-	alert('data');
 	var pro_id = $(x).data('pro_id');
-	alert(pro_id);
+	//alert(pro_id)
 	$.ajax({
 		type: 'POST',
-		url: 'include/action.php',
+		url: 'product_popup.php',
 		dataType: 'html',
 		data: {
 		  btn: 'product_popup',
 		  pro_id: pro_id,
 		},
 		success: function (data) {
-			alert(data)
-		//   var json = $.parseJSON(JSON.stringify(data))
-		//   var carthtml = json.cart_html
-		//   var cartcount = json.cart_count
-		//   console.log(carthtml);
-		  
-		//   var array = carthtml.split(",");
-		//   var data_content = array[1];
-		  
-		//   $('#total_product_count').html(cartcount);
-		//   $('#get_updated_carProduct').html(data_content);
-		 
-  
-		 
-		  
-		  
-		//   // var array = data.split(",");
-		//   //   var done = array[0];
-		//   //   var count = array[1];
-		//   //    if(done=='inserted')
-		//   //     {
-		//   //       $('#total_product_count').html(count);
-		//   //     }
+			$("#productsPopupContent").html(data);
+
+			console.log(data);
+			$('#productsQuickView').modal('show');
 		},
-	  });
-
-
+	});
 }

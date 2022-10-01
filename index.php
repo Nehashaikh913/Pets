@@ -136,7 +136,6 @@
                                             <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
                                             <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
                                             <li><a href="javascript:void(0)" data-pro_id="<?php echo $pro_data['id'] ?>" onclick="product_popup(this)"><i class='bx bx-show'></i></a></li>
-                                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="content">
@@ -208,7 +207,6 @@
                                             <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
                                             <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
                                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="content">
@@ -257,7 +255,7 @@
                 </div>
                 <div class="products-slides owl-carousel owl-theme">
                 <?php
-                        $stmt_pro = $conn->prepare("SELECT * FROM `product` order by id desc limit 10");
+                        $stmt_pro = $conn->prepare("SELECT * FROM `product` order by id asc limit 10");
                         $stmt_pro->execute();
                         while($pro_data = $stmt_pro->fetch(PDO::FETCH_ASSOC)){
                             ?>
@@ -269,8 +267,7 @@
                             <ul class="products-button">
                                 <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
                                 <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                                <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
+                                <li><a href="javascript:void(0)" data-pro_id="<?php echo $pro_data['id'] ?>" onclick="product_popup(this)"><i class='bx bx-show'></i></a></li>
                             </ul>
                         </div>
                         <div class="content">
