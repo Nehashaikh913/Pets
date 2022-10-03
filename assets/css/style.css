@@ -438,35 +438,24 @@ Main Banner Area CSS
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 150px;
-  height: 500px;
+  /* height: 500px; */
 }
 
 .banner-item.bg1 {
-  background-image: url(../img/banner/HOME\ PAGE\ BANNER\ -\ 1.WEBP);
+  background-image: url(../img/banner/CLOTHES\ BANNER\ -\ 2022.webp);
 }
 
 .banner-item.bg2 {
-  background-image: url(../img/banner/HOME\ PAGE\ BANNER\ -\ 2.WEBP);
+  background-image: url(../img/banner/ONE\ STOP\ BANNER.webp);
 }
 
 .banner-item.bg3 {
-  background-image: url(../img/banner/HOME\ PAGE\ BANNER\ -\ 3.WEBP);
+  background-image: url(../img/banner/SMALL\ BITES\ FOR\ SMALL\ MOUTH\ BANNER.webp);
 }
 
 @media (max-width: 600px) {
-  .banner-item.bg1 {
-    background-image: url(../img/banner/CLOTHES\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
-  }
-  
-  .banner-item.bg2 {
-    background-image: url(../img/banner/ONE\ STOP\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
-  }
-  
-  .banner-item.bg3 {
-    background-image: url(../img/banner/SMALL\ BITES\ FOR\ SMALL\ MOUTH\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
-  }
   .banner-item{
-    height: unset;
+    background-position: -380px 0px;
   }
 }
 

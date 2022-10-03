@@ -3,23 +3,23 @@
 <div class="home-slides owl-carousel owl-theme">
   <div class="banner-item bg1">
     <div class="container">
-      <!-- <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>The Best Quality Organic Food</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>The Best Quality Organic Food</h1><div class="price">
                             Price Only
-                            <span>$95.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div> -->
+                            <span>$95.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
   <div class="banner-item bg2">
     <div class="container">
-      <!-- <div class="banner-item-content"><span class="sub-title">New Arrivals</span><h1>Super Offer Pet Foods</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">New Arrivals</span><h1>Super Offer Pet Foods</h1><div class="price">
                             Price Only
-                            <span>$70.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div> -->
+                            <span>$70.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
   <div class="banner-item bg3">
     <div class="container">
-      <!-- <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>Pet Toys Collection</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>Pet Toys Collection</h1><div class="price">
                             Price Only
-                            <span>$30.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div> -->
+                            <span>$30.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
 </div>
