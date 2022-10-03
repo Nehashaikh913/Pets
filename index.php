@@ -89,16 +89,9 @@
       </div> <?php } ?> </div>
   </div>
 </div>
-<!-- End Categories Area -->
-<!-- Start Products Area -->
-<!-- <div class="products-area pb-75">
-  <div class="container">
-    <div class="section-title">
-      <h2>New Arrivals</h2>
-    </div>
-    </div>
-</div>                   
-<-- grid -->
+<!-- End Categories Area -->               
+<!-- grid -->
+<h2 class="arrival text-center mb-5">New Arrivals</h2>
 <div class="grid-container owl-carousel" id="grid-section">
     <?php
     $i=1;
@@ -160,7 +153,8 @@
           <i class='bx bxs-star'></i>
         </div>
         <?php if($i==2){ ?>
-            <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.</p>
+         <div class="hide-cont d-none d-lg-block">
+         <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.</p>
       <h3>Place an order now</h3>
       <span class="discount">Enjoy 30% OFF</span>
       <div class="counter-class" data-date="2022-12-24 24:00:00">
@@ -180,6 +174,7 @@
       <a href="shop-grid.html" class="default-btn">
         <span>Shop Now</span>
       </a>
+         </div>
       <?php } ?>  
       </div>
     </div>

@@ -5029,7 +5029,7 @@ Modal CSS
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -86px 0px 15px 0px;
+  /* margin: -86px 0px 15px 0px; */
 }
 
 .grid-container .owl-nav .owl-prev, .grid-container .owl-nav .owl-next{
@@ -5048,6 +5048,15 @@ Modal CSS
   position: absolute;
   left: 10px;
   top: -9px;
-
+}
+@media (max-width: 600px) {
+  .grid-container {
+  position: relative;
+  }
+  .grid-container .owl-nav{
+    position: absolute;
+    top: -38px;
+    right: 12px;
+  }
 }
 /* grid css end*/
