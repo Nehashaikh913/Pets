@@ -234,6 +234,7 @@
         <script src="assets/js/contact-form-script.js"></script>
         <script src="assets/js/ajaxchimp.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/custom.js"></script>
     </body>
 
 <!-- Mirrored from templates.envytheme.com/patoi/default/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Sep 2022 12:01:22 GMT -->

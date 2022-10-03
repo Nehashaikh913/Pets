@@ -96,165 +96,33 @@
     <div class="section-title">
       <h2>New Arrivals</h2>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-3 col-md-12 col-sm-12">
-        <div class="row"> <?php
-                        $stmt_pro = $conn->prepare("SELECT * FROM `product` order by id desc limit 2");
-                        $stmt_pro->execute();
-                        while($pro_data = $stmt_pro->fetch(PDO::FETCH_ASSOC)){
-                            ?> <div class="col-lg-12 col-md-6 col-sm-6">
-            <div class="single-products-box">
-              <div class="image">
-                <a href="#" class="d-block">
-                  <img src="
-													
-													
-													<?php echo $pro_data['image'] ?>" alt="products-image">
-                </a>
-                <ul class="products-button">
-                  <li>
-                    <a href="cart.html">
-                      <i class='bx bx-cart-alt'></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="wishlist.html">
-                      <i class='bx bx-heart'></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)" data-pro_id="
-															
-															
-															<?php echo $pro_data['id'] ?>" onclick="product_popup(this)">
-                      <i class='bx bx-show'></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3>
-                  <a href="products-details.html"> <?php echo $pro_data['name'] ?> </a>
-                </h3>
-                <div class="price">
-                  <span class="new-price">$ <?php echo $pro_data['price'] ?>.00 </span>
-                </div>
-                <div class="rating">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                </div>
-              </div>
-            </div>
-          </div> <?php } ?> </div>
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12"> <?php
-                        $stmt_pro = $conn->prepare("SELECT * FROM `product` order by id desc limit 1");
-                        $stmt_pro->execute();
-                        while($pro_data = $stmt_pro->fetch(PDO::FETCH_ASSOC)){
-                            ?> <div class="offer-item">
-          <img src="
-										
-										
-										<?php echo $pro_data['image'] ?>" alt="offer-image">
-          <h3>
-            <a href="products-details.html"> <?php echo $pro_data['name'] ?> </a>
-          </h3>
-          <span class="price">$ <?php echo $pro_data['price'] ?>.00 </span>
-          <div class="rating">
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-          </div>
-          <p> <?php echo $pro_data['description'] ?> </p>
-          <h3>Place an order now</h3>
-          <span class="discount">Enjoy 30% OFF</span>
-          <div class="counter-class" data-date="2022-12-24 24:00:00">
-            <div>
-              <span class="counter-days"></span> Days
-            </div>
-            <div>
-              <span class="counter-hours"></span> Hours
-            </div>
-            <div>
-              <span class="counter-minutes"></span> Minutes
-            </div>
-            <div>
-              <span class="counter-seconds"></span> Seconds
-            </div>
-          </div>
-          <a href="shop-grid.html" class="default-btn">
-            <span>Shop Now</span>
-          </a>
-        </div> <?php } ?> </div>
-      <div class="col-lg-3 col-md-12 col-sm-12">
-        <div class="row"> <?php
-                        $stmt_pro = $conn->prepare("SELECT * FROM `product` order by id desc limit 2");
-                        $stmt_pro->execute();
-                        while($pro_data = $stmt_pro->fetch(PDO::FETCH_ASSOC)){
-                            ?> <div class="col-lg-12 col-md-6 col-sm-6">
-            <div class="single-products-box">
-              <div class="image">
-                <a href="#" class="d-block">
-                  <img src="
-															
-															
-															<?php echo $pro_data['image'] ?>" alt="products-image">
-                </a>
-                <ul class="products-button">
-                  <li>
-                    <a href="cart.html">
-                      <i class='bx bx-cart-alt'></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="wishlist.html">
-                      <i class='bx bx-heart'></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
-                      <i class='bx bx-show'></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3>
-                  <a href="products-details.html"> <?php echo $pro_data['name'] ?> </a>
-                </h3>
-                <div class="price">
-                  <span class="new-price">$ <?php echo $pro_data['price'] ?>.00 </span>
-                  <span class="old-price">$55.00</span>
-                </div>
-                <div class="rating">
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bxs-star'></i>
-                  <i class='bx bx-star'></i>
-                </div>
-              </div>
-            </div>
-          </div> <?php } ?> </div>
-      </div>
     </div>
-  </div>
-</div>
-<!-- End Products Area -->
+</div>                   
 <!-- grid -->
-<div class="grid-container">
-  <div class="grid-item grid-item1">
-    <div class="single-products-box">
-      <div class="image">
+<div class="grid-container owl-carousel" id="grid-section">
+    <?php
+    $i=1;
+    $d_none="";
+    $classname="";
+    $stmt_pro = $conn->prepare("SELECT * FROM `product` order by id desc limit 5");
+    $stmt_pro->execute();
+    while($pro_data = $stmt_pro->fetch(PDO::FETCH_ASSOC)){
+        if($i==2){
+            $classname="offer-item";
+            $d_none="d-none";
+        }else{
+            $classname="single-products-box";
+            $d_none="d-block";
+        }  
+    ?>
+
+   <div class="grid-item grid-item<?php echo $i ?>">
+     <div class="<?php echo $classname ?>">
+       <div class="image">
         <a href="#" class="d-block">
-          <img src="assets/img/products/products1.jpg" alt="products-image">
+          <img src="<?php echo $pro_data['image'] ?>" alt="products-image">
         </a>
-        <ul class="products-button">
+        <ul class="products-button <?php echo $d_none ?>">
           <li>
             <a href="cart.html">
               <i class='bx bx-cart-alt'></i>
@@ -279,10 +147,10 @@
       </div>
       <div class="content">
         <h3>
-          <a href="products-details.html">Pet brash</a>
+          <a href="products-details.html"><?php echo $pro_data['name'] ?></a>
         </h3>
         <div class="price">
-          <span class="new-price">$35.00</span>
+          <span class="new-price">$<?php echo $pro_data['price'] ?>.00</span>
         </div>
         <div class="rating">
           <i class='bx bxs-star'></i>
@@ -291,24 +159,8 @@
           <i class='bx bxs-star'></i>
           <i class='bx bxs-star'></i>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item grid-item2">
-    <div class="offer-item">
-      <img src="assets/img/offer/offer14.png" alt="offer-image">
-      <h3>
-        <a href="products-details.html">Premium lamb rice</a>
-      </h3>
-      <span class="price">$240.00</span>
-      <div class="rating">
-        <i class='bx bxs-star'></i>
-        <i class='bx bxs-star'></i>
-        <i class='bx bxs-star'></i>
-        <i class='bx bxs-star'></i>
-        <i class='bx bxs-star'></i>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.</p>
+        <?php if($i==2){ ?>
+            <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.</p>
       <h3>Place an order now</h3>
       <span class="discount">Enjoy 30% OFF</span>
       <div class="counter-class" data-date="2022-12-24 24:00:00">
@@ -328,146 +180,11 @@
       <a href="shop-grid.html" class="default-btn">
         <span>Shop Now</span>
       </a>
-    </div>
-  </div>
-  <div class="grid-item grid-item3">
-    <div class="single-products-box">
-      <div class="image">
-        <a href="#" class="d-block">
-          <img src="assets/img/products/products1.jpg" alt="products-image">
-        </a>
-        <ul class="products-button">
-          <li>
-            <a href="cart.html">
-              <i class='bx bx-cart-alt'></i>
-            </a>
-          </li>
-          <li>
-            <a href="wishlist.html">
-              <i class='bx bx-heart'></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
-              <i class='bx bx-show'></i>
-            </a>
-          </li>
-          <li>
-            <a href="products-details.html">
-              <i class='bx bx-link-alt'></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h3>
-          <a href="products-details.html">Pet brash</a>
-        </h3>
-        <div class="price">
-          <span class="new-price">$35.00</span>
-        </div>
-        <div class="rating">
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-        </div>
+      <?php } ?>  
       </div>
     </div>
-  </div>
-  <div class="grid-item grid-item4">
-    <div class="single-products-box">
-      <div class="image">
-        <a href="#" class="d-block">
-          <img src="assets/img/products/products1.jpg" alt="products-image">
-        </a>
-        <ul class="products-button">
-          <li>
-            <a href="cart.html">
-              <i class='bx bx-cart-alt'></i>
-            </a>
-          </li>
-          <li>
-            <a href="wishlist.html">
-              <i class='bx bx-heart'></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
-              <i class='bx bx-show'></i>
-            </a>
-          </li>
-          <li>
-            <a href="products-details.html">
-              <i class='bx bx-link-alt'></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h3>
-          <a href="products-details.html">Pet brash</a>
-        </h3>
-        <div class="price">
-          <span class="new-price">$35.00</span>
-        </div>
-        <div class="rating">
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="grid-item grid-item5">
-    <div class="single-products-box">
-      <div class="image">
-        <a href="#" class="d-block">
-          <img src="assets/img/products/products1.jpg" alt="products-image">
-        </a>
-        <ul class="products-button">
-          <li>
-            <a href="cart.html">
-              <i class='bx bx-cart-alt'></i>
-            </a>
-          </li>
-          <li>
-            <a href="wishlist.html">
-              <i class='bx bx-heart'></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
-              <i class='bx bx-show'></i>
-            </a>
-          </li>
-          <li>
-            <a href="products-details.html">
-              <i class='bx bx-link-alt'></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="content">
-        <h3>
-          <a href="products-details.html">Pet brash</a>
-        </h3>
-        <div class="price">
-          <span class="new-price">$35.00</span>
-        </div>
-        <div class="rating">
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-        </div>
-      </div>
-    </div>
-  </div>
+ </div>
+       <?php $i++; } ?> 
 </div>
 <!-- grid -->
 <!-- Start Offer Area -->

@@ -5011,7 +5011,7 @@ Modal CSS
   grid-column-start: 3;
   grid-column-end: 4;
 }
-.grid-item2 {
+ .grid-item2 {
   grid-row-start: 1;
   grid-row-end: 4;
   grid-column-start: 2;
