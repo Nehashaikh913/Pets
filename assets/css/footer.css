@@ -52,7 +52,7 @@
   color: var(--primaryColor);
 }
 
-.single-footer-widget .custom-links li a::before {
+/* .single-footer-widget .custom-links li a::before {
   top: 50%;
   left: -7px;
   font-size: 20px;
@@ -62,7 +62,7 @@
   font-family: boxicons;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-}
+} */
 
 .single-footer-widget .custom-links li:last-child {
   margin-bottom: 0;
