@@ -181,7 +181,6 @@
         <span>Shop Now</span>
       </a>
       <?php } ?>  
-      
       </div>
     </div>
  </div>
