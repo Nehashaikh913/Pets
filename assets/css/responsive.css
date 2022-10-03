@@ -1178,6 +1178,8 @@
   }
   .offer-item img {
     margin-bottom: 20px;
+    max-height: 260px;
+    object-fit: contain;
   }
   .offer-item .rating {
     margin-top: 10px;
