@@ -5005,12 +5005,10 @@ Modal CSS
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
-
-.grid-item5 {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start: 3;
-  grid-column-end: 4;
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  text-align: center;
 }
  .grid-item2 {
   grid-row-start: 1;
@@ -5018,20 +5016,17 @@ Modal CSS
   grid-column-start: 2;
   grid-column-end: 3;
 }
-
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 30px;
-  text-align: center;
+.grid-item5 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
-
 .grid-container .owl-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: -86px 0px 15px 0px; */
 }
-
 .grid-container .owl-nav .owl-prev, .grid-container .owl-nav .owl-next{
   position: relative;
   background: #fff !important;
