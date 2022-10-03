@@ -5020,9 +5020,33 @@ Modal CSS
 
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
-  padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+
+.grid-container .owl-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -86px 0px 15px 0px;
+}
+
+.grid-container .owl-nav .owl-prev, .grid-container .owl-nav .owl-next{
+  position: relative;
+  background: #fff !important;
+  color: #2a2b39 !important;
+  border: 1px solid #eeeeee !important;
+  font-size: 28px !important;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  margin: 0px 4px;
+}
+.grid-container .owl-nav .owl-prev span,.grid-container .owl-nav .owl-next span{
+  position: absolute;
+  left: 10px;
+  top: -9px;
+
 }
 /* grid css end*/

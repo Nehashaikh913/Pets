@@ -91,7 +91,7 @@
 </div>
 <!-- End Categories Area -->
 <!-- Start Products Area -->
-<div class="products-area pb-75">
+<!-- <div class="products-area pb-75">
   <div class="container">
     <div class="section-title">
       <h2>New Arrivals</h2>
@@ -244,7 +244,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- End Products Area -->
 <!-- grid -->
 <div class="grid-container owl-carousel" id="grid-section">
@@ -308,6 +308,7 @@
         <i class='bx bxs-star'></i>
         <i class='bx bxs-star'></i>
       </div>
+      <div class="hide-cont d-none d-lg-block">
       <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.</p>
       <h3>Place an order now</h3>
       <span class="discount">Enjoy 30% OFF</span>
@@ -328,6 +329,7 @@
       <a href="shop-grid.html" class="default-btn">
         <span>Shop Now</span>
       </a>
+      </div>
     </div>
   </div>
   <div class="grid-item grid-item3">
