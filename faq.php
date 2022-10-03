@@ -1,19 +1,15 @@
 <?php include('./include/header.php') ?>
 
 
-<!-- Start Page Title Area -->
-<div class="page-title-area">
-    <div class="container">
-        <div class="page-title-content">
-            <h1>Frequently Asked Questions</h1>
-            <ul>
-                <li><a href="index-2.html">Home</a></li>
-                <li>FAQ</li>
-            </ul>
+        <!-- Start Page Title Area -->
+        <div class="page-title-area">
+            <div class="container">
+                <div class="page-title-content">
+
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<!-- End Page Title Area -->
+        <!-- End Page Title Area -->
 
 <!-- Start FAQ Area -->
 <div class="faq-area ptb-100">
