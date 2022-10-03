@@ -30,7 +30,7 @@
     <div class="row align-items-center">
       <div class="col-lg-3 col-md-12">
         <div class="about-image">
-          <img src="assets/img/about/about1.jpg" alt="about-image">
+          <img class="rounded shadow" src="assets/img/about/DOG1.WEBP" alt="about-image">
         </div>
       </div>
       <div class="col-lg-6 col-md-12">
@@ -44,7 +44,7 @@
       </div>
       <div class="col-lg-3 col-md-12">
         <div class="about-image">
-          <img src="assets/img/about/about2.jpg" alt="about-image">
+          <img class="rounded shadow" src="assets/img/about/DOG2.WEBP" alt="about-image">
         </div>
       </div>
     </div>

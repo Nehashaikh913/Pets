@@ -766,6 +766,7 @@ Offer Area CSS
 
 .offer-item img {
   margin-bottom: 30px;
+  max-width: 400px;
 }
 
 .offer-item h3 {
