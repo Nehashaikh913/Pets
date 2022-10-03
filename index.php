@@ -247,7 +247,7 @@
 </div>
 <!-- End Products Area -->
 <!-- grid -->
-<div class="grid-container">
+<div class="grid-container owl-carousel" id="grid-section">
   <div class="grid-item grid-item1">
     <div class="single-products-box">
       <div class="image">
