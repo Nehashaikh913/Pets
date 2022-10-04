@@ -3,21 +3,21 @@
 <div class="home-slides owl-carousel owl-theme">
   <div class="banner-item bg1">
     <div class="container">
-      <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>The Best Quality Organic Food</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>One Stop For All Your Pet Needs</h1><div class="price">
                             Price Only
                             <span>$95.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
   <div class="banner-item bg2">
     <div class="container">
-      <div class="banner-item-content"><span class="sub-title">New Arrivals</span><h1>Super Offer Pet Foods</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">New Arrivals</span><h1>Help Your Dog Maintain A Healthier Weight</h1><div class="price">
                             Price Only
                             <span>$70.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
   <div class="banner-item bg3">
     <div class="container">
-      <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>Pet Toys Collection</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>Why Should Hoomans Have All The Fun?</h1><div class="price">
                             Price Only
                             <span>$30.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
@@ -92,6 +92,7 @@
 <!-- End Categories Area -->               
 <!-- grid -->
 <h2 class="arrival text-center mb-5">New Arrivals</h2>
+<div class="container">
 <div class="grid-container owl-carousel" id="grid-section">
     <?php
     $i=1;
@@ -181,13 +182,14 @@
  </div>
        <?php $i++; } ?> 
 </div>
+</div>
 <!-- grid -->
 <!-- Start Offer Area -->
 <div class="offer-area pb-75">
   <div class="container">
     <div class="single-offer-box">
       <a href="shop-grid.html" class="d-block">
-        <img src="assets/img/banner/CTA BANNER.WEBP" alt="offer-image">
+        <img src="assets/img/banner/CTA BANNER - 2022.WEBP" alt="offer-image">
       </a>
     </div>
   </div>

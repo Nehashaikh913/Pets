@@ -681,7 +681,7 @@ Offer Area CSS
 .single-offer-box img {
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  max-heigh: 400px;
+  max-height: 400px;
   width: 100%;
   object-fit: contain;
 }
