@@ -23,6 +23,11 @@
             font-weight: 400;
             letter-spacing: 0.025em;
             font-size: 23px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
         .one {
@@ -129,6 +134,7 @@
             
             .title {
                 font-size: 18px;
+                line-height: 20px;
             }
         }
     }

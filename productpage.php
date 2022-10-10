@@ -57,7 +57,7 @@ if ($proCount > 0) {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 col-md-12">
+                    <!-- <div class="col-lg-12 col-md-12">
                         <div class="products-details-tabs">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
@@ -70,7 +70,7 @@ if ($proCount > 0) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
