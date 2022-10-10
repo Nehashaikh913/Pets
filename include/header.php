@@ -1,5 +1,13 @@
 <?php include('pets-admin/include/config.php');
-//      include('product_popup.php'); ?>
+$cookie_name="userid";
+if(!isset($_COOKIE[$cookie_name])) {
+    $userid = uniqid();
+    setcookie($cookie_name, $userid, time() + (86400 * 30), "/"); // 86400 = 1 day
+    echo "<script>location.reload()</script>";
+}else{
+    setcookie($cookie_name, $_COOKIE[$cookie_name], time() + (86400 * 30), "/"); // 86400 = 1 day
+}
+?>
 <!doctype html>
 <html lang="eng">
 <head>
@@ -7,6 +15,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Link of CSS files -->
+        <base href="http://localhost/Pets/">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
         <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -75,7 +84,7 @@
                                           $stmt->execute();
                                           while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
                                         ?>
-                                        <li class="nav-item"><a href="shop-grid.php" class="nav-link"><?php echo $user_data['cat_name'] ?></a></li>
+                                        <li class="nav-item"><a href="category/<?php echo $user_data['cat_slug'] ?>" class="nav-link"><?php echo $user_data['cat_name'] ?></a></li>
                                          <?php } ?>   
                                     </ul>
                                 </li>
@@ -84,9 +93,18 @@
                             <div class="others-option">
                                 <div class="d-flex align-items-center">
                                     <ul>
+                                    <?php 
+                                    $product = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status='cart'");
+                                    $product->execute([$_COOKIE[$cookie_name]]);
+                                    $product_row = $product->fetchColumn();
+
+                                    $product_wish = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status=?");
+                                    $product_wish->execute([$_COOKIE[$cookie_name],'wishlist']);
+                                    $product_row_wish = $product_wish->fetchColumn();
+                                    ?>
                                         <li><a href="user.php"><i class='bx bx-user-circle'></i></a></li>
-                                        <li><span>1</span><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>
-                                        <li class="position-relative"><span>1</span><a href="cart.php"><i class='bx bx-cart'></i></a></li>
+                                        <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>    
+                                        <li class="position-relative"><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>                               
                                     </ul>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 <?php include('pets-admin/include/config.php'); ?>
 <?php 
+    $userid = $_COOKIE['userid'];
     $pro_id = $_POST['pro_id'];
     $stmt = $conn->prepare("SELECT * FROM `product` WHERE id=?");
     $stmt->execute([$pro_id]);
@@ -8,7 +9,8 @@
         $name=$pro_data['name'];
         $decription=$pro_data['description'];
         $price=$pro_data['price'];
-        }
+        $category=$pro_data['category'];    
+    }
 ?>
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-6">
@@ -37,8 +39,9 @@
                                             <input type="text" value="1">
                                             <span class="plus-btn"><i class='bx bx-plus'></i></span>
                                         </div>
-                                        <button type="submit" class="default-btn"><span>Add to Cart</span></button>
-                                    </div>
+                                    <button type="submit" class="default-btn addCartbtn" ><a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Add to card" onclick="addTocart(this)" data-proid="<?php echo $pro_id ?>" data-proimg="<?php echo $image ?>" data-name="<?php echo $name ?>" data-category=<?php echo $category ?> data-price="<?php echo $price ?>" data-qty="<?php echo 1 ?>" data-userid="<?php echo $userid ?>"><span>Add to Cart</span></a></button>
+                                    <button type="submit" class="default-btn success-btn checkOutbtn"><a href="checkout.php"><span>Check Out</span></a></button>    
+                                </div>
                                     <a href="wishlist.html" class="add-to-wishlist"><i class='bx bx-heart'></i> Add to wishlist</a>
                                 </div>
                             </div>

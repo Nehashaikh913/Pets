@@ -5047,3 +5047,12 @@ Modal CSS
   }
 }
 /* grid css end*/
+
+.checkOutbtn{
+  display: none;
+  background-color: #42be42;
+  color: white;
+}
+.default-btn span {
+  color: white;
+}
