@@ -38,7 +38,7 @@
             </div>
             <div class="copyright-area">
                 <div class="container">
-                    <p>Copyright @2021 <span>Patoi</span>. Design & Developed by <a href="https://envytheme.com/">EnvyTheme</a></p>
+                    <p>Copyright @2022 <span>Patoi</span>. Design & Developed by <a href="https://envytheme.com/">EnvyTheme</a></p>
                 </div>
             </div>
         </footer>
