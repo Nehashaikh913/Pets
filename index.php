@@ -36,8 +36,8 @@
       </div>
       <div class="col-lg-6 col-md-12">
         <div class="about-content">
-          <h2>About Patoi</h2>
-          <p>We offer quality products at low prices every day. We have been in this business for almost 20 years. We have been doing online shopping very confiden tly. Our customers like and trust us so much because of the quality of our site's products.</p>
+          <h2>About Doggtastic Adventure</h2>
+          <p>We, the Doggtastic Adventure, promise to provide the ultimate shopping experience & best quality of pet supply to our customers. To ensure the healthy and happy life of your beloved pets we are committed to keep upgrading ourself and serve you better. </p>
           <a href="shop-grid.html" class="default-btn">
             <span>Shop Now</span>
           </a>
