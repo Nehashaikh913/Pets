@@ -1,5 +1,13 @@
 <?php include('./include/header.php') ?>
+        <!-- Start Page Title Area -->
+        <div class="page-title-area">
+            <div class="container">
+                <div class="page-title-content">
 
+                </div>
+            </div>
+        </div>
+        <!-- End Page Title Area -->
 <!-- Start Cart Area -->
 <div class="cart-area ptb-100">
     <div class="container">

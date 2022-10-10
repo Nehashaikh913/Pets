@@ -4,23 +4,23 @@
 <div class="home-slides owl-carousel owl-theme">
   <div class="banner-item bg1">
     <div class="container">
-      <!-- <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>The Best Quality Organic Food</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>One Stop For All Your Pet Needs</h1><div class="price">
                             Price Only
-                            <span>$95.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div> -->
+                            <span>$95.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
   <div class="banner-item bg2">
     <div class="container">
-      <!-- <div class="banner-item-content"><span class="sub-title">New Arrivals</span><h1>Super Offer Pet Foods</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">New Arrivals</span><h1>Help Your Dog Maintain A Healthier Weight</h1><div class="price">
                             Price Only
-                            <span>$70.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div> -->
+                            <span>$70.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
   <div class="banner-item bg3">
     <div class="container">
-      <!-- <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>Pet Toys Collection</h1><div class="price">
+      <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>Why Should Hoomans Have All The Fun?</h1><div class="price">
                             Price Only
-                            <span>$30.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div> -->
+                            <span>$30.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
 </div>
@@ -31,7 +31,7 @@
     <div class="row align-items-center">
       <div class="col-lg-3 col-md-12">
         <div class="about-image">
-          <img src="assets/img/about/about1.jpg" alt="about-image">
+          <img class="rounded shadow" src="assets/img/about/DOG1.WEBP" alt="about-image">
         </div>
       </div>
       <div class="col-lg-6 col-md-12">
@@ -45,7 +45,7 @@
       </div>
       <div class="col-lg-3 col-md-12">
         <div class="about-image">
-          <img src="assets/img/about/about2.jpg" alt="about-image">
+          <img class="rounded shadow" src="assets/img/about/DOG2.WEBP" alt="about-image">
         </div>
       </div>
     </div>
@@ -87,16 +87,10 @@
       </div> <?php } ?> </div>
   </div>
 </div>
-<!-- End Categories Area -->
-<!-- Start Products Area -->
-<div class="products-area pb-75">
-  <div class="container">
-    <div class="section-title">
-      <h2>New Arrivals</h2>
-    </div>
-    </div>
-</div>                   
+<!-- End Categories Area -->               
 <!-- grid -->
+<h2 class="arrival text-center mb-5">New Arrivals</h2>
+<div class="container">
 <div class="grid-container owl-carousel" id="grid-section">
     <?php
     $i=1;
@@ -153,7 +147,8 @@
           <i class='bx bxs-star'></i>
         </div>
         <?php if($i==2){ ?>
-            <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.</p>
+         <div class="hide-cont d-none d-lg-block">
+         <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.</p>
       <h3>Place an order now</h3>
       <span class="discount">Enjoy 30% OFF</span>
       <div class="counter-class" data-date="2022-12-24 24:00:00">
@@ -173,11 +168,13 @@
       <a href="shop-grid.html" class="default-btn">
         <span>Shop Now</span>
       </a>
+         </div>
       <?php } ?>  
       </div>
     </div>
  </div>
        <?php $i++; } ?> 
+</div>
 </div>
 <!-- grid -->
 <!-- Start Offer Area -->
@@ -185,7 +182,7 @@
   <div class="container">
     <div class="single-offer-box">
       <a href="shop-grid.html" class="d-block">
-        <img src="assets/img/banner/CTA BANNER.WEBP" alt="offer-image">
+        <img src="assets/img/banner/CTA BANNER - 2022.WEBP" alt="offer-image">
       </a>
     </div>
   </div>

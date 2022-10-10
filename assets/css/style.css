@@ -438,35 +438,24 @@ Main Banner Area CSS
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 150px;
-  height: 500px;
+  /* height: 500px; */
 }
 
 .banner-item.bg1 {
-  background-image: url(../img/banner/HOME\ PAGE\ BANNER\ -\ 1.WEBP);
+  background-image: url(../img/banner/CLOTHES\ BANNER\ -\ 2022.webp);
 }
 
 .banner-item.bg2 {
-  background-image: url(../img/banner/HOME\ PAGE\ BANNER\ -\ 2.WEBP);
+  background-image: url(../img/banner/ONE\ STOP\ BANNER.webp);
 }
 
 .banner-item.bg3 {
-  background-image: url(../img/banner/HOME\ PAGE\ BANNER\ -\ 3.WEBP);
+  background-image: url(../img/banner/SMALL\ BITES\ FOR\ SMALL\ MOUTH\ BANNER.webp);
 }
 
 @media (max-width: 600px) {
-  .banner-item.bg1 {
-    background-image: url(../img/banner/CLOTHES\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
-  }
-  
-  .banner-item.bg2 {
-    background-image: url(../img/banner/ONE\ STOP\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
-  }
-  
-  .banner-item.bg3 {
-    background-image: url(../img/banner/SMALL\ BITES\ FOR\ SMALL\ MOUTH\ BANNER\ -\ 2022\ \(MOBILE\ VIEW\)\ \(1\).WEBP);
-  }
   .banner-item{
-    height: unset;
+    background-position: -380px 0px;
   }
 }
 
@@ -692,6 +681,9 @@ Offer Area CSS
 .single-offer-box img {
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  max-height: 400px;
+  width: 100%;
+  object-fit: contain;
 }
 
 .single-offer-box:hover img {
@@ -766,6 +758,7 @@ Offer Area CSS
 
 .offer-item img {
   margin-bottom: 30px;
+  max-width: 400px;
 }
 
 .offer-item h3 {
@@ -2954,7 +2947,7 @@ Page Title Area CSS
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 230px;
+  padding-top: 350px;
   padding-bottom: 180px;
 }
 
@@ -5004,12 +4997,10 @@ Modal CSS
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
-
-.grid-item5 {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start: 3;
-  grid-column-end: 4;
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  text-align: center;
 }
  .grid-item2 {
   grid-row-start: 1;
@@ -5017,13 +5008,43 @@ Modal CSS
   grid-column-start: 2;
   grid-column-end: 3;
 }
-
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+.grid-item5 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.grid-container .owl-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container .owl-nav .owl-prev, .grid-container .owl-nav .owl-next{
+  position: relative;
+  background: #fff !important;
+  color: #2a2b39 !important;
+  border: 1px solid #eeeeee !important;
+  font-size: 28px !important;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  margin: 0px 4px;
+}
+.grid-container .owl-nav .owl-prev span,.grid-container .owl-nav .owl-next span{
+  position: absolute;
+  left: 10px;
+  top: -9px;
+}
+@media (max-width: 600px) {
+  .grid-container {
+  position: relative;
+  }
+  .grid-container .owl-nav{
+    position: absolute;
+    top: -38px;
+    right: 12px;
+  }
 }
 /* grid css end*/
 
