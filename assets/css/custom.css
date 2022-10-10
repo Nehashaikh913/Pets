@@ -6,6 +6,7 @@
 }
 .data__list__block .lhs img {
   width: 160px;
+  height: 140px;
 }
 .data__list__block .grid-template {
   display: grid;
@@ -18,6 +19,11 @@
   font-weight: 400;
   letter-spacing: 0.025em;
   font-size: 23px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .data__list__block .grid-template .one {
   grid-column: 1/3;
@@ -108,5 +114,6 @@
   }
   .data__list__block .grid-template .title {
     font-size: 18px;
+    line-height: 20px;
   }
 }
