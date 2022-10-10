@@ -1,4 +1,5 @@
-<?php include('./include/header.php') ?>
+<?php include('./include/header.php')
+?>
 <!-- Start Home Slides Area -->
 <div class="home-slides owl-carousel owl-theme">
   <div class="banner-item bg1">
@@ -78,11 +79,8 @@
 
                        
                     ?> <div class="categories-box">
-        <a href="shop-grid.php" class="d-block">
-          <img src="pets-admin/
-								
-								
-								<?php echo $row['path'] ?>" alt="categories-image">
+        <a href="category/<?php echo $user_data['cat_slug'] ?>" class="d-block">
+          <img src="pets-admin/<?php echo $row['path'] ?>" alt="categories-image">
           <h3> <?php echo $user_data['cat_name'] ?> </h3>
           <span> <?php echo $pro_row_count ?> items </span>
         </a>
@@ -119,35 +117,30 @@
    <div class="grid-item grid-item<?php echo $i ?>">
      <div class="<?php echo $classname ?>">
        <div class="image">
-        <a href="#" class="d-block">
+        <a href="<?php echo $pro_data['slug'] ?>" class="d-block">
           <img src="<?php echo $pro_data['image'] ?>" alt="products-image">
         </a>
         <ul class="products-button <?php echo $d_none ?>">
           <li>
-            <a href="cart.html">
+            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Add to card" onclick="addTocart(this)" data-proid="<?php echo $pro_data['id']; ?>" data-proimg="<?php echo $pro_data['image'] ?>" data-name="<?php echo $pro_data['name'] ?>" data-category=<?php echo $pro_data['category']; ?> data-price="<?php echo $pro_data['price'] ?>" data-qty="<?php echo 1 ?>" data-userid="<?php echo $_COOKIE[$cookie_name]; ?>">
               <i class='bx bx-cart-alt'></i>
             </a>
           </li>
           <li>
-            <a href="wishlist.html">
+            <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Add to card" onclick="addTowish(this)" data-proid="<?php echo $pro_data['id']; ?>" data-proimg="<?php echo $pro_data['image'] ?>" data-name="<?php echo $pro_data['name'] ?>" data-category=<?php echo $pro_data['category']; ?> data-price="<?php echo $pro_data['price'] ?>" data-qty="<?php echo 1 ?>" data-userid="<?php echo $_COOKIE[$cookie_name]; ?>">
               <i class='bx bx-heart'></i>
             </a>
           </li>
           <li>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+            <a href="javascript:void(0)" data-pro_id="<?php echo $pro_data['id'] ?>" onclick="product_popup(this)">
               <i class='bx bx-show'></i>
-            </a>
-          </li>
-          <li>
-            <a href="products-details.html">
-              <i class='bx bx-link-alt'></i>
             </a>
           </li>
         </ul>
       </div>
       <div class="content">
         <h3>
-          <a href="products-details.html"><?php echo $pro_data['name'] ?></a>
+          <a href="<?php echo $pro_data['slug'] ?>"><?php echo $pro_data['name'] ?></a>
         </h3>
         <div class="price">
           <span class="new-price">$<?php echo $pro_data['price'] ?>.00</span>
@@ -210,15 +203,12 @@
                         while($pro_data = $stmt_pro->fetch(PDO::FETCH_ASSOC)){
                             ?> <div class="single-products-box">
         <div class="image">
-          <a href="#" class="d-block">
-            <img src="
-															
-																			
-																			<?php echo $pro_data['image'] ?>" alt="products-image">
+          <a href="<?php echo $pro_data['slug'] ?>" class="d-block">
+            <img src="<?php echo $pro_data['image'] ?>" alt="products-image">
           </a>
           <ul class="products-button">
             <li>
-              <a href="cart.html">
+              <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Add to card" onclick="addTocart(this)" data-proid="<?php echo $pro_data['id']; ?>" data-proimg="<?php echo $pro_data['image'] ?>" data-name="<?php echo $pro_data['name'] ?>" data-category=<?php echo $pro_data['category']; ?> data-price="<?php echo $pro_data['price'] ?>" data-qty="<?php echo 1 ?>" data-userid="<?php echo $_COOKIE[$cookie_name]; ?>">
                 <i class='bx bx-cart-alt'></i>
               </a>
             </li>
@@ -228,10 +218,7 @@
               </a>
             </li>
             <li>
-              <a href="javascript:void(0)" data-pro_id="
-																	
-																					
-																					<?php echo $pro_data['id'] ?>" onclick="product_popup(this)">
+              <a href="javascript:void(0)" data-pro_id="<?php echo $pro_data['id'] ?>" onclick="product_popup(this)">
                 <i class='bx bx-show'></i>
               </a>
             </li>
@@ -239,7 +226,7 @@
         </div>
         <div class="content">
           <h3>
-            <a href="products-details.html"> <?php echo $pro_data['name'] ?> </a>
+            <a href="<?php echo $pro_data['slug'] ?>"> <?php echo $pro_data['name'] ?> </a>
           </h3>
           <div class="price">
             <span class="new-price">$ <?php echo $pro_data['price'] ?>.00 </span>

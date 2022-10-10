@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^home/?$ index.php [NC,L]
+RewriteRule ^about/?$ about.php [NC,L]
+RewriteRule ^category/([^/\.]+)/?$ shop-grid.php?cat=$1 [NC,L]
+RewriteRule ^([0-9a-zA_Z_-]+)$ productpage.php?pro_name=$1 [NC,L]
