@@ -17,89 +17,89 @@
         <div class="faq-accordion accordion" id="faqAccordion">
             <div class="accordion-item">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <span>Que:</span> How do I contact Patoi?
+                    <span>Que:</span>  What are Doggtastic adventures?
                 </button>
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <span class="title">Ans:</span>
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <a href="#">ultricies</a> ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <strong>posuere</strong> cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula ligula sed magna dictum porta..</p>
+                        <p>Doggtastic Adventures is an online store, solely into selling pet’s  grooming products, pet food & accessories.</p>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <span>Que:</span> How do I place my order?
+                    <span>Que:</span>  What are the benefits of buying from Doggtastic adventures? 
                 </button>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <span class="title">Ans:</span>
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <a href="#">ultricies</a> ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <strong>posuere</strong> cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula ligula sed magna dictum porta..</p>
+                        <p>Our company philosophy is pretty simple: We want to offer the best possible collection of pet products and deals for our customers. Our goal is to ensure that you get the widest possible choice of top rated products at the best possible price anywhere in the USA combined with best possible service and timely delivery of products at your doorstep.</p>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <span>Que:</span> How do I track my order?
+                    <span>Que:</span>  What happens if I am unavailable at the time of delivery?
                 </button>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <span class="title">Ans:</span>
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <a href="#">ultricies</a> ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <strong>posuere</strong> cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula ligula sed magna dictum porta..</p>
+                        <p>Our delivery partners will attempt to deliver the package thrice before it is returned back to our warehouse. Please provide your mobile number in the delivery address as it will help in making a faster delivery.</p>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <span>Que:</span> What payment methods are accepted?
+                    <span>Que:</span>  How can I change my shipping address or phone number in ongoing order?
                 </button>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <span class="title">Ans:</span>
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <a href="#">ultricies</a> ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <strong>posuere</strong> cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula ligula sed magna dictum porta..</p>
+                        <p>It is pretty simple. It can be done through the "My Order" Section till the order is shipped. A small edit icon on the order detail screen enables you to input your changes. But yes, you cannot change the address or phone number once the order is shipped.</p>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    <span>Que:</span> How do I cancel or change my order after I place it?
+                    <span>Que:</span> Can I cancel my order before/after it has been shipped?
                 </button>
                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <span class="title">Ans:</span>
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <a href="#">ultricies</a> ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <strong>posuere</strong> cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula ligula sed magna dictum porta..</p>
+                        <p>Once you have placed an order it takes 24 to 48 hours for shipping. You can cancel your order before it gets shipped but you can't cancel it after shipping.</p>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    <span>Que:</span> Can I change the shipping address?
+                    <span>Que:</span> As a pet parent, what are some of the essential pet accessories one should have?
                 </button>
                 <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <span class="title">Ans:</span>
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <a href="#">ultricies</a> ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <strong>posuere</strong> cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula ligula sed magna dictum porta..</p>
+                        <p>As a pet parent you should get your dog some feeding and watering bowls and if your pet is a fast eater then you should get him/her a slow feeding bowl. You should get leash and harness, hygiene products and grooming essentials. Some exciting toys can make your pet's life more fun.</p>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                    <span>Que:</span> How do i know when my order will be delivered?
+                    <span>Que:</span>  What payment modes can I use at Doggtastic adventures?
                 </button>
                 <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <span class="title">Ans:</span>
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <a href="#">ultricies</a> ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <strong>posuere</strong> cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula ligula sed magna dictum porta..</p>
+                        <p>You can pay through CashApp, Zelle or credit and debit cards at Doggtastic adventures. All the payment modes are highly secured here.</p>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                    <span>Que:</span> How do I change my password?
+                    <span>Que:</span> Do we customise?
                 </button>
                 <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <span class="title">Ans:</span>
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <a href="#">ultricies</a> ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <strong>posuere</strong> cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula ligula sed magna dictum porta..</p>
+                        <p>Currently we are not doing custom orders but we will surely do this future.</p>
                     </div>
                 </div>
             </div>
