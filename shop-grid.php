@@ -51,8 +51,8 @@ if ($categoryCount > 0) {
                                     <img src="<?php echo $pro_data['image'] ?>" alt="products-image">
                                 </a>
                                 <ul class="products-button">
-                                    <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Add to card" onclick="addTocart(this)" data-proid="<?php echo $pro_data['id']; ?>" data-proimg="<?php echo $pro_data['image'] ?>" data-name="<?php echo $pro_data['name'] ?>" data-category=<?php echo $pro_data['category']; ?> data-price="<?php echo $pro_data['price'] ?>" data-qty="<?php echo 1 ?>" data-userid="<?php echo $_COOKIE[$cookie_name]; ?>"><i class='bx bx-cart-alt'></i></a></li>
-                                    <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
+                                    <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Add to Card" onclick="addTocart(this)" data-proid="<?php echo $pro_data['id']; ?>" data-proimg="<?php echo $pro_data['image'] ?>" data-name="<?php echo $pro_data['name'] ?>" data-category=<?php echo $pro_data['category']; ?> data-price="<?php echo $pro_data['price'] ?>" data-qty="<?php echo 1 ?>" data-userid="<?php echo $_COOKIE[$cookie_name]; ?>"><i class='bx bx-cart-alt'></i></a></li>
+                                    <li><a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Add to Wishlist" onclick="addTowish(this)" data-proid="<?php echo $pro_data['id']; ?>" data-proimg="<?php echo $pro_data['image'] ?>" data-name="<?php echo $pro_data['name'] ?>" data-category=<?php echo $pro_data['category']; ?> data-price="<?php echo $pro_data['price'] ?>" data-qty="<?php echo 1 ?>" data-userid="<?php echo $_COOKIE[$cookie_name]; ?>"><i class='bx bx-heart'></i></a></li>
                                     <li><a href="javascript:void(0)" data-pro_id="<?php echo $pro_data['id'] ?>" onclick="product_popup(this)"><i class='bx bx-show'></i></a></li>
                                 </ul>
                             </div>

@@ -102,7 +102,23 @@ if(!isset($_COOKIE[$cookie_name])) {
                                     $product_wish->execute([$_COOKIE[$cookie_name],'wishlist']);
                                     $product_row_wish = $product_wish->fetchColumn();
                                     ?>
-                                        <li><a href="user.php"><i class='bx bx-user-circle'></i></a></li>
+                                        <li>
+                                        <div class="dropdown">
+  <a href="user.php" id="dropdownMenuButton2" data-bs-toggle="dropdown"><i class='bx bx-user-circle'></i></a>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+    <li><a class="dropdown-item active" href="user.php">Login</a></li>
+    <li><a class="dropdown-item" href="user.php">Register</a></li>
+    <li><a class="dropdown-item" href="order">Order details</a></li>
+  </ul>
+</div>    
+                                        
+                                        
+                                        
+                                        
+                                        
+
+                                        </li>
+                                        
                                         <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>    
                                         <li class="position-relative"><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>                               
                                     </ul>

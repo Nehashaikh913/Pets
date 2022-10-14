@@ -220,6 +220,9 @@
         <!-- Link of JS files -->
         <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
         <script src="assets/js/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/magnific-popup.min.js"></script>
         <script src="assets/js/meanmenu.min.js"></script>

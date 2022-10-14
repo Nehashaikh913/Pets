@@ -348,6 +348,7 @@ function product_popup(x){
 }
 
 function addTocart(x){
+	var btn_id= $(x).attr('id');
     var id = $(x).data('proid');
     var name = $(x).data('name');
     var category = $(x).data('category');
@@ -377,8 +378,11 @@ function addTocart(x){
 	
 			if(msg='inserted'){
 				getCartcount();
+				$('#'+btn_id).hide();
+				$('#'+btn_id).siblings().show();
 				$('.addCartbtn').hide();
 				$('.checkOutbtn').show();
+				
 			}
         },
       });
@@ -414,6 +418,7 @@ function addTowish(x){
 	
 			if(msg='inserted'){
 				getWishcount();
+				$('.Wishlistadd'+id).hide();
 			}
         },
       });
@@ -449,6 +454,7 @@ function getWishcount(){
 getWishcount();
 
 function deleteCartproduct(id){
+	if(confirm("Do you want to delete?")) {
 	$.ajax({
 		type: 'POST',
 		url: 'include/action.php',
@@ -465,6 +471,7 @@ function deleteCartproduct(id){
 			}
 		},
 	});
+  }
 }
 
 function getCartpageproduct(){
@@ -491,6 +498,49 @@ function getCartpageproduct(){
 }
 getCartpageproduct();
 
+
+function getWishpageproduct(){
+	$.ajax({
+		type: 'POST',
+		url: 'include/action.php',
+		dataType: 'json',
+		data: {
+		  btn: 'getWishlistpageproduct'
+		},
+		success: function (data) {
+			var json = $.parseJSON(JSON.stringify(data))
+		  	var html_content = json.html_content;	
+			$('#wishlist_products').html(html_content);
+			//$('#sideCarttotal').html(sideCarttotal);
+			// $('#subtotal_cart').html(subtotal);
+			// $('#final_total').html(total);
+			
+		},
+	});
+}
+getWishpageproduct();
+
+function deleteWishlistproduct(id){
+	if(confirm("Do you want to delete?")) {
+	$.ajax({
+		type: 'POST',
+		url: 'include/action.php',
+		dataType: 'html',
+		data: {
+		  btn: 'deleteProductwishlist',
+		  pro_wishlistid: id,
+		},
+		success: function (data) {
+//			$('#total_product_count').html(data);
+			if(data=='deleted'){
+				getWishpageproduct();
+				getWishcount();
+			}
+		},
+	});
+	}
+}
+
 function changeQuantity(x){
 	var classname = $(x).attr('class');
 	var value = $(x).val();
@@ -513,3 +563,46 @@ function changeQuantity(x){
 		},
 	});
 }
+
+  // checkout data form
+  $("#checkoutForm").validate({
+	rules: {
+	  fname: "required",
+	  lname: "required",
+	  email: "required",
+	  phone: "required",
+	  address:"required",
+	  city:"required",
+	  pincode:"required",
+	  state:"required",
+	  country:"required",
+	},
+	message: {
+	},
+	submitHandler: function (form) {
+		$.ajax({
+			url: 'include/action.php',
+			type: 'post',
+			data: new FormData(form),
+			contentType: false,
+			cache: false,
+			processData: false,
+			success: function (data) {  
+		  //    alert(data)
+			 
+				if(data=='done')
+				{
+					alert("Enquiery Submitted Successfully");
+				   // $("#contactForm").trigger("reset"); 
+				}
+				else
+				{
+					alert("Some Technical Issue")
+				}
+  
+			}
+  
+			});
+		}
+  
+	});

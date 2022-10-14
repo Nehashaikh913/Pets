@@ -38,6 +38,12 @@ if($_POST['btn']=='deleteProductcart'){
     $delete_cart->execute([$cart_id]);
     echo "deleted";
 }
+if($_POST['btn']=='deleteProductwishlist'){
+    $wish_id = $_POST['pro_wishlistid'];
+    $delete_wish = $conn->prepare('DELETE FROM `cart` WHERE id=?');
+    $delete_wish->execute([$wish_id]);
+    echo "deleted";
+}
 
 if($_POST['btn']=='getCartpageproduct'){
     $data="";
@@ -45,7 +51,7 @@ if($_POST['btn']=='getCartpageproduct'){
     $total_ui="";
     $cartTotal=0;
     $k=0;
-    $stmt = $conn->prepare("SELECT * FROM `cart` WHERE userid=?");
+    $stmt = $conn->prepare("SELECT * FROM `cart` WHERE userid=? AND status='cart'");
     $stmt->execute([$userid]);
     $proCount=$stmt->rowCount();
     if($proCount>0){
@@ -55,6 +61,7 @@ if($_POST['btn']=='getCartpageproduct'){
         $image = $cart_data['pro_img'];
         $price = $cart_data['pro_price'];
         $qty = $cart_data['pro_qty'];
+        $category = $cart_data['pro_category'];
         $cartTotal = $cartTotal + ($cart_data["sub_total"] * $cart_data["pro_qty"]);
     $data.="    
     <div class='data__list__block mb-4'>
@@ -67,7 +74,7 @@ if($_POST['btn']=='getCartpageproduct'){
                     <div class='one'><div class='title'>$name</div></div>
                     <div class='two'><div class='btn'><i class='fa-solid fa-trash-can'></i><span class='delete d-none d-lg-inline ms-3' onclick='deleteCartproduct($id)'>Delete</span></div></div>
                     <div class='three'><div class='price'>$$price</div></div>
-                    <div class='four'><div class='btn'><i class='fa-regular fa-heart'></i><span class='text d-none d-lg-inline ms-3'>Move to whistlist</span></div></div>
+                    <div class='four'><div class='btn'><a href='javascript:void(0)' class='Wishlistadd$id' title='Add to Wishlist' onclick='addTowish(this)' data-proid='$id' data-proimg='$image' data-name='$name' data-category='$category' data-price='$price' data-qty='$qty' data-userid='$userid'><i class='fa-regular fa-heart'></i><span class='text d-none d-lg-inline ms-3'>Move to whistlist</span></a></div></div>
                     <div class='five'><div class='btn'>Qty:
                         <select name='productQuantity' class='productQuantity$k' id='productQuantity' data-cartpro_id=$id onchange='changeQuantity(this)'>";
                         for($i=1; $i<=5; $i++){
@@ -88,11 +95,11 @@ if($_POST['btn']=='getCartpageproduct'){
     $final_cartTotal = $cartTotal+30;
     $total_ui.="<div class='cart-totals'>
     <ul>
-        <li>Subtotal<span>$cartTotal</span></li>
+        <li>Subtotal<span>$$cartTotal</span></li>
         <li>Shipping<span>$30.00</span></li>
-        <li>Total <span>$final_cartTotal</span></li>
+        <li>Total <span>$$final_cartTotal</span></li>
     </ul>
-    <a href='checkout.html' class='default-btn'><span>Proceed to Checkout</span></a>
+    <a href='checkout.php' class='default-btn'><span>Proceed to Checkout</span></a>
     </div>";
 
     }else{
@@ -126,54 +133,60 @@ if($_POST['btn']=='addTowishlist'){
     
     }
 
+    
+if($_POST['btn']=='getWishlistpageproduct'){
+    $data="";
+    $stmt = $conn->prepare("SELECT * FROM `cart` WHERE userid=? AND status='wishlist'");
+    $stmt->execute([$userid]);
+    $proCount=$stmt->rowCount();
+    if($proCount>0){
+            $data.="<table class='table table-bordered'>
+            <thead>
+                <tr>
+                    <th scope='col'>Product</th>
+                    <th scope='col'>Name</th>
+                    <th scope='col'>Unit Price</th>
+                    <th scope='col'>Shop Now</th>
+                </tr>
+            </thead>
+            <tbody>";
+            $i=1;
+                while($cart_data = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    $id = $cart_data['id'];
+                    $name = $cart_data['pro_name'];
+                    $image = $cart_data['pro_img'];
+                    $price = $cart_data['pro_price'];
+                    $category = $cart_data['pro_category'];
+                $data.="<tr><td>
+                        <a href='products-details.html'>
+                            <img src='$image' alt='item'>
+                        </a>
+                    </td>
+                    <td>$name</td>
+                    <td class='product-price'>$$price.00</td>
+                    <td>
+                    <button class='default-btn' id='addCartbtn$i' title='Add to card' onclick='addTocart(this)' data-proid='$id' data-proimg='$image' data-name='$name' data-category='$category' data-price='$price' data-qty=1 data-userid='$userid' type='button'>Add to Cart</button>
+                    <button class='default-btn success-btn checkOutbtn1' id='checkOutbtn$i' type='button'><a href='checkout.php'><span>Check Out</span></a></button>
+                    </td>
+                    <td><a href='javascript:void(0)' onclick='deleteWishlistproduct($id)' class='remove'><i class='bx bx-trash-alt'></i></a></td></tr>";
+                    $i++; }
+                    $data.=" 
+                </tbody>
+            </table>";
+        }else{
+            $data.="<p style='font-size:25px; color:red;' class='text-center'>There is no product in wishlist</p>";
+        }
+
+    $arr_data = array('html_content' => $data);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($arr_data);
+}
+
 if($_POST['btn']=='checkout_form'){
     $add_checkout_insert = $conn->prepare('INSERT INTO cart(pro_name, pro_price, pro_img, pro_qty, userid)VALUES(?,?,?,?,?)');
     $add_checkout_insert->execute([$_POST['pro_name'], $_POST['pro_price'], $_POST['pro_img'], $_POST['pro_qty'], $_POST['userid']]);
     echo "inserted";
 }
-if($_POST['btn']=='checkout_details'){
-   
-    $order_id = date('YmdHis');
-
-    if(!empty($_POST['email'])){
-        $stmt = $conn->prepare("SELECT * FROM `customer_details` WHERE email=?");
-        $stmt->execute([$_POST['email']]);
-        $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
-        $userCount=$stmt->rowCount();
-        if($userCount==0){
-            
-            $add_customer_insert = $conn->prepare('INSERT INTO customer_details(userid, name, email, phone)VALUES(?,?,?,?)');
-            $add_customer_insert->execute([$_POST['userid'], $_POST['full_name'], $_POST['email'], $_POST['phone']]);
-        }
-        else{
-            $userid = $user_data['userid'];
-        }
-
-        $add_address_insert = $conn->prepare('INSERT INTO address(address, city, state, pincode, userid)VALUES(?,?,?,?,?)');
-        $add_address_insert->execute([$_POST['address'], $_POST['city'], $_POST['state'], $_POST['post_code'], $userid]);
-        
-        $stmt_cart = $conn->prepare("SELECT * FROM `cart` WHERE userid=?");
-        $stmt_cart->execute([$userid]);
-        while($user_cart_data = $stmt_cart->fetch(PDO::FETCH_ASSOC)){
-            $add_order_insert = $conn->prepare('INSERT INTO order_product(pro_name, pro_category, pro_price, pro_img, pro_qty, sub_total, userid, order_id)VALUES(?,?,?,?,?,?,?,?)');
-            $add_order_insert->execute([$user_cart_data['pro_name'], $user_cart_data['pro_category'], $user_cart_data['pro_price'], $user_cart_data['pro_img'], $user_cart_data['pro_qty'], $user_cart_data['sub_total'], $user_cart_data['userid'], $order_id]);
-            }
-
-        $stmt_total_price = $conn->prepare("SELECT SUM(sub_total) AS total_price FROM `order_product` WHERE userid=?");
-        $stmt_total_price->execute([$userid]);
-        $user_data = $stmt_total_price->fetch(PDO::FETCH_ASSOC);
-        $sub_total = $user_data['total_price'];
-        $shipping=20;
-        $discount=40;
-        $order_date = date('Y-m-d H:i:s');
-        $total = ($sub_total-$discount)+$shipping;
-        $add_order_detail_insert = $conn->prepare('INSERT INTO order_details(invoice_id, userid, disc_price, shipping_charges, sub_total, total, name, email, phone, address, city, pincode, state, payment_mode, order_date)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
-        $add_order_detail_insert->execute([$order_id, $userid, $discount, $shipping, $sub_total, $total, $_POST['full_name'], $_POST['email'], $_POST['phone'], $_POST['address'], $_POST['city'], $_POST['post_code'], $_POST['state'], $_POST['payment-method'], $order_date]);
-        echo "done";
-        
-    } 
-}
-
 if($_POST['btn']=='getAllupdatedcartProduct'){
     // $stmt = $conn->prepare("SELECT * FROM `cart` WHERE userid=?");
     // $stmt->execute([$userid]);
@@ -247,5 +260,50 @@ if($_POST['btn']=='removeQuantity'){
      echo json_encode($arr_data);
 
     }
+}
+
+if($_POST['btn']=='checkout_details'){
+   
+    $order_id = date('YmdHis');
+    $subTotal=0;
+    if(!empty($_POST['email'])){
+        $stmt = $conn->prepare("SELECT * FROM `customer_details` WHERE email=?");
+        $stmt->execute([$_POST['email']]);
+        $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+        $userCount=$stmt->rowCount();
+        $full_name = $_POST['fname']." ".$_POST['lname'];
+        if($userCount==0){
+            $add_customer_insert = $conn->prepare('INSERT INTO customer_details(userid, name, email, phone)VALUES(?,?,?,?)');
+            $add_customer_insert->execute([$userid, $full_name, $_POST['email'], $_POST['phone']]);
+        }
+        else{
+           $userid = $user_data['userid'];
+        }
+
+        $add_address_insert = $conn->prepare('INSERT INTO address(address, city, state, pincode, userid)VALUES(?,?,?,?,?)');
+        $add_address_insert->execute([$_POST['address'], $_POST['city'], $_POST['state'], $_POST['pincode'], $userid]);
+        
+        $stmt_cart = $conn->prepare("SELECT * FROM `cart` WHERE userid=?");
+        $stmt_cart->execute([$userid]);
+        while($user_cart_data = $stmt_cart->fetch(PDO::FETCH_ASSOC)){
+            $add_order_insert = $conn->prepare('INSERT INTO order_product(pro_name, pro_category, pro_price, pro_img, pro_qty, sub_total, userid, order_id)VALUES(?,?,?,?,?,?,?,?)');
+            $add_order_insert->execute([$user_cart_data['pro_name'], $user_cart_data['pro_category'], $user_cart_data['pro_price'], $user_cart_data['pro_img'], $user_cart_data['pro_qty'], $user_cart_data["pro_price"] * $user_cart_data["pro_qty"], $user_cart_data['userid'], $order_id]);
+            }
+
+        $order_date = date('Y-m-d H:i:s');
+        $stmt_total_price = $conn->prepare("SELECT SUM(sub_total) AS total_price FROM `order_product` WHERE userid=? AND order_id=?");
+        $stmt_total_price->execute([$userid, $order_id]);
+        $user_data = $stmt_total_price->fetch(PDO::FETCH_ASSOC);
+        $sub_total = $user_data['total_price'];
+        $shipping=30;
+        $discount=0;
+        $total = ($sub_total-$discount)+$shipping;
+        $add_order_detail_insert = $conn->prepare('INSERT INTO order_details(invoice_id, userid, disc_price, shipping_charges, sub_total, total, name, email, phone, address, city, pincode, state, country, payment_mode, order_date)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+        $add_order_detail_insert->execute([$order_id, $userid, $discount, $shipping, $sub_total, $total, $full_name, $_POST['email'], $_POST['phone'], $_POST['address'], $_POST['city'], $_POST['pincode'], $_POST['state'], $_POST['country'], $_POST['payment'], $order_date]);
+        
+        $deletecart = $conn->prepare("DELETE FROM cart WHERE userid=? AND status=?");
+        $deletecart->execute([$userid, 'cart']);
+        echo "done";
+    } 
 }
 ?>

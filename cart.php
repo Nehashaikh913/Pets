@@ -15,7 +15,6 @@
             <div class="col-lg-8 cart-table table-responsive" id="get_updateCartproduct">
             </div>
             <div class=" col-lg-4 position-relative" id="sideCarttotal">
-                
             </div>
         </form>
         

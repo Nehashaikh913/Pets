@@ -5053,6 +5053,11 @@ Modal CSS
   background-color: #42be42;
   color: white;
 }
+.checkOutbtn1{
+  display: none;
+  background-color: #42be42;
+  color: white;
+}
 .default-btn span {
   color: white;
 }
