@@ -564,6 +564,78 @@ function changeQuantity(x){
 	});
 }
 
+$("#userRegistration").validate({
+	rules: {
+	  name: "required",
+	  email: "required",
+	  phone: "required",
+	  password:"required",
+	},
+	message: {
+	},
+	submitHandler: function (form) {
+		$.ajax({
+			url: 'include/action.php',
+			type: 'post',
+			data: new FormData(form),
+			contentType: false,
+			cache: false,
+			processData: false,
+			success: function (data) {  
+		  //    alert(data)
+			 
+				if(data=='done')
+				{
+					window.location='http://localhost/Pets/'
+				   // $("#contactForm").trigger("reset"); 
+				}
+				else
+				{
+					alert("Some Technical Issue")
+				}
+  
+			}
+  
+			});
+		}
+  
+	});
+
+	$("#userLogin").validate({
+		rules: {
+		  email: "required",
+		  password:"required",
+		},
+		message: {
+		},
+		submitHandler: function (form) {
+			$.ajax({
+				url: 'include/action.php',
+				type: 'post',
+				data: new FormData(form),
+				contentType: false,
+				cache: false,
+				processData: false,
+				success: function (data) {  
+			  //    alert(data)
+				 
+					if(data=='done')
+					{
+						window.location='http://localhost/Pets/'
+					   // $("#contactForm").trigger("reset"); 
+					}
+					else
+					{
+						alert("Some Technical Issue")
+					}
+	  
+				}
+	  
+				});
+			}
+	  
+		});
+
   // checkout data form
   $("#checkoutForm").validate({
 	rules: {

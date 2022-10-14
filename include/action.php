@@ -1,4 +1,5 @@
 <?php
+session_start();
 date_default_timezone_set("Asia/Kolkata");
 $userid = $_COOKIE['userid'];
 include('../pets-admin/include/config.php');
@@ -306,4 +307,26 @@ if($_POST['btn']=='checkout_details'){
         echo "done";
     } 
 }
+    if($_POST['btn']=='addRegisteruser'){
+        $insertUser = $conn->prepare("INSERT INTO customer_details(userid, name, email, phone, password) VALUES(?,?,?,?,?)");
+        $insertUser->execute([$userid, $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['password']]);
+        $_SESSION['user_name']= $_POST['name'];
+        $_SESSION['user_email']= $_POST['email'];
+        echo "done";
+    }   
+    if($_POST['btn']=='userlogin'){
+        $stmt1 = $conn->prepare("SELECT * FROM `customer_details` WHERE email=? AND password=?");
+        $stmt1->execute([$_POST['email'], $_POST['password']]);
+        $user_data1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+        $userCount1=$stmt1->rowCount();
+        if($userCount1>0){
+            $user_data1['userid'];
+            $_SESSION['user_name']= $user_data1['name'];
+            $_SESSION['user_email']= $_POST['email'];
+            echo "done";
+        }else{
+            echo "Wrong Credentials";
+        }
+
+    }
 ?>

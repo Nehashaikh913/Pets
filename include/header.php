@@ -1,4 +1,6 @@
-<?php include('pets-admin/include/config.php');
+<?php
+session_start();
+include('pets-admin/include/config.php');
 $cookie_name="userid";
 if(!isset($_COOKIE[$cookie_name])) {
     $userid = uniqid();
@@ -103,21 +105,20 @@ if(!isset($_COOKIE[$cookie_name])) {
                                     $product_row_wish = $product_wish->fetchColumn();
                                     ?>
                                         <li>
-                                        <div class="dropdown">
-  <a href="user.php" id="dropdownMenuButton2" data-bs-toggle="dropdown"><i class='bx bx-user-circle'></i></a>
-  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <li><a class="dropdown-item active" href="user.php">Login</a></li>
-    <li><a class="dropdown-item" href="user.php">Register</a></li>
-    <li><a class="dropdown-item" href="order">Order details</a></li>
-  </ul>
-</div>    
-                                        
-                                        
-                                        
-                                        
-                                        
+            <div class="dropdown">
+                <a href="user.php" id="dropdownMenuButton2" data-bs-toggle="dropdown"><i class='bx bx-user-circle'></i><?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name']; }else{ echo "login"; }?></a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <?php if(isset($_SESSION['user_name'])){ ?>
+                    <li><a class="dropdown-item active" href="user.php">Order Detail</a></li>
+                    <li><a class="dropdown-item" href="logout.php">Log Out</a></li>   
+                <?php }else{ ?>
+                    <li><a class="dropdown-item" href="user.php">Login</a></li>
+                    <li><a class="dropdown-item" href="user.php">Register</a></li>
+                <?php } ?>
 
-                                        </li>
+                </ul>
+            </div>
+    </li>
                                         
                                         <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>    
                                         <li class="position-relative"><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>                               

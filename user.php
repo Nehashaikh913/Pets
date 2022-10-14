@@ -15,14 +15,14 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="login-form">
                             <h2>Login</h2>
-                            <form>
+                            <form id="userLogin">
                                 <div class="form-group">
-                                    <label>Username or email</label>
-                                    <input type="text" class="form-control" placeholder="Username or email">
+                                    <label>Email</label>
+                                    <input type="text" name="email" class="form-control" placeholder="Enter Email">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-6 remember-me-wrap">
@@ -35,6 +35,7 @@
                                         <a href="#" class="lost-your-password">Lost your password?</a>
                                     </div>
                                 </div>
+                                <input type="hidden" name="btn" value="userlogin"/>
                                 <button type="submit">Log In</button>
                             </form>
                         </div>
@@ -42,20 +43,26 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="register-form">
                             <h2>Register</h2>
-                            <form>
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control" placeholder="Username">
-                                </div>
+                            <form id="userRegistration">
+                                
+                            <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Name">
+                            </div>
+
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <input type="text" name="email" class="form-control" placeholder="Enter Email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Enter Password">
                                 </div>
-                                <p class="description">The password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ & )</p>
+                                <input type="hidden" name="btn" value="addRegisteruser"/>
                                 <button type="submit">Register</button>
                             </form>
                         </div>
