@@ -107,7 +107,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                                         <li>
             <div class="dropdown">
                 <a href="user.php" id="dropdownMenuButton2" data-bs-toggle="dropdown"><i class='bx bx-user-circle'></i><?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name']; }else{ echo "login"; }?></a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <ul class="dropdown-menu dropdown-menu-dark login-drop" aria-labelledby="dropdownMenuButton2">
                 <?php if(isset($_SESSION['user_name'])){ ?>
                     <li><a class="dropdown-item active" href="user.php">Order Detail</a></li>
                     <li><a class="dropdown-item" href="logout.php">Log Out</a></li>   
