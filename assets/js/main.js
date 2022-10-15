@@ -678,3 +678,13 @@ $("#userRegistration").validate({
 		}
   
 	});
+
+
+	$(function(){
+		$('#dropdownMenuButton2').hover(function() {
+		  $('.dropdown-menu ').addClass('display');
+		}, function() {
+		  $('.dropdown-menu ').removeClass('display');
+		})
+	  })
+	
