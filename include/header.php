@@ -4,10 +4,10 @@ include('pets-admin/include/config.php');
 $cookie_name="userid";
 if(!isset($_COOKIE[$cookie_name])) {
     $userid = uniqid();
-    setcookie($cookie_name, $userid, time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie($cookie_name, $userid, time()+3600, '/'); // 86400 = 1 day
     echo "<script>location.reload()</script>";
 }else{
-    setcookie($cookie_name, $_COOKIE[$cookie_name], time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie($cookie_name, $_COOKIE['userid'], time()+3600, '/'); // 86400 = 1 day
 }
 ?>
 <!doctype html>
@@ -48,7 +48,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                     <div class="col-lg-5 col-md-5 col-sm-6">
                         <div class="search-box">
                             <form>
-                                <input type="text" class="input-search" placeholder="Enter your keywords...">
+                                <input type="text" value="<?php echo $_COOKIE['userid']; ?>" class="input-search" placeholder="Enter your keywords...">
                                 <button type="submit"><i class='bx bx-search'></i></button>
                             </form>
                         </div>
@@ -109,7 +109,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                 <a href="user.php" id="dropdownMenuButton2" data-bs-toggle="dropdown"><i class='bx bx-user-circle'></i><?php if(isset($_SESSION['user_name'])){ echo $_SESSION['user_name']; }else{ echo "login"; }?></a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                 <?php if(isset($_SESSION['user_name'])){ ?>
-                    <li><a class="dropdown-item active" href="user.php">Order Detail</a></li>
+                    <li><a class="dropdown-item active" href="order_detail.php">Order Detail</a></li>
                     <li><a class="dropdown-item" href="logout.php">Log Out</a></li>   
                 <?php }else{ ?>
                     <li><a class="dropdown-item" href="user.php">Login</a></li>

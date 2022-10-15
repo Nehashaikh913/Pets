@@ -621,7 +621,7 @@ $("#userRegistration").validate({
 				 
 					if(data=='done')
 					{
-						window.location='http://localhost/Pets/'
+						location.reload()
 					   // $("#contactForm").trigger("reset"); 
 					}
 					else
@@ -664,7 +664,8 @@ $("#userRegistration").validate({
 			 
 				if(data=='done')
 				{
-					alert("Enquiery Submitted Successfully");
+					alert("Order Success")	
+					window.location='http://localhost/Pets/'
 				   // $("#contactForm").trigger("reset"); 
 				}
 				else

@@ -274,13 +274,15 @@ if($_POST['btn']=='checkout_details'){
         $userCount=$stmt->rowCount();
         $full_name = $_POST['fname']." ".$_POST['lname'];
         if($userCount==0){
+            $userid = uniqid();
             $add_customer_insert = $conn->prepare('INSERT INTO customer_details(userid, name, email, phone)VALUES(?,?,?,?)');
             $add_customer_insert->execute([$userid, $full_name, $_POST['email'], $_POST['phone']]);
+            updatecartUserid($conn,$userid);
         }
         else{
            $userid = $user_data['userid'];
+           updatecartUserid($conn,$userid);
         }
-
         $add_address_insert = $conn->prepare('INSERT INTO address(address, city, state, pincode, userid)VALUES(?,?,?,?,?)');
         $add_address_insert->execute([$_POST['address'], $_POST['city'], $_POST['state'], $_POST['pincode'], $userid]);
         
@@ -312,6 +314,7 @@ if($_POST['btn']=='checkout_details'){
         $insertUser->execute([$userid, $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['password']]);
         $_SESSION['user_name']= $_POST['name'];
         $_SESSION['user_email']= $_POST['email'];
+        $_SESSION['userid']= $userid;
         echo "done";
     }   
     if($_POST['btn']=='userlogin'){
@@ -320,13 +323,20 @@ if($_POST['btn']=='checkout_details'){
         $user_data1 = $stmt1->fetch(PDO::FETCH_ASSOC);
         $userCount1=$stmt1->rowCount();
         if($userCount1>0){
-            $user_data1['userid'];
+            setcookie('userid', $user_data1['userid'], time()+3600, '/');
             $_SESSION['user_name']= $user_data1['name'];
             $_SESSION['user_email']= $_POST['email'];
+            $_SESSION['userid']= $user_data1['userid'];
             echo "done";
         }else{
             echo "Wrong Credentials";
         }
 
     }
+
+    function updatecartUserid($conn,$userid){
+        $updateCartvalue = $conn->prepare("UPDATE cart SET userid=? where userid=?");
+        $updateCartvalue->execute([$userid, $_COOKIE['userid']]);
+    }
+
 ?>
