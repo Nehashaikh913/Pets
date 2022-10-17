@@ -66,6 +66,13 @@ if(!isset($_COOKIE[$cookie_name])) {
                         <div class="logo">
                             <a href="index-4.html"><img class="logoimg" src="assets/img/logo/LOGO.svg"></img></a>
                         </div>
+                        <div class="others-option">
+                                <ul>
+                                    <li><a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a></li>
+                                    <li><a href="cart.html"><i class="fa-regular fa-heart"></i></a></li>
+                                    <li><a href="cart.html"><i class='bx bx-cart'></i></a></li>
+                                </ul>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -129,7 +136,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                     </nav>
                 </div>
             </div>
-            <div class="others-option-for-responsive">
+            <!-- <div class="others-option-for-responsive">
                 <div class="container">
                     <div class="dot-menu">
                         <div class="inner">
@@ -150,6 +157,6 @@ if(!isset($_COOKIE[$cookie_name])) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <!-- End Navbar Area -->
