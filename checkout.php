@@ -1,8 +1,7 @@
 <?php
 $userid = $_COOKIE['userid'];
 include('pets-admin/include/config.php');
-include('./include/header.php');
-?>
+include('./include/header.php'); ?>
      <!-- Start Checkout Area -->
      <div class="checkout-area ptb-100">
             <div class="container">
