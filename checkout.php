@@ -8,7 +8,100 @@ include('./include/header.php'); ?>
                 <form id="checkoutForm">
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
+
+
+                        <?php
+                        if(isset($_SESSION['userid'])){
+
+                        if($userid==$_SESSION['userid']){
+                            
+                            $stmt = $conn->prepare("SELECT * FROM `order_details` WHERE userid=?");
+                            $stmt->execute([$userid]);
+                            while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
+                            $name = $user_data['name'];
+                            $email = $user_data['email'];
+                            $phone = $user_data['phone'];
+                            $address = $user_data['address'];
+                            $city = $user_data['city'];
+                            $pincode = $user_data['pincode'];
+                            $state = $user_data['state'];
+                            $country = $user_data['country'];
+                          
+                            $name_array = explode(" ", $name);
+                            $fname = $name_array[0]; // piece1
+                            $lname = $name_array[1]; // piece2
+                            }
+                            ?>
                             <div class="billing-details">
+                                <h3><span>Billing details</span></h3>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>First name <span class="required"></span></label>
+                                            <input type="text" class="form-control" name="fname" value="<?php echo $fname ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>Last name <span class="required"></span></label>
+                                            <input type="text" class="form-control" name="lname" value="<?php echo $lname ?>">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>Email <span class="required"></span></label>
+                                            <input type="text" class="form-control" name="email" value="<?php echo $email ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>Phone <span class="required"></span></label>
+                                            <input type="text" class="form-control" name="phone" value="<?php echo $phone ?>">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                        <label>Address <span class="required"></span></label>
+                                        <textarea name="address" class="form-control" id="" cols="10" name="address" rows="3"><?php echo $address ?></textarea>
+									    </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>City <span class="required"></span></label>
+                                            <input type="text" class="form-control" name="city" value="<?php echo $city ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>Postcode <span class="required"></span></label>
+                                            <input type="text" class="form-control" value="<?php echo $pincode ?>" name="pincode">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>State <span class="required"></span></label>
+                                            <input type="text" class="form-control" value="<?php echo $state ?>" name="state">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>Country<span class="required"></span></label>
+                                            <input id="country_selector" type="text" name="country" value="<?php echo $country ?>">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                       <?php } }else{?>
+
+                       <div class="billing-details">
                                 <h3><span>Billing details</span></h3>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
@@ -73,13 +166,19 @@ include('./include/header.php'); ?>
 
                                 </div>
                             </div>
+                        <?php } ?>
+
+
                         </div>
                         <div class="col-lg-6 col-md-12">
-                            <div class="billing-details">
-                                <h3><span>Your Order</span></h3>
                                 <div class="order-details">
                                 <div class="order-table table-responsive">
                                     <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+              <th>Your Order Information</th>
+            </tr>
+                                        </thead>
                                         <tbody>
                                             <?php
                                              $cartTotal=0;
