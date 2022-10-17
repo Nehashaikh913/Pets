@@ -104,38 +104,18 @@
               <td class="product-price">1</td>
               <td> $255.00 </td>
             </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td class="product-price">Order subtotal:</td>
-              <td> $255.00 </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td class="product-price">Tax:</td>
-              <td> $00 </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td class="product-price">Shipping:</td>
-              <td> $00 </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td class="product-price">Shipping Tax:</td>
-              <td> $00 </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td class="product-price">Order Total:</td>
-              <td> $255.00 </td>
-            </tr>
+
           </tbody>
         </table>
+        <div>
+        <div class="cart-totals">
+    <ul>
+        <li>Subtotal<span>$226</span></li>
+        <li>Shipping<span>$30.00</span></li>
+        <li>Total <span>$256</span></li>
+    </ul>
+    </div>
+        </div>
       </div>
     </form>
   </div>
