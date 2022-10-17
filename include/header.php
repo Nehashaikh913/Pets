@@ -64,7 +64,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                 <div class="container">
                     <div class="patoi-responsive-menu">
                         <div class="logo">
-                            <a href="index-4.html"><img src="assets/img/logo/LOGO.svg" width="170" height="60"></img></a>
+                            <a href="index-4.html"><img class="logoimg" src="assets/img/logo/LOGO.svg"></img></a>
                         </div>
                     </div>
                 </div>
@@ -142,13 +142,6 @@ if(!isset($_COOKIE[$cookie_name])) {
                         <div class="option-inner">
                              <div class="others-option">
                                 <ul>
-                                    <li>
-                                        <select class="form-select">
-                                            <option selected>English</option>
-                                            <option value="1">Spanish</option>
-                                            <option value="2">Chinese</option>
-                                        </select>
-                                    </li>
                                     <li><a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a></li>
                                     <li><a href="cart.html"><i class="fa-regular fa-heart"></i></a></li>
                                     <li><a href="cart.html"><i class='bx bx-cart'></i></a></li>

@@ -1224,3 +1224,13 @@
 
 /* Min width 1550px */
 /*# sourceMappingURL=header.css.map */
+.logoimg{
+  width: 170px;
+  height:60px ;
+}
+@media (min-width: 320px) and (max-width: 767px){
+  .logoimg{
+    width: 120px;
+    height: 36px;
+  }
+}
