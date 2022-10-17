@@ -8,6 +8,32 @@ include('./include/header.php'); ?>
                 <form id="checkoutForm">
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
+
+
+                        <?php
+                        if(isset($_SESSION['userid'])){
+
+                        if($userid==$_SESSION['userid']){
+                            
+                            $stmt = $conn->prepare("SELECT * FROM `order_details` WHERE userid=?");
+                            $stmt->execute([$userid]);
+                            while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
+                            echo "<pre>";
+                            print_r($user_data);
+                            echo "</pre>";
+                            }
+                            
+                            
+                            ?>
+                        <div class="billing-details">
+                                <h3><span>Billing details</span></h3>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p>dfdsfds</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <?php } }else{ ?>
                             <div class="billing-details">
                                 <h3><span>Billing details</span></h3>
                                 <div class="row">
@@ -73,6 +99,12 @@ include('./include/header.php'); ?>
 
                                 </div>
                             </div>
+
+
+                       <?php } ?>
+
+
+
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="billing-details">

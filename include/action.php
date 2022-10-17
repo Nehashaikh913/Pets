@@ -337,6 +337,6 @@ if($_POST['btn']=='checkout_details'){
     function updatecartUserid($conn,$userid){
         $updateCartvalue = $conn->prepare("UPDATE cart SET userid=? where userid=?");
         $updateCartvalue->execute([$userid, $_COOKIE['userid']]);
-    }
+    }   
 
 ?>
