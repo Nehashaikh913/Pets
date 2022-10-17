@@ -165,7 +165,7 @@
           <span class="counter-seconds"></span> Seconds
         </div>
       </div>
-      <a href="shop-grid.html" class="default-btn">
+      <a href="<?php echo $pro_data['slug']  ?>" class="default-btn">
         <span>Shop Now</span>
       </a>
          </div>
