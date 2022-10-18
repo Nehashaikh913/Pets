@@ -1180,9 +1180,18 @@
   .patoi-responsive-nav .dropdown-toggle::before {
     display: none !important;
   }
-  .patoi-responsive-nav .others-option {
+  /* .patoi-responsive-nav .others-option {
     display: none !important;
+  } */
+  .bx{
+    font-size: 25px;
   }
+  i.fa-regular.fa-heart {
+    font-size: 22px;
+  }
+  .others-option {
+    padding-top: 10px;
+}
   .patoi-responsive-nav .logo {
     position: relative;
     z-index: 999;
