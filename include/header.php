@@ -17,7 +17,7 @@ if(!isset($_COOKIE[$cookie_name])) {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Link of CSS files -->
-        <!-- <base href="http://localhost/Pets/"> -->
+        <base href="http://localhost/Pets/">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
         <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -84,7 +84,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                             <ul class="navbar-nav">
                                 <li class="nav-item"><a href="index.php" class="nav-link active">Home</a>
                                 </li>
-                                <li class="nav-item"><a href="index.php" class="nav-link">About</a>
+                                <li class="nav-item"><a href="about.php" class="nav-link">About</a>
                                 </li>
                                 <li class="nav-item"><a class="dropdown-toggle nav-link">Shop By Category</a>
                                     <ul class="dropdown-menu">

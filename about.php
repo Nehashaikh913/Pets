@@ -3,6 +3,14 @@
         <div class="page-title-area">
             <div class="container">
                 <div class="page-title-content">
+               
+                </div>
+            </div>
+        </div>
+        <div class="terms-conditions-area pb-5">
+            <div class="container">
+                <div class="terms-conditions-content">
+                    <h1 style="text-align:center">About Us</h1>
                 <p>At Doggtastic Adventures we want to help every pet parent and their pet, meet all their needs through our innovative products. Our hope is that we can play a meaningful role in bringing pets and their humans closer to each other for years and years to come, and through that build a kinder world.</p>
                 <p>Doggtastic Adventures was created with the ambition to be an ecosystem for pets and pet parenting. While we are still in our fledgling days, we aim to source the best of the products from manufacturers and brands, small or big, and bring them to the loving pet parents across the country.</p>
                 <p>As pet parents, we realise that information on the lifestyle, nutritional and behavioural needs of pets is all across the internet but probably paucity of time is an impediment for pet parents to know what really works best for their pets. So we simply decided: If it’s not good, it’s not on Doggtastic Adventures.</p>

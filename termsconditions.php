@@ -9,9 +9,10 @@
         </div>
         <!-- End Page Title Area -->
         <!-- Start Terms & Conditions Area -->
-        <div class="terms-conditions-area ptb-100">
+        <div class="terms-conditions-area pb-5">
             <div class="container">
                 <div class="terms-conditions-content">
+                <h1 style="text-align:center">Terms and Conditions</h1>
                     <ul>
                         <li>If you access or use this website, you accept and agree to be bound by and comply with the following terms and conditions. If you do not accept these Terms, do not use the Site.</li>
                         <li>All information displayed, transmitted or carried on Doggtastic Adventures is protected by copyright and other intellectual property laws.</li>

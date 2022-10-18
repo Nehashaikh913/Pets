@@ -75,19 +75,6 @@ if ($categoryCount > 0) {
                         echo "There is no product in this category";
                     } ?>
 
-
-                    <div class="col-lg-12 col-md-12">
-                        <div class="pagination-area">
-                            <div class="nav-links">
-                                <a href="shop-grid.html" class="previous page-numbers" title="Next Page"><i class='bx bx-chevrons-left'></i></a>
-                                <span class="page-numbers current">1</span>
-                                <a href="shop-grid.html" class="page-numbers">2</a>
-                                <a href="shop-grid.html" class="page-numbers">3</a>
-                                <a href="shop-grid.html" class="next page-numbers" title="Next Page"><i class='bx bx-chevrons-right'></i></a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
