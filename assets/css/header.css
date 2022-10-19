@@ -954,11 +954,10 @@
   /*navbar-area-css*/
   .navbar-area {
     padding-top: 15px;
-    padding-bottom: 15px;
+
   }
   .navbar-area.is-sticky {
     padding-top: 15px;
-    padding-bottom: 15px;
   }
   .navbar-area.white-color .patoi-responsive-nav .mean-container a.meanmenu-reveal {
     color: var(--whiteColor);
@@ -1016,9 +1015,9 @@
   .patoi-responsive-nav .mean-container a.meanmenu-reveal {
     top: 0;
     padding: 0;
-    width: 35px;
-    height: 30px;
-    padding-top: 20px;
+    width: 25px;
+    height: auto;
+    padding-top: 7px;
     color: var(--blackColor);
     font-family: var(--fontFamily);
   }
@@ -1042,13 +1041,12 @@
   .patoi-responsive-nav .dropdown-toggle::before {
     display: none !important;
   }
-  .patoi-responsive-nav .others-option {
+  /* .patoi-responsive-nav .others-option {
     display: none !important;
-  }
+  } */
   .patoi-responsive-nav .logo {
     position: relative;
     z-index: 999;
-    width: 60%;
   }
   .patoi-nav {
     display: none;
@@ -1182,9 +1180,18 @@
   .patoi-responsive-nav .dropdown-toggle::before {
     display: none !important;
   }
-  .patoi-responsive-nav .others-option {
+  /* .patoi-responsive-nav .others-option {
     display: none !important;
+  } */
+  .bx{
+    font-size: 25px;
   }
+  i.fa-regular.fa-heart {
+    font-size: 22px;
+  }
+  .others-option {
+    padding-top: 10px;
+}
   .patoi-responsive-nav .logo {
     position: relative;
     z-index: 999;
@@ -1224,3 +1231,35 @@
 
 /* Min width 1550px */
 /*# sourceMappingURL=header.css.map */
+
+/* header custom */
+.logoimg{
+  width: 170px;
+  height:60px ;
+}
+@media (min-width: 320px) and (max-width: 767px){
+  .logoimg{
+    width: 134px;
+    height: 44px;
+  }
+  .bx{
+    font-size: 22px;
+  }
+  i.fa-regular.fa-heart {
+    font-size: 19px;
+  }
+}
+
+.patoi-responsive-menu.mean-container{
+  display: flex;
+}
+.patoi-responsive-menu.mean-container .others-option ul{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-left: 4rem;
+}
+.others-option ul li{
+  margin: 10px;
+}

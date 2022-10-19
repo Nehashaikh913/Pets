@@ -682,10 +682,10 @@ $("#userRegistration").validate({
 
 
 	$(function(){
-		$('#dropdownMenuButton2, .dropdown-menu').hover(function() {
-		  $('.dropdown-menu ').addClass('display');
+		$('#dropdownMenuButton2,.dropdown-menu').hover(function() {
+		  $('.dropdown-menu').addClass('display');
 		}, function() {
-		  $('.dropdown-menu ').removeClass('display');
+		  $('.dropdown-menu').removeClass('display');
 		})
 	  })
 	

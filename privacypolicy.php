@@ -3,7 +3,16 @@
         <div class="page-title-area">
             <div class="container">
                 <div class="page-title-content">
-                    <p>This is an online privacy policy (“Policy”) of the website www.DogtasticAdventures.com. The Policy hereby governs the privacy of the personal information i.e. any information that identifies or can be used to identify, contact or locate the person to whom such information pertains (“Personal Information”).
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="terms-conditions-area pb-5">
+            <div class="container">
+                <div class="terms-conditions-content">
+                <h1 style="text-align:center">Privacy Policy</h1>
+                <p>This is an online privacy policy (“Policy”) of the website www.DogtasticAdventures.com. The Policy hereby governs the privacy of the personal information i.e. any information that identifies or can be used to identify, contact or locate the person to whom such information pertains (“Personal Information”).
                             The way Dogtastic Adventures collects, receives, possesses, stores, deals, handles and protects the User’s Personal Information is detailed within this Policy. Dogtastic Adventures and its Owner take a proactive approach to ensure that the necessary steps are taken to protect the privacy of its User throughout his/her experience on Dogtastic Adventures. The Personal Information collected and maintained by Dogtastic Adventures shall be subject to the version of this Policy. We hereby declare that your details will not be disclosed to any third party unless it is required to provide a service to you. Please go through the below mentioned Privacy Policy points carefully. By accessing our website, you acknowledge reading and understanding the policies, and hence agree to be bound by the terms stated below.
                             <li>CONSENT</li>
                             <p>The User visiting Dogtastic Adventures does so at their own discretion and agrees to give their informed consent prior to registering with us. Your personal details (name, location, e-mail address, debit/credit card information) will not be sold or rented by us to any third party without your consent. Though we reserve the right to communicate your personal information to any third party that makes a legally-compliant request for its disclosure; we will not disclose your name, address and other information which identifies you personally to any third party without your consent. However, we hold no responsibility for any action of a third party that may have directed you to our website.</p>
