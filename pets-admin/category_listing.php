@@ -78,7 +78,7 @@ include('include/config.php');
 												<?php
 
 															$per_page = 10;
-															$stmt = $conn->prepare("SELECT * FROM `categories` ORDER BY id DESC");
+															$stmt = $conn->prep	are("SELECT * FROM `categories` ORDER BY id DESC");
 															$stmt->execute();
 															$number_of_rows = $stmt->fetchColumn();
 															$page = ceil($number_of_rows/$per_page);
