@@ -75,7 +75,7 @@
                             <ul>
                                 <li><span>Hotline:</span> <a href="tel:12855">12855</a></li>
                                 <li><span>Email:</span> <a href="https://templates.envytheme.com/cdn-cgi/l/email-protection#6d05080101022d1d0c190204430e0200"><span class="__cf_email__" data-cfemail="3c54595050537c4c5d485355125f5351">[email&#160;protected]</span></a></li>
-                                <li><span>Address:</span> 1523 Cook Hill Road New Haven, CT</li>
+                                <li><span>Address:</span> 555 Eddy St,Apt 24,San Francisco CA 94109</li>
                             </ul>
                         </div>
                     </div>

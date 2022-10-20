@@ -9,9 +9,8 @@
                             </a>
                             <ul class="footer-contact-info">
                                 <li><span>Hotline:</span> <a href="tel:12855">12855</a></li>
-                                <li><span>Tech support:</span> <a href="tel:+1514312-5678">+1 (514) 312-5678</a></li>
                                 <li><span>Email:</span> <a href="https://templates.envytheme.com/cdn-cgi/l/email-protection#a3cbc6cfcfcce3d3c2d7ccca8dc0ccce"><span class="__cf_email__" data-cfemail="ddb5b8b1b1b29dadbca9b2b4f3beb2b0">[email&#160;protected]</span></a></li>
-                                <li><span>Address:</span> 1523 Cook Hill Road New Haven, CT</li>
+                                <li><span>Address:</span>555 Eddy St,Apt 24,San Francisco CA 94109</li>
                             </ul>
                         </div>
                     </div>
