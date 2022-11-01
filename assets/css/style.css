@@ -5081,3 +5081,27 @@ Modal CSS
 .dropdown-menu-dark .dropdown-item.active {
   background: none !important;
 }
+
+/* thank you page css  */
+.thank-img{
+  width: 30px;
+}
+
+.main-heading{
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.thank-you-section{
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+}
+
+.continue-btn{
+  background: #1da1f2;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+}

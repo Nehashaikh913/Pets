@@ -272,11 +272,11 @@ if($_POST['btn']=='checkout_details'){
         $stmt->execute([$_POST['email']]);
         $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
         $userCount=$stmt->rowCount();
-        $full_name = $_POST['fname']." ".$_POST['lname'];
+        $full_name = $_POST['fname'];
         if($userCount==0){
             $userid = uniqid();
-            $add_customer_insert = $conn->prepare('INSERT INTO customer_details(userid, name, email, phone)VALUES(?,?,?,?)');
-            $add_customer_insert->execute([$userid, $full_name, $_POST['email'], $_POST['phone']]);
+            $add_customer_insert = $conn->prepare('INSERT INTO customer_details(userid, name, email, phone, password)VALUES(?,?,?,?,?)');
+            $add_customer_insert->execute([$userid, $full_name, $_POST['email'], $_POST['phone'], $_POST['password']]);
             updatecartUserid($conn,$userid);
         }
         else{
@@ -306,16 +306,36 @@ if($_POST['btn']=='checkout_details'){
         
         $deletecart = $conn->prepare("DELETE FROM cart WHERE userid=? AND status=?");
         $deletecart->execute([$userid, 'cart']);
-        echo "done";
+
+        // $_SESSION['user_name']= $full_name;
+        // $_SESSION['user_email']= $_POST['email'];
+        // $_SESSION['userid']= $userid;
+
+        echo $order_id;
     } 
 }
     if($_POST['btn']=='addRegisteruser'){
-        $insertUser = $conn->prepare("INSERT INTO customer_details(userid, name, email, phone, password) VALUES(?,?,?,?,?)");
-        $insertUser->execute([$userid, $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['password']]);
-        $_SESSION['user_name']= $_POST['name'];
-        $_SESSION['user_email']= $_POST['email'];
-        $_SESSION['userid']= $userid;
-        echo "done";
+
+        $stmt1 = $conn->prepare("SELECT * FROM `customer_details` WHERE email=?");
+        $stmt1->execute([$_POST['email']]);
+        $user_data1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+        $userCount1=$stmt1->rowCount();
+        if($userCount1>0){
+            setcookie('userid', $user_data1['userid'], time()+3600, '/');
+            $_SESSION['user_name']= $user_data1['name'];
+            $_SESSION['user_email']= $user_data1['email'];
+            $_SESSION['user_phone']= $user_data1['phone'];
+            $_SESSION['userid']= $user_data1['userid'];
+            echo "done";
+        }else{
+            $insertUser = $conn->prepare("INSERT INTO customer_details(userid, name, email, phone, password) VALUES(?,?,?,?,?)");
+            $insertUser->execute([$userid, $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['password']]);
+            $_SESSION['user_name']= $_POST['name'];
+            $_SESSION['user_email']= $_POST['email'];
+            $_SESSION['user_phone']= $_POST['phone'];
+            $_SESSION['userid']= $userid;
+            echo "done";
+        }
     }   
     if($_POST['btn']=='userlogin'){
         $stmt1 = $conn->prepare("SELECT * FROM `customer_details` WHERE email=? AND password=?");

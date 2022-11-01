@@ -1,7 +1,8 @@
 <?php
-$userid = $_COOKIE['userid'];
 include('pets-admin/include/config.php');
-include('./include/header.php'); ?>
+include('./include/header.php');
+$userid = $_COOKIE['userid'];
+?>
      <!-- Start Checkout Area -->
      <div class="checkout-area ptb-100">
             <div class="container">
@@ -11,40 +12,40 @@ include('./include/header.php'); ?>
 
 
                         <?php
-                        if(isset($_SESSION['userid'])){
-
-                        if($userid==$_SESSION['userid']){
                             
                             $stmt = $conn->prepare("SELECT * FROM `order_details` WHERE userid=?");
                             $stmt->execute([$userid]);
-                            while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
-                            $name = $user_data['name'];
+                            $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+                            $userCount=$stmt->rowCount();
+                            if($userCount>0){
+                            $fname = $user_data['name'];
                             $email = $user_data['email'];
                             $phone = $user_data['phone'];
+                            // $password = $user_data['password'];
                             $address = $user_data['address'];
                             $city = $user_data['city'];
                             $pincode = $user_data['pincode'];
                             $state = $user_data['state'];
                             $country = $user_data['country'];
                           
-                            $name_array = explode(" ", $name);
-                            $fname = $name_array[0]; // piece1
-                            $lname = $name_array[1]; // piece2
-                            }
+                            // $name_array = explode(" ", $name);
+                            // $fname = $name_array[0]; // piece1
+                            // $lname = $name_array[1]; // piece2
+                            
                             ?>
                             <div class="billing-details">
                                 <h3><span>Billing details</span></h3>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-										    <label>First name <span class="required"></span></label>
+										    <label>Full name<span class="required"></span></label>
                                             <input type="text" class="form-control" name="fname" value="<?php echo $fname ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-										    <label>Last name <span class="required"></span></label>
-                                            <input type="text" class="form-control" name="lname" value="<?php echo $lname ?>">
+										    <label>Password<span class="required"></span></label>
+                                            <input type="text" class="form-control" name="password">
                                         </div>
                                     </div>
 
@@ -99,34 +100,33 @@ include('./include/header.php'); ?>
                             </div>
 
 
-                       <?php } }else{?>
-
+                       <?php }else{?>
                        <div class="billing-details">
                                 <h3><span>Billing details</span></h3>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-										    <label>First name <span class="required">*</span></label>
-                                            <input type="text" class="form-control" name="fname">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="form-group">
-										    <label>Last name <span class="required">*</span></label>
-                                            <input type="text" class="form-control" name="lname">
+										    <label>Full Name<span class="required">*</span></label>
+                                            <input type="text" class="form-control" name="fname" value="<?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name']; }else{ echo ""; } ?>">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
 										    <label>Email <span class="required">*</span></label>
-                                            <input type="text" class="form-control" name="email">
+                                            <input type="text" class="form-control" name="email" value="<?php if(isset($_SESSION['user_email'])){echo $_SESSION['user_email']; }else{ echo ""; } ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
 										    <label>Phone <span class="required">*</span></label>
-                                            <input type="text" class="form-control" name="phone">
+                                            <input type="text" class="form-control" name="phone" value="<?php if(isset($_SESSION['user_phone'])){echo $_SESSION['user_phone']; }else{ echo ""; } ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-group">
+										    <label>Password <span class="required">*</span></label>
+                                            <input type="password" class="form-control" name="password" value="<?php //echo $password ?>">
                                         </div>
                                     </div>
 
@@ -166,7 +166,7 @@ include('./include/header.php'); ?>
 
                                 </div>
                             </div>
-                        <?php } ?>
+                    <?php } ?>
 
 
                         </div>

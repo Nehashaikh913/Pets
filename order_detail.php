@@ -1,28 +1,38 @@
-<?php include('./include/header.php') ?>
+<?php
+include('pets-admin/include/config.php');
+include('./include/header.php');
+$userid = $_COOKIE['userid']; ?>
 <!-- Start Page Title Area -->
 <div class="page-title-area">
   <div class="container">
     <div class="page-title-content"></div>
   </div>
 </div>
+<?php  $stmt = $conn->prepare("SELECT * FROM `order_details` WHERE userid=?");
+       $stmt->execute([$userid]);
+       $user_data_order = $stmt->fetch(PDO::FETCH_ASSOC);
+       $order_date = date('F d, Y', strtotime($user_data_order['order_date']));
+       ?>
 <!-- End Page Title Area -->
 <!-- Start Wishlist Area -->
-<div class="wishlist-area">
+
+<div class="wishlist-area pt-5 pb-5">
   <div class="container">
     <form>
       <div class="wishlist-table table-responsive">
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">Order Details</th>
+              <th>Order Information</th>
             </tr>
           </thead>
           <tbody>
+              <td>Order ID</td>
+              <td><?php echo $user_data_order['invoice_id']; ?></td>
+            </tr>
             <tr>
-              <td>
-                <p>Order Number: 11304</p>
-                <p>Order Date:February 14,2022</p>
-              </td>
+              <td>Order Date</td>
+              <td><?php echo $order_date; ?></td>
             </tr>
           </tbody>
         </table>
@@ -30,6 +40,7 @@
     </form>
   </div>
 </div>
+
 <div class="wishlist-area pt-5">
   <div class="container">
     <form>
@@ -37,82 +48,36 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Shipping Information</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Row A -->
-            <tr>
-              <td>Shipping Address:</td>
-              <td>Ship as Complete:Yes</td>
-            </tr>
-            <!-- Row B -->
-            <tr>
-              <td>Crowne</td>
-              <td></td>
-            </tr>
-            <!-- Row C -->
-            <tr>
-              <td>Stan Crowne</td>
-              <td>Shopping Method</td>
-            </tr>
-            <!-- Row D -->
-            <tr>
-              <td>33 Canai street</td>
-              <td>Mall</td>
-            </tr>
-            <!-- Row E -->
-            <tr>
-              <td>New York</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>New York</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>New York</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </form>
-  </div>
-</div>
-<div class="wishlist-area pt-5">
-  <div class="container">
-    <form>
-      <div class="wishlist-table table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Product</th>
+              <th scope="col">Image</th>
               <th scope="col">Name</th>
               <th scope="col">Quantity</th>
-              <th scope="col">Total</th>
+              <th scope="col">Price</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <?php         $stmt = $conn->prepare("SELECT * FROM `order_product` WHERE userid=?");
+                            $stmt->execute([$userid]);
+                            while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
+                               ?>
               <td>
                 <a href="products-details.html">
-                  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/81rKy-rXrUL._AC_SX679_.jpg" alt="item">
+                  <img src="<?php echo $user_data['pro_img'] ?>" alt="item">
                 </a>
               </td>
-              <td> Dog Striped T-Shirt </td>
-              <td class="product-price">1</td>
-              <td> $255.00 </td>
+              <td> <?php echo $user_data['pro_name'] ?> </td>
+              <td class="product-price"><?php echo $user_data['pro_qty'] ?></td>
+              <td> $<?php echo $user_data['pro_price'] ?> </td>
             </tr>
-
+            <?php } ?>
           </tbody>
         </table>
         <div>
         <div class="cart-totals">
     <ul>
-        <li>Subtotal<span>$226</span></li>
-        <li>Shipping<span>$30.00</span></li>
-        <li>Total <span>$256</span></li>
+        <li>Subtotal<span>$<?php echo $user_data_order['sub_total'] ?></span></li>
+        <li>Shipping<span>$<?php echo $user_data_order['shipping_charges'] ?></span></li>
+        <li>Total <span>$<?php echo $user_data_order['total'] ?></span></li>
     </ul>
     </div>
         </div>
@@ -120,6 +85,7 @@
     </form>
   </div>
 </div>
+
 <div class="wishlist-area pt-5 pb-5">
   <div class="container">
     <form>
@@ -131,30 +97,25 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Row A -->
-            <tr>
-              <td>Shipping Address:</td>
-              <td>Ship as Complete:Yes</td>
+          <tr>
+              <td>Name</td>
+              <td><?php echo $user_data_order['name']; ?></td>
             </tr>
-            <!-- Row B -->
             <tr>
-              <td>Crowne</td>
-              <td></td>
+              <td>Shipping Address</td>
+              <td><?php echo $user_data_order['address']; ?></td>
             </tr>
-            <!-- Row C -->
             <tr>
-              <td>Stan Crowne</td>
-              <td>Shopping Method</td>
+              <td>City</td>
+              <td><?php echo $user_data_order['city']; ?></td>
             </tr>
-            <!-- Row D -->
             <tr>
-              <td>33 Canai street</td>
-              <td>Mall</td>
+              <td>State</td>
+              <td><?php echo $user_data_order['state']; ?>, <?php echo $user_data_order['country']; ?></td>
             </tr>
-            <!-- Row E -->
             <tr>
-              <td>New York</td>
-              <td></td>
+              <td>Pincode</td>
+              <td><?php echo $user_data_order['pincode']; ?></td>
             </tr>
           </tbody>
         </table>

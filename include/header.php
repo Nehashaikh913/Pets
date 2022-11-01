@@ -13,11 +13,11 @@ if(!isset($_COOKIE[$cookie_name])) {
 <!doctype html>
 <html lang="eng">
 <head>
+        <base href="http://localhost/Pets/">
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Link of CSS files -->
-        <base href="http://localhost/Pets/">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
         <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -126,9 +126,12 @@ if(!isset($_COOKIE[$cookie_name])) {
                 </ul>
             </div>
     </li>
-                                        
-                                        <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>    
-                                        <li class="position-relative"><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>                               
+    <?php if(isset($_SESSION['user_name'])){?>                                     
+    <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>    
+    <?php }else{ ?>
+        <li><span id="total_wish_count"></span><a href="user.php"><i class='bx bx-heart'></i></a></li>
+   <?php } ?>  
+   <li class="position-relative"><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>                               
                                     </ul>
                                 </div>
                             </div>

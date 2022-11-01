@@ -120,11 +120,19 @@
               <i class='bx bx-cart-alt'></i>
             </a>
           </li>
+          <?php if(isset($_SESSION['userid'])){?>       
           <li>
             <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Add to card" onclick="addTowish(this)" data-proid="<?php echo $pro_data['id']; ?>" data-proimg="<?php echo $pro_data['image'] ?>" data-name="<?php echo $pro_data['name'] ?>" data-category=<?php echo $pro_data['category']; ?> data-price="<?php echo $pro_data['price'] ?>" data-qty="<?php echo 1 ?>" data-userid="<?php echo $_COOKIE[$cookie_name]; ?>">
               <i class='bx bx-heart'></i>
             </a>
           </li>
+          <?php }else { ?>
+            <li>
+            <a href="user.php" data-toggle="tooltip" data-placement="left">
+              <i class='bx bx-heart'></i>
+            </a>
+          </li>
+          <?php } ?>
           <li>
             <a href="javascript:void(0)" data-pro_id="<?php echo $pro_data['id'] ?>" onclick="product_popup(this)">
               <i class='bx bx-show'></i>

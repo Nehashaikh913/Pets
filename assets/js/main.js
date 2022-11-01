@@ -660,21 +660,8 @@ $("#userRegistration").validate({
 			cache: false,
 			processData: false,
 			success: function (data) {  
-		  //    alert(data)
-			 
-				if(data=='done')
-				{
-					alert("Order Success")	
-					window.location='http://localhost/Pets/'
-				   // $("#contactForm").trigger("reset"); 
-				}
-				else
-				{
-					alert("Some Technical Issue")
-				}
-  
+				window.location='http://localhost/Pets/thankyou.php?inv_id='+data;
 			}
-  
 			});
 		}
   
