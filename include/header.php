@@ -13,7 +13,8 @@ if(!isset($_COOKIE[$cookie_name])) {
 <!doctype html>
 <html lang="eng">
 <head>
-        <base href="http://localhost/Pets/">
+        <!-- <base href="http://localhost/Pets/"> -->
+        <base href="http://192.168.2.132/Pets/">
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,7 +46,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                     <div class="col-lg-4 col-md-4 col-sm-12">
                         <p>FREE 5 days shipping over $99</p>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-6">
+                    <div class="col-lg-5 col-md-5 col-sm-6 d-none d-lg-block">
                         <div class="search-box">
                             <form>
                                 <input type="text" value="<?php echo $_COOKIE['userid']; ?>" class="input-search" placeholder="Enter your keywords...">
@@ -64,13 +65,20 @@ if(!isset($_COOKIE[$cookie_name])) {
                 <div class="container">
                     <div class="patoi-responsive-menu">
                         <div class="logo">
-                            <a href="index-4.html"><img class="logoimg" src="assets/img/logo/LOGO.svg"></img></a>
+                            <a href="index.php"><img class="logoimg" src="assets/img/logo/LOGO.svg"></img></a>
                         </div>
                         <div class="others-option">
                                 <ul>
                                     <li><a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a></li>
                                     <li><a href="cart.html"><i class="fa-regular fa-heart"></i></a></li>
                                     <li><a href="cart.html"><i class='bx bx-cart'></i></a></li>
+                                    <li  class="mobile-search-btn"><i class="bx bx-search"></i></li>
+                                    <input class="mobile-search-input" placeholder="Search for brands & products" />
+                                </ul>
+                                <ul class="search-list">
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
                                 </ul>
                             </div>
                     </div>

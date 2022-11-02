@@ -43,3 +43,14 @@ $(function () {
     })
   })
 
+// mobile search js
+var stat = false;
+$('.mobile-search-btn').click(function () {
+  stat = !stat;
+  stat ? $('.mobile-search-btn').html('<i class="bx  bx-x"></i>') : $('.mobile-search-btn').html('<i class="bx bx-search"></i>')
+  $('.mobile-search-input').toggleClass('search-input');
+  $('.search-list list').toggleClass('show');
+});
+
+
+// mobile search js

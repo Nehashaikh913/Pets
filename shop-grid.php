@@ -47,7 +47,7 @@ if ($categoryCount > 0) {
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-products-box">
                             <div class="image">
-                                <a href="<?php echo $pro_data['slug'] ?>" class="d-block">
+                                <a href="<?php echo $pro_data['slug'] ?>" class="d-block text-center">
                                     <img src="<?php echo $pro_data['image'] ?>" alt="products-image">
                                 </a>
                                 <ul class="products-button">

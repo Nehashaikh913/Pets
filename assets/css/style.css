@@ -236,7 +236,7 @@ textarea.form-control {
 /*================================================
 Header Area CSS
 =================================================*/
-.others-option li span{
+.others-option li span {
   display: block;
   position: relative;
   border-radius: 50%;
@@ -244,6 +244,7 @@ Header Area CSS
   color: #FFFFFF;
   text-align: center;
 }
+
 /*================================================
 Main Banner Area CSS
 =================================================*/
@@ -454,13 +455,13 @@ Main Banner Area CSS
 }
 
 @media (max-width: 600px) {
-  .banner-item{
+  .banner-item {
     background-position: -380px 0px;
   }
 }
 
 @media (min-width: 1600px) {
-  .banner-item{
+  .banner-item {
     height: 1080px;
   }
 }
@@ -948,7 +949,7 @@ Categories Area CSS
 }
 
 @media (max-width: 600px) {
-  .categories-box img{
+  .categories-box img {
     width: 200px !important;
     margin: auto;
   }
@@ -4447,6 +4448,7 @@ Checkout Area CSS
 .billing-details .col-lg-12:last-child .form-group {
   margin-bottom: 0;
 }
+
 .order-details h3 {
   letter-spacing: .5px;
   margin-bottom: 25px;
@@ -4942,7 +4944,7 @@ Modal CSS
   right: 0;
 }
 
-.display{
+.display {
   display: block !important;
 }
 
@@ -4980,7 +4982,7 @@ Modal CSS
 
 /* custom css */
 
-.productsQuickView .modal-body .image img{
+.productsQuickView .modal-body .image img {
   width: 300px;
   height: 400px;
   object-fit: contain;
@@ -4994,29 +4996,35 @@ Modal CSS
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
+
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 30px;
   text-align: center;
 }
- .grid-item2 {
+
+.grid-item2 {
   grid-row-start: 1;
   grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 3;
 }
+
 .grid-item5 {
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 3;
   grid-column-end: 4;
 }
+
 .grid-container .owl-nav {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.grid-container .owl-nav .owl-prev, .grid-container .owl-nav .owl-next{
+
+.grid-container .owl-nav .owl-prev,
+.grid-container .owl-nav .owl-next {
   position: relative;
   background: #fff !important;
   color: #2a2b39 !important;
@@ -5028,33 +5036,40 @@ Modal CSS
   margin: 0;
   margin: 0px 4px;
 }
-.grid-container .owl-nav .owl-prev span,.grid-container .owl-nav .owl-next span{
+
+.grid-container .owl-nav .owl-prev span,
+.grid-container .owl-nav .owl-next span {
   position: absolute;
   left: 10px;
   top: -9px;
 }
+
 @media (max-width: 600px) {
   .grid-container {
-  position: relative;
+    position: relative;
   }
-  .grid-container .owl-nav{
+
+  .grid-container .owl-nav {
     position: absolute;
     top: -38px;
     right: 12px;
   }
 }
+
 /* grid css end*/
 
-.checkOutbtn{
+.checkOutbtn {
   display: none;
   background-color: #42be42;
   color: white;
 }
-.checkOutbtn1{
+
+.checkOutbtn1 {
   display: none;
   background-color: #42be42;
   color: white;
 }
+
 .default-btn span {
   color: white;
 }
@@ -5083,25 +5098,75 @@ Modal CSS
 }
 
 /* thank you page css  */
-.thank-img{
+.thank-img {
   width: 30px;
 }
 
-.main-heading{
+.main-heading {
   font-size: 30px;
   font-weight: 600;
   text-transform: capitalize;
 }
 
-.thank-you-section{
+.thank-you-section {
   max-width: 600px;
   text-align: center;
   margin: auto;
 }
 
-.continue-btn{
+.continue-btn {
   background: #1da1f2;
   color: #fff;
   padding: 6px 12px;
   border: none;
 }
+
+/* mobile search css starts here */
+.mobile-search-btn {
+  z-index: 9999;
+}
+
+.mobile-search-input {
+  display: none;
+}
+
+.search-input {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 22px;
+  right: 35px;
+  font-size: 16px;
+  z-index: 999;
+  padding: 0px 15px;
+  background-color: #f9f9f9;
+  border: none;
+}
+
+.search-list {
+  flex-direction: column;
+  justify-content: start !important;
+  align-items: start !important;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+  padding:0px !important;
+}
+.search-list li {
+  display: none;
+  background-color: #fff;
+  border: 1px solid #fff;
+  width: 100%;
+  border-top-color: #DBEEFC;
+  margin: 0px !important;
+  padding: 10px;
+}
+
+.show{
+  display: block !important;
+}
+
+/* mobile search css ends here */
