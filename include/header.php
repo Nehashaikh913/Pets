@@ -14,7 +14,7 @@ if(!isset($_COOKIE[$cookie_name])) {
 <html lang="eng">
 <head>
         <!-- <base href="http://localhost/Pets/"> -->
-        <base href="http://192.168.2.132/Pets/">
+        <base href="http://192.168.2.112/Pets/">
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,6 +51,16 @@ if(!isset($_COOKIE[$cookie_name])) {
                             <form>
                                 <input type="text" value="<?php echo $_COOKIE['userid']; ?>" class="input-search" placeholder="Enter your keywords...">
                                 <button type="submit"><i class='bx bx-search'></i></button>
+                                <ul class="desk-search-list">
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                </ul>
                             </form>
                         </div>
                     </div>
@@ -76,6 +86,11 @@ if(!isset($_COOKIE[$cookie_name])) {
                                     <input class="mobile-search-input" placeholder="Search for brands & products" />
                                 </ul>
                                 <ul class="search-list">
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
+                                    <li><a href="">Hello World</a></li>
                                     <li><a href="">Hello World</a></li>
                                     <li><a href="">Hello World</a></li>
                                     <li><a href="">Hello World</a></li>

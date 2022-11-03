@@ -5144,7 +5144,7 @@ Modal CSS
   border: none;
 }
 
-.search-list {
+.search-list, .desk-search-list {
   flex-direction: column;
   justify-content: start !important;
   align-items: start !important;
@@ -5154,9 +5154,12 @@ Modal CSS
   right: 0px;
   z-index: 2;
   padding:0px !important;
+  max-height: 300px;
+  overflow-y: scroll;
 }
-.search-list li {
-  display: none;
+.search-list li, .desk-search-list li {
+  display: none!important;
+  text-align: start;
   background-color: #fff;
   border: 1px solid #fff;
   width: 100%;
