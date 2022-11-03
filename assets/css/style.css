@@ -5158,7 +5158,7 @@ Modal CSS
   overflow-y: scroll;
 }
 .search-list li, .desk-search-list li {
-  display: none!important;
+  display: none;
   text-align: start;
   background-color: #fff;
   border: 1px solid #fff;

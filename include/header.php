@@ -13,8 +13,8 @@ if(!isset($_COOKIE[$cookie_name])) {
 <!doctype html>
 <html lang="eng">
 <head>
-        <!-- <base href="http://localhost/Pets/"> -->
-        <base href="http://192.168.2.112/Pets/">
+        <base href="http://localhost/Pets/">
+        <!-- <base href="http://192.168.2.111/Pets/"> -->
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
