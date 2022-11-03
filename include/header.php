@@ -9,6 +9,12 @@ if(!isset($_COOKIE[$cookie_name])) {
 }else{
     setcookie($cookie_name, $_COOKIE['userid'], time()+3600, '/'); // 86400 = 1 day
 }
+
+$stmt = $conn->prepare("SELECT name,slug FROM `product`");
+$stmt->execute();
+while($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)){
+file_put_contents('product.json', json_encode($pro_data));
+}
 ?>
 <!doctype html>
 <html lang="eng">
