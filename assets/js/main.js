@@ -622,6 +622,7 @@ $("#userRegistration").validate({
 					if(data=='done')
 					{
 						location.reload()
+						window.location='http://localhost/Pets/'
 					   // $("#contactForm").trigger("reset"); 
 					}
 					else

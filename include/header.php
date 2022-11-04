@@ -13,7 +13,7 @@ if(!isset($_COOKIE[$cookie_name])) {
 $stmt = $conn->prepare("SELECT name,slug FROM `product`");
 $stmt->execute();
 while($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)){
-file_put_contents('product.json', json_encode($pro_data));
+file_put_contents('product.js', json_encode($pro_data));
 }
 ?>
 <!doctype html>
