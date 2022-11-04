@@ -5,7 +5,7 @@ $cookie_name="userid";
 if(!isset($_COOKIE[$cookie_name])) {
     $userid = uniqid();
     setcookie($cookie_name, $userid, time()+3600, '/'); // 86400 = 1 day
-    echo "<script>location.reload()</script>";
+    echo "<script>locationz.reload()</script>";
 }else{
     setcookie($cookie_name, $_COOKIE['userid'], time()+3600, '/'); // 86400 = 1 day
 }
