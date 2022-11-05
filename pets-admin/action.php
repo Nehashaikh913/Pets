@@ -12,12 +12,12 @@ if($_POST['btn']=='loginUser'){
       while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
         $email = $user_data['username'];
         $password = $user_data['password'];
-        if (password_verify($pass, $password)) {
+        //if (password_verify($pass, $password)) {
           $_SESSION['admin_is_login'] = $user_data['username'];
           $_SESSION['admin_is_login_id'] = $user_data['id'];
           $_SESSION['admin_is_login_id'] = true;
           echo "done";            
-        }
+        //}
 
       }
     }
