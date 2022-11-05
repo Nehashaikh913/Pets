@@ -2,14 +2,13 @@
 session_start();
 include('pets-admin/include/config.php');
 $cookie_name = "userid";
-if (!isset($_COOKIE[$cookie_name])) {
+if(!isset($_COOKIE[$cookie_name])) {
     $userid = uniqid();
     setcookie($cookie_name, $userid, time() + 3600, '/'); // 86400 = 1 day
     echo "<script>location.reload()</script>";
 } else {
     setcookie($cookie_name, $_COOKIE['userid'], time() + 3600, '/'); // 86400 = 1 day
 }
-
 $stmt = $conn->prepare("SELECT name,slug FROM `product`");
 $stmt->execute();
 while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
@@ -18,10 +17,9 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
 ?>
 <!doctype html>
 <html lang="eng">
-
 <head>
-    <base href="http://localhost/Pets/">
-    <!-- <base href="http://192.168.2.134/Pets/"> -->
+    <!-- <base href="http://localhost/Pets/"> -->
+    <base href="http://192.168.2.112/Pets/">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
