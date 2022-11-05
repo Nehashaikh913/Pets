@@ -5215,14 +5215,26 @@ Modal CSS
 .category-wrapper .category-list:last-child{
   border-bottom: none;
 }
-/* #categoryBtn.active .category-wrapper{
-  display: flex;
+
+.category-list a{
+  color: #000;
 }
 
-#categoryBtn.active .category-wrapper .category-list{
-  display: block;
-} */
 .category-wrapper .category-list:hover{
   color: var(--primaryColor);
 }
 /* mobile search css ends here */
+
+#userDetails{
+  display: none;  
+  position: absolute;
+  top: 35px;
+  z-index: 2;
+  flex-direction: column;
+  background: aliceblue;
+  font-size: 18px;
+}
+
+a.user:hover ~ #userDetails,#userDetails:hover{
+  display: block !important;
+}
