@@ -1269,15 +1269,19 @@
     width: 100%;
     z-index: 2;
     background: #fff;
-    padding: 10px;
+    padding: 15px;
+    display: none;
   }
-  .menu-btn{
-    display: block;
+  #category-wrapper{
+    position: relative;
+    top: 10px;
   }
-}
-
-.menu-btn{
-  /* display: none; */
+  #category-wrapper .category-list{
+    margin-left: 20px;
+  }
+  ul.mobile-quick-links-ul.show{
+    display: flex;
+  }
 }
 
 .patoi-responsive-menu.mean-container{

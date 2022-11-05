@@ -5202,6 +5202,10 @@ Modal CSS
   display: none;
   margin-bottom: 6px;
   cursor: pointer;
+  /* border-bottom: solid 1px var(--primaryColor); */
+}
+.category-wrapper .category-list:last-child{
+  border-bottom: none;
 }
 #categoryBtn.active .category-wrapper{
   display: flex;

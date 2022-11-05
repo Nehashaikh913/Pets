@@ -78,7 +78,7 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                             <li><a href="cart.html"><i class="fa-regular fa-heart"></i></a></li>
                             <li><a href="cart.html"><i class='bx bx-cart'></i></a></li>
                             <li class="mobile-search-btn"><i class="bx bx-search"></i></li>
-                            <li class="menu-btn"><i class="bx bx-menu"></i></li>
+                            <li class="menu-btn d-block d-md-none"><i class="bx bx-menu"></i></li>
                             <input class="mobile-search-input" placeholder="Search for brands & products" />
                         </ul>
                         <ul class="search-list">

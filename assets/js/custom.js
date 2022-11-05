@@ -94,6 +94,7 @@ function showSuggestions(list){
     }
     suggBox.innerHTML = listData;
 }
+// mobile search js
 
 // category show on hover 
 $('#categoryBtn').click(function () {
@@ -101,4 +102,9 @@ $('#categoryBtn').click(function () {
 })
 // category show on hover 
 
-// mobile search js
+// menu js 
+  $('.menu-btn').click(function () {
+    console.log('hi')
+    $('.mobile-quick-links-ul').toggleClass('show')
+  })
+// menu js 
