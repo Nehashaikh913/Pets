@@ -275,8 +275,8 @@ if($_POST['btn']=='checkout_details'){
         $full_name = $_POST['fname'];
         if($userCount==0){
             $userid = uniqid();
-            $add_customer_insert = $conn->prepare('INSERT INTO customer_details(userid, name, email, phone, password)VALUES(?,?,?,?,?)');
-            $add_customer_insert->execute([$userid, $full_name, $_POST['email'], $_POST['phone'], $_POST['password']]);
+            $add_customer_insert = $conn->prepare('INSERT INTO customer_details(userid, name, email, phone)VALUES(?,?,?,?)');
+            $add_customer_insert->execute([$userid, $full_name, $_POST['email'], $_POST['phone']]);
             updatecartUserid($conn,$userid);
         }
         else{
