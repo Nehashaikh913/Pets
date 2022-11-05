@@ -94,11 +94,16 @@ function showSuggestions(list){
     }
     suggBox.innerHTML = listData;
 }
-
-// category show on hover 
-$('#categoryBtn').click(function () {
-  $(this).toggleClass('active')
-})
-// category show on hover 
-
 // mobile search js
+
+// category show on hover 
+// $('#categoryBtn').click(function () {
+//   $(this).toggleClass('active')
+// })
+// category show on hover 
+
+// menu js 
+  $('.menu-btn').click(function () {
+    $('.mobile-quick-links-ul').toggleClass('show')
+  })
+// menu js 
