@@ -47,17 +47,58 @@ $(function () {
 var stat = false;
 $('.mobile-search-btn').click(function () {
   stat = !stat;
-  stat ? $('.mobile-search-btn').html('<i class="bx  bx-x"></i>') : $('.mobile-search-btn').html('<i class="bx bx-search"></i>');
+  $('.search-list').removeClass('active')
+  if(stat){
+    $('.mobile-search-btn').html('<i class="bx  bx-x"></i>')
+  } else{
+    $('.mobile-search-btn').html('<i class="bx bx-search"></i>')
+  }
   $('.mobile-search-input').toggleClass('search-input');
   $('.search-list li').toggleClass('show');
 });
 
-$(".input-search").keyup(function(){
-  if($('.desk-search-list').hasClass( "show" )){
-  $('.desk-search-list').addClass('show')
-  } else{
-    
-  }
-  $('.desk-search-list').addClass('show')
-});
+
+const inputBox = document.querySelector(".mobile-search-input");
+const suggBox = document.querySelector(".search-list");
+
+// if user press any key and release
+ var productdata;
+fetch('./product.json')
+    .then((response) => response.json())
+    .then((json) => productdata = json)
+inputBox.onkeyup = (e)=>{
+    let userData = e.target.value; //user enetered data
+    let emptyArray = [];
+    if(userData){
+        emptyArray = productdata.filter((data)=>{
+            //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+            return data.name.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+        });
+        emptyArray = emptyArray.map((data)=>{
+            // passing return data inside li tag
+            return data = `<a href="${data.slug}"><li>${data.name}</li></a>`;
+        });
+        suggBox.classList.add("active"); //show autocomplete box
+        showSuggestions(emptyArray);
+
+    }else{
+        suggBox.classList.remove("active"); //hide autocomplete box
+    }
+}
+function showSuggestions(list){
+    let listData;
+    if(!list.length){
+        listData = `<li>No search</li>`;
+    }else{
+      listData = list.join('');
+    }
+    suggBox.innerHTML = listData;
+}
+
+// category show on hover 
+$('#categoryBtn').click(function () {
+  $(this).toggleClass('active')
+})
+// category show on hover 
+
 // mobile search js

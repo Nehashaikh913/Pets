@@ -5,7 +5,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-footer-widget">
                             <a href="index.php" class="logo">
-                                <img src="assets/img/logo/LOGO.svg" width="170" height="60" alt="logo">
+                                <img src="assets/img/logo/LOGO-footer.png" width="170" height="60" alt="logo">
                             </a>
                             <ul class="footer-contact-info">
                                 <li><span>Hotline:</span> <a href="tel:12855">12855</a></li>

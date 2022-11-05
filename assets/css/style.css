@@ -5135,7 +5135,7 @@ Modal CSS
   position: absolute;
   top: 0px;
   left: 0px;
-  bottom: 22px;
+  bottom: 8px;
   right: 35px;
   font-size: 16px;
   z-index: 999;
@@ -5149,7 +5149,7 @@ Modal CSS
   justify-content: start !important;
   align-items: start !important;
   position: absolute;
-  top: 60px;
+  top: -10px;
   left: 0px;
   right: 0px;
   z-index: 2;
@@ -5157,7 +5157,7 @@ Modal CSS
   max-height: 300px;
   overflow-y: scroll;
 }
-.search-list li, .desk-search-list li {
+.search-list li {
   display: none;
   text-align: start;
   background-color: #fff;
@@ -5166,10 +5166,51 @@ Modal CSS
   border-top-color: #DBEEFC;
   margin: 0px !important;
   padding: 10px;
+  font-size: 18px;
 }
 
-.show{
+.search-list a{
+  width: 100%;
+}
+
+.search-list.active  li{
   display: block !important;
 }
 
+.category-inner{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.category-wrapper{
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    position: absolute;
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  left: 0px;
+  z-index: 2;
+  top: 40px;
+  padding: 4px 8px;
+  min-width: 150px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.category-wrapper .category-list{
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: none;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+#categoryBtn.active .category-wrapper{
+  display: flex;
+}
+
+#categoryBtn.active .category-wrapper .category-list{
+  display: block;
+}
+.category-wrapper .category-list:hover{
+  color: var(--primaryColor);
+}
 /* mobile search css ends here */

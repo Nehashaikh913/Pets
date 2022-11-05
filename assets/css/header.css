@@ -289,8 +289,17 @@
   color: var(--primaryColor);
 }
 
-.patoi-responsive-nav {
-  display: none;
+.patoi-responsive-nav { 
+  /* display: none; */
+}
+
+.patoi-responsive-nav ul{
+  position: relative;
+  font-size: 22px;
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 0px;
 }
 
 .patoi-nav .container-fluid {
@@ -1234,7 +1243,7 @@
 
 /* header custom */
 .logoimg{
-  width: 170px;
+  width: 130px;
   height:60px ;
 }
 @media (min-width: 320px) and (max-width: 767px){
@@ -1248,11 +1257,47 @@
   i.fa-regular.fa-heart {
     font-size: 19px;
   }
+  .patoi-responsive-menu .others-option{
+    top: -8px !important;
+  }
+  ul.mobile-quick-links-ul{
+    display: flex ;
+    flex-direction: column;
+    position: absolute !important;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    z-index: 2;
+    background: #fff;
+    padding: 10px;
+  }
+  .menu-btn{
+    display: block;
+  }
+}
+
+.menu-btn{
+  /* display: none; */
 }
 
 .patoi-responsive-menu.mean-container{
   display: flex;
 }
+.patoi-responsive-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.patoi-responsive-menu span{
+  min-width: 130px;
+}
+
+.quick-links li{
+  font-size: 18px;
+}
+
 .patoi-responsive-menu.mean-container .others-option ul{
   display: flex;
     justify-content: center;
@@ -1262,4 +1307,11 @@
 }
 .others-option ul li{
   margin: 10px;
+}
+
+.patoi-responsive-menu .others-option{
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  width: 350px;
 }
