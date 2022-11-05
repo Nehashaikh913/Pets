@@ -74,7 +74,7 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                             <li><a href="">contact</a></li>
                         </ul>
                     </div>
-                    <span></span>
+                    <span class="empty-div"></span>
                     <div class="others-option">
                     <?php 
                                     $product = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status='cart'");
@@ -88,8 +88,8 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                         <ul>
 
 
-                                <!-- <a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a>
-                             -->
+                                <a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a>
+
                              <?php if(isset($_SESSION['user_name'])){ ?>
                     <li><a class="" href="order_detail.php">Order Detail</a></li>
                     <li><a class="" href="logout.php">Log Out</a></li>   
@@ -103,10 +103,10 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                             <?php if(isset($_SESSION['user_name'])){?>
                                 <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='fa-regular fa-heart'></i></a></li>
                                 <?php }else{ ?>
-                                    <li><span id="total_wish_count"></span><a href="user.php"><i class='bx bx-heart'></i></a></li>
+                                    <li class="position-relative"><span id="total_wish_count"></span><a href="user.php"><i class='bx bx-heart'></i></a></li>
                                 <?php } ?>  
                             <!-- <li><a href="cart.html"><i class="fa-regular fa-heart"></i></a></li> -->
-                            <li><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>
+                            <li class="position-relative"><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>
 
                             <!-- <li><a href="cart.html"><i class='bx bx-cart'></i></a></li> -->
                             <li class="mobile-search-btn"><i class="bx bx-search"></i></li>

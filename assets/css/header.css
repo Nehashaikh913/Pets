@@ -1294,8 +1294,12 @@
   position: relative;
 }
 
-.patoi-responsive-menu span{
+.patoi-responsive-menu span.empty-div{
   min-width: 130px;
+}
+
+#categoryBtn:hover .category-wrapper {
+  display: flex;
 }
 
 .quick-links li{

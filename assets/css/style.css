@@ -238,8 +238,13 @@ Header Area CSS
 =================================================*/
 .others-option li span {
   display: block;
-  position: relative;
+  position: absolute;
   border-radius: 50%;
+  font-size: 15px;
+  width: 25px;
+  height: 25px;
+  top: -14px;
+  left: 15px;
   background-color: #1da1f2;
   color: #FFFFFF;
   text-align: center;
@@ -5191,7 +5196,7 @@ Modal CSS
   background: #fff;
   left: 0px;
   z-index: 2;
-  top: 40px;
+  top: 20px;
   padding: 4px 8px;
   min-width: 150px;
   border-bottom-right-radius: 5px;
@@ -5199,7 +5204,7 @@ Modal CSS
 }
 .category-wrapper .category-list{
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  display: none;
+  /* display: none; */
   margin-bottom: 6px;
   cursor: pointer;
   /* border-bottom: solid 1px var(--primaryColor); */
@@ -5207,13 +5212,13 @@ Modal CSS
 .category-wrapper .category-list:last-child{
   border-bottom: none;
 }
-#categoryBtn.active .category-wrapper{
+/* #categoryBtn.active .category-wrapper{
   display: flex;
 }
 
 #categoryBtn.active .category-wrapper .category-list{
   display: block;
-}
+} */
 .category-wrapper .category-list:hover{
   color: var(--primaryColor);
 }

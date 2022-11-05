@@ -97,14 +97,13 @@ function showSuggestions(list){
 // mobile search js
 
 // category show on hover 
-$('#categoryBtn').click(function () {
-  $(this).toggleClass('active')
-})
+// $('#categoryBtn').click(function () {
+//   $(this).toggleClass('active')
+// })
 // category show on hover 
 
 // menu js 
   $('.menu-btn').click(function () {
-    console.log('hi')
     $('.mobile-quick-links-ul').toggleClass('show')
   })
 // menu js 
