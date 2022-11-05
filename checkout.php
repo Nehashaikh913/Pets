@@ -44,13 +44,6 @@ $userid = $_COOKIE['userid'];
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-										    <label>Password<span class="required"></span></label>
-                                            <input type="text" class="form-control" name="password">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="form-group">
 										    <label>Email <span class="required"></span></label>
                                             <input type="text" class="form-control" name="email" value="<?php echo $email ?>">
                                         </div>
@@ -62,7 +55,7 @@ $userid = $_COOKIE['userid'];
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12 col-md-12">
+                                    <div class="col-lg-6 col-md-12">
                                         <div class="form-group">
                                         <label>Address <span class="required"></span></label>
                                         <textarea name="address" class="form-control" id="" cols="10" name="address" rows="3"><?php echo $address ?></textarea>
@@ -123,12 +116,7 @@ $userid = $_COOKIE['userid'];
                                             <input type="text" class="form-control" name="phone" value="<?php if(isset($_SESSION['user_phone'])){echo $_SESSION['user_phone']; }else{ echo ""; } ?>">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="form-group">
-										    <label>Password <span class="required">*</span></label>
-                                            <input type="password" class="form-control" name="password" value="<?php //echo $password ?>">
-                                        </div>
-                                    </div>
+                                    
 
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">

@@ -62,10 +62,13 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                             <li><a href="">About</a></li>
                             <li class="position-relative" id="categoryBtn"><a>Category</a>
                         <div class="category-wrapper" id="category-wrapper">
-                            <div class="category-list">search result</div>
-                            <div class="category-list">search result</div>
-                            <div class="category-list">search result</div>
-                            <div class="category-list">search result</div>
+                        <?php
+                                          $stmt = $conn->prepare("SELECT * FROM `categories`");
+                                          $stmt->execute();
+                                          while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                        ?>
+                            <div class="category-list"><a href="category/<?php echo $user_data['cat_slug'] ?>" class="nav-link"><?php echo $user_data['cat_name'] ?></a></div>
+                            <?php } ?>  
                         </div>
                         </li>
                             <li><a href="">contact</a></li>
@@ -73,10 +76,39 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                     </div>
                     <span></span>
                     <div class="others-option">
+                    <?php 
+                                    $product = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status='cart'");
+                                    $product->execute([$_COOKIE[$cookie_name]]);
+                                    $product_row = $product->fetchColumn();
+
+                                    $product_wish = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status=?");
+                                    $product_wish->execute([$_COOKIE[$cookie_name],'wishlist']);
+                                    $product_row_wish = $product_wish->fetchColumn();
+                                    ?>
                         <ul>
-                            <li><a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a></li>
-                            <li><a href="cart.html"><i class="fa-regular fa-heart"></i></a></li>
-                            <li><a href="cart.html"><i class='bx bx-cart'></i></a></li>
+
+
+                                <!-- <a href="profile-authentication.html"><i class='bx bx-user-circle'></i></a>
+                             -->
+                             <?php if(isset($_SESSION['user_name'])){ ?>
+                    <li><a class="" href="order_detail.php">Order Detail</a></li>
+                    <li><a class="" href="logout.php">Log Out</a></li>   
+                <?php }else{ ?>
+                    <li><a class="" href="user.php">Login</a></li>
+                    <li><a class="" href="user.php">Register</a></li>
+                <?php } ?>            
+                            
+
+
+                            <?php if(isset($_SESSION['user_name'])){?>
+                                <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='fa-regular fa-heart'></i></a></li>
+                                <?php }else{ ?>
+                                    <li><span id="total_wish_count"></span><a href="user.php"><i class='bx bx-heart'></i></a></li>
+                                <?php } ?>  
+                            <!-- <li><a href="cart.html"><i class="fa-regular fa-heart"></i></a></li> -->
+                            <li><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>
+
+                            <!-- <li><a href="cart.html"><i class='bx bx-cart'></i></a></li> -->
                             <li class="mobile-search-btn"><i class="bx bx-search"></i></li>
                             <li class="menu-btn"><i class="bx bx-menu"></i></li>
                             <input class="mobile-search-input" placeholder="Search for brands & products" />
