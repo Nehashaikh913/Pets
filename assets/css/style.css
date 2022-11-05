@@ -1295,7 +1295,10 @@ Products Details Area CSS
   padding: 0;
   margin: 0;
 }
-
+.slick-slide img{
+    height: 350px;
+    margin: 0 auto;
+}
 .products-details-thumbs-image .slick-dots {
   padding: 0;
   display: -webkit-box;
