@@ -6,7 +6,7 @@
     <div class="container">
       <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>One Stop For All Your Pet Needs</h1><div class="price">
                             Price Only
-                            <span>$95.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
+                            <span>$95.00</span></div><a href="category/grooming" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
   <div class="banner-item bg2">
