@@ -58,57 +58,57 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                     </div>
                     <div class="quick-links">
                         <ul class="gap-4 mobile-quick-links-ul">
-                            <li><a href="">Home</a></li>
-                            <li><a href="">About</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="about.php">About</a></li>
                             <li class="position-relative" id="categoryBtn"><a>Category</a>
-                        <div class="category-wrapper" id="category-wrapper">
-                        <?php
-                                          $stmt = $conn->prepare("SELECT * FROM `categories`");
-                                          $stmt->execute();
-                                          while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
-                                        ?>
-                            <div class="category-list"><a href="category/<?php echo $user_data['cat_slug'] ?>" class="nav-link"><?php echo $user_data['cat_name'] ?></a></div>
-                            <?php } ?>  
-                        </div>
-                        </li>
-                            <li><a href="">contact</a></li>
+                                <div class="category-wrapper" id="category-wrapper">
+                                    <?php
+                                    $stmt = $conn->prepare("SELECT * FROM `categories`");
+                                    $stmt->execute();
+                                    while ($user_data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    ?>
+                                        <div class="category-list"><a href="category/<?php echo $user_data['cat_slug'] ?>" class="nav-link"><?php echo $user_data['cat_name'] ?></a></div>
+                                    <?php } ?>
+                                </div>
+                            </li>
+                            <li><a href="contact.php">contact</a></li>
                         </ul>
                     </div>
                     <span class="empty-div"></span>
                     <div class="others-option">
-                    <?php 
-                                    $product = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status='cart'");
-                                    $product->execute([$_COOKIE[$cookie_name]]);
-                                    $product_row = $product->fetchColumn();
+                        <?php
+                        $product = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status='cart'");
+                        $product->execute([$_COOKIE[$cookie_name]]);
+                        $product_row = $product->fetchColumn();
 
-                                    $product_wish = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status=?");
-                                    $product_wish->execute([$_COOKIE[$cookie_name],'wishlist']);
-                                    $product_row_wish = $product_wish->fetchColumn();
-                                    ?>
+                        $product_wish = $conn->prepare("SELECT count(*) FROM `cart` where userid=? AND status=?");
+                        $product_wish->execute([$_COOKIE[$cookie_name], 'wishlist']);
+                        $product_row_wish = $product_wish->fetchColumn();
+                        ?>
                         <ul>
 
 
-                                <li>
+                            <li>
                                 <a class="user"><i class='bx bx-user-circle'></i></a>
 
-<ul class="userDetails ps-0" id="userDetails">
-<?php if(isset($_SESSION['user_name'])){ ?>
-<li><a class="" href="order_detail.php">Order Detail</a></li>
-<li><a class="" href="logout.php">Log Out</a></li>   
-<?php }else{ ?>
-<li><a class="" href="user.php">Login</a></li>
-<li><a class="" href="user.php">Register</a></li>
-<?php } ?>   
-</ul>      
-                                </li>   
-                            
+                                <ul class="userDetails ps-0" id="userDetails">
+                                    <?php if (isset($_SESSION['user_name'])) { ?>
+                                        <li><a class="" href="order_detail.php">Order Detail</a></li>
+                                        <li><a class="" href="logout.php">Log Out</a></li>
+                                    <?php } else { ?>
+                                        <li><a class="" href="user.php">Login</a></li>
+                                        <li><a class="" href="user.php">Register</a></li>
+                                    <?php } ?>
+                                </ul>
+                            </li>
 
 
-                            <?php if(isset($_SESSION['user_name'])){?>
+
+                            <?php if (isset($_SESSION['user_name'])) { ?>
                                 <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='fa-regular fa-heart'></i></a></li>
-                                <?php }else{ ?>
-                                    <li class="position-relative"><span id="total_wish_count"></span><a href="user.php"><i class='bx bx-heart'></i></a></li>
-                                <?php } ?>  
+                            <?php } else { ?>
+                                <li class="position-relative"><span id="total_wish_count"></span><a href="user.php"><i class='bx bx-heart'></i></a></li>
+                            <?php } ?>
                             <!-- <li><a href="cart.html"><i class="fa-regular fa-heart"></i></a></li> -->
                             <li class="position-relative"><span id="total_product_count"><?php echo $product_row ?></span><a href="cart.php"><i class='bx bx-cart'></i></a></li>
 
