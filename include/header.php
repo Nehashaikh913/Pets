@@ -56,21 +56,6 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                     </div>
                     <div class="quick-links">
                         <ul class="gap-4 mobile-quick-links-ul">
-<<<<<<< HEAD
-                            <li><a href="">Home</a></li>
-                            <li><a href="about.php">About</a></li>
-                            <li class="position-relative" id="categoryBtn"><a>Category</a>
-                        <div class="category-wrapper" id="category-wrapper">
-                        <?php
-                                          $stmt = $conn->prepare("SELECT * FROM `categories`");
-                                          $stmt->execute();
-                                          while($user_data = $stmt->fetch(PDO::FETCH_ASSOC)){
-                                        ?>
-                            <div class="category-list"><a href="category/<?php echo $user_data['cat_slug'] ?>" class="nav-link"><?php echo $user_data['cat_name'] ?></a></div>
-                            <?php } ?>  
-                        </div>
-                        </li>
-=======
                             <li><a href="index.php">Home</a></li>
                             <li><a href="about.php">About</a></li>
                             <li class="position-relative" id="categoryBtn"><a>Category</a>
@@ -84,7 +69,6 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                                     <?php } ?>
                                 </div>
                             </li>
->>>>>>> d23a7530e9ac459876a2e95fa292001f334c38d4
                             <li><a href="contact.php">contact</a></li>
                         </ul>
                     </div>
