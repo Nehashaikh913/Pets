@@ -586,7 +586,7 @@ $("#userRegistration").validate({
 			 
 				if(data=='done')
 				{
-					window.location='http://localhost/Pets/'
+					window.location='https://doggtasticadventures.com/'
 				   // $("#contactForm").trigger("reset"); 
 				}
 				else
@@ -622,7 +622,7 @@ $("#userRegistration").validate({
 					if(data=='done')
 					{
 						location.reload()
-//						window.location='http://localhost/Pets/'
+//						window.location='https://doggtasticadventures.com/'
 					   // $("#contactForm").trigger("reset"); 
 					}
 					else
@@ -661,7 +661,7 @@ $("#userRegistration").validate({
 			cache: false,
 			processData: false,
 			success: function (data) {  
-				window.location='http://localhost/Pets/thankyou.php?inv_id='+data;
+				window.location='https://doggtasticadventures.com/thankyou.php?inv_id='+data;
 			}
 			});
 		}
