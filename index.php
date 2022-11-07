@@ -13,14 +13,14 @@
     <div class="container">
       <div class="banner-item-content"><span class="sub-title">New Arrivals</span><h1>Help Your Dog Maintain A Healthier Weight</h1><div class="price">
                             Price Only
-                            <span>$70.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
+                            <span>$70.00</span></div><a href="category/pet-food-" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
   <div class="banner-item bg3">
     <div class="container">
       <div class="banner-item-content"><span class="sub-title">Super Offer</span><h1>Why Should Hoomans Have All The Fun?</h1><div class="price">
                             Price Only
-                            <span>$30.00</span></div><a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a></div>
+                            <span>$30.00</span></div><a href="category/toys" class="default-btn"><span>Shop Now</span></a></div>
     </div>
   </div>
 </div>
@@ -38,7 +38,7 @@
         <div class="about-content">
           <h2>About Doggtastic Adventure</h2>
           <p>We, the Doggtastic Adventure, promise to provide the ultimate shopping experience & best quality of pet supply to our customers. To ensure the healthy and happy life of your beloved pets we are committed to keep upgrading ourself and serve you better. </p>
-          <a href="shop-grid.html" class="default-btn">
+          <a href="category/pet-food-" class="default-btn">
             <span>Shop Now</span>
           </a>
         </div>
@@ -156,8 +156,7 @@
         </div>
         <?php if($i==2){ ?>
          <div class="hide-cont d-none d-lg-block">
-         <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor.</p>
-      <h3>Place an order now</h3>
+        <h3>Place an order now</h3>
       <span class="discount">Enjoy 30% OFF</span>
       <div class="counter-class" data-date="2022-12-24 24:00:00">
         <div>

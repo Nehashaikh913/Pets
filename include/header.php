@@ -18,8 +18,8 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
 <!doctype html>
 <html lang="eng">
 <head>
-    <!-- <base href="http://localhost/Pets/"> -->
-    <base href="http://192.168.2.112/Pets/">
+    <base href="http://localhost/Pets/">
+    <!-- <base href="http://192.168.2.112/Pets/"> -->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,7 +57,7 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                     <div class="quick-links">
                         <ul class="gap-4 mobile-quick-links-ul">
                             <li><a href="">Home</a></li>
-                            <li><a href="">About</a></li>
+                            <li><a href="about.php">About</a></li>
                             <li class="position-relative" id="categoryBtn"><a>Category</a>
                         <div class="category-wrapper" id="category-wrapper">
                         <?php
@@ -69,7 +69,7 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                             <?php } ?>  
                         </div>
                         </li>
-                            <li><a href="">contact</a></li>
+                            <li><a href="contact.php">contact</a></li>
                         </ul>
                     </div>
                     <span class="empty-div"></span>
@@ -87,7 +87,7 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
 
 
                                 <li>
-                                <a class="user"><i class='bx bx-user-circle'></i></a>
+                                <a class="user"><i class='bx bx-user-circle'></i><?php if(isset($_SESSION['user_name'])){?><?php echo $_SESSION['user_name']; ?><?php } ?></a>
 
                                 <ul class="userDetails ps-0" id="userDetails">
                                 <?php if(isset($_SESSION['user_name'])){ ?>
@@ -103,7 +103,7 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
 
 
                             <?php if(isset($_SESSION['user_name'])){?>
-                                <li><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='fa-regular fa-heart'></i></a></li>
+                                <li class="position-relative"><span id="total_wish_count"><?php echo $product_row_wish ?></span><a href="wishlist.php"><i class='fa-regular fa-heart'></i></a></li>
                                 <?php }else{ ?>
                                     <li class="position-relative"><span id="total_wish_count"></span><a href="user.php"><i class='bx bx-heart'></i></a></li>
                                 <?php } ?>  

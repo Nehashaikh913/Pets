@@ -328,6 +328,8 @@ if($_POST['btn']=='checkout_details'){
             $_SESSION['userid']= $user_data1['userid'];
             echo "done";
         }else{
+            $userid = uniqid();
+            setcookie('userid', $userid, time()+3600, '/');
             $insertUser = $conn->prepare("INSERT INTO customer_details(userid, name, email, phone, password) VALUES(?,?,?,?,?)");
             $insertUser->execute([$userid, $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['password']]);
             $_SESSION['user_name']= $_POST['name'];
@@ -343,7 +345,9 @@ if($_POST['btn']=='checkout_details'){
         $user_data1 = $stmt1->fetch(PDO::FETCH_ASSOC);
         $userCount1=$stmt1->rowCount();
         if($userCount1>0){
+            
             setcookie('userid', $user_data1['userid'], time()+3600, '/');
+
             $_SESSION['user_name']= $user_data1['name'];
             $_SESSION['user_email']= $_POST['email'];
             $_SESSION['userid']= $user_data1['userid'];

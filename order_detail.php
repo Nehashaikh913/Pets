@@ -10,7 +10,9 @@ $userid = $_COOKIE['userid']; ?>
 </div>
 <?php  $stmt = $conn->prepare("SELECT * FROM `order_details` WHERE userid=?");
        $stmt->execute([$userid]);
-       $user_data_order = $stmt->fetch(PDO::FETCH_ASSOC);
+       $proCount = $stmt->rowCount();
+       if ($proCount > 0) {
+        $user_data_order = $stmt->fetch(PDO::FETCH_ASSOC);
        $order_date = date('F d, Y', strtotime($user_data_order['order_date']));
        ?>
 <!-- End Page Title Area -->
@@ -123,4 +125,7 @@ $userid = $_COOKIE['userid']; ?>
     </form>
   </div>
 </div>
+<?php }else{
+  echo "<p classs='text-center' style='text-align: center;color: red;font-size: 20px;'>There is no product in your account</p>";
+} ?>
 <!-- End Wishlist Area --> <?php include('./include/footer.php') ?>
