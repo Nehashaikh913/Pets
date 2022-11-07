@@ -20,19 +20,7 @@ if ($categoryCount > 0) {
                 <div class="patoi-grid-sorting row align-items-center">
                     <div class="col-lg-6 col-md-6 result-count">
                         <div class="d-flex align-items-center">
-                            <p><?php echo ucfirst($category_name) ?></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 ordering">
-                        <div class="select-box">
-                            <label>Sort By:</label>
-                            <select>
-                                <option>Default</option>
-                                <option>Popularity</option>
-                                <option>Latest</option>
-                                <option>Price: low to high</option>
-                                <option>Price: high to low</option>
-                            </select>
+                            <p style="font-size:20px;"><?php echo ucfirst($category_name) ?></p>
                         </div>
                     </div>
                 </div>

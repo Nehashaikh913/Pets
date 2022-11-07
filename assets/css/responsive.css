@@ -409,9 +409,10 @@
     margin-bottom: 15px;
   }
   .single-facility-box h3 {
-    font-size: 14px;
+    font-size: 14px; 
   }
   .facility-box {
+    height: 180px;
     padding: 20px 15px;
   }
   .facility-box img {
