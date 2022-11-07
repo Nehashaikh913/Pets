@@ -90,17 +90,17 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
 
                             <li>
                                 <a class="user"><i class='bx bx-user-circle'></i></a>
-
-                                <ul class="userDetails ps-0" id="userDetails">
-                                    <?php if (isset($_SESSION['user_name'])) { ?>
-                                        <li><a class="" href="order_detail.php">Order Detail</a></li>
-                                        <li><a class="" href="logout.php">Log Out</a></li>
-                                    <?php } else { ?>
-                                        <li><a class="" href="user.php">Login</a></li>
-                                        <li><a class="" href="user.php">Register</a></li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
+                                    <ul class="userDetails ps-0" id="userDetails">
+                                    <?php if(isset($_SESSION['user_name'])){ ?>
+                                    <li><a class="" href="order_detail.php">Order Detail</a></li>
+                                    <li><a class="" href="logout.php">Log Out</a></li>   
+                                    <?php }else{ ?>
+                                    <li><a class="" href="user.php">Login</a></li>
+                                    <li><a class="" href="user.php">Register</a></li>
+                                    <?php } ?>   
+                                    </ul>      
+                                </li>   
+                            
 
 
 
