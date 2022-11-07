@@ -18,7 +18,7 @@ while ($pro_data = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
 <!doctype html>
 <html lang="eng">
 <head>
-    <base href="http://localhost/Pets/">
+    <base href="https://doggtasticadventures.com/">
     <!-- <base href="http://192.168.2.112/Pets/"> -->
     <!-- Required meta tags -->
     <meta charset="utf-8">
